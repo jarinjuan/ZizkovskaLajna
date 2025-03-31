@@ -1,4 +1,4 @@
-<h1 align="center">Žižkovský Lajna</h1>
+<h1 align="center">Žižkovská Lajna</h1>
 <p style="font-size: 17px" align="center">Top-down shooter game</p>
 
 
