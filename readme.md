@@ -1,10 +1,10 @@
-<h1 align="center">Komoushooter</h1>
+<h1 align="center">Žižkovská Lajna</h1>
 <p style="font-size: 17px" align="center">Top-down shooter game</p>
 
 
 ## Description
 
-Komoushooter is a top-down shooter game school project. It is a game developed in GameMaker.
+Žižkovská Lajna is a top-down shooter game school project. It is a game developed in Godot.
 
 ## Developers
 
@@ -27,7 +27,3 @@ Komoushooter is a top-down shooter game school project. It is a game developed i
 </tr>
 </table>
 
-
-## Licensing
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
