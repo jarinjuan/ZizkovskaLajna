@@ -51,7 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwgj7nuhl8m5" path="res://Assets/Gradient background/gradient48.png" id="49_spnvb"]
 [ext_resource type="Texture2D" uid="uid://bvq3xqy3cg245" path="res://Assets/Gradient background/gradient49.png" id="50_fei02"]
 [ext_resource type="Texture2D" uid="uid://y0xwkr5eoyl8" path="res://Assets/Gradient background/gradient50.png" id="51_0mupu"]
-[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="52_cgtu8"]
+[ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://animated_sprite_2d.gd" id="52_cgtu8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtu10"]
 resource_local_to_scene = true
