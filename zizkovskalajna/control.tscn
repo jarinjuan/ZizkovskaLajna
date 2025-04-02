@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cnhomkg2adfxi"]
+[gd_scene load_steps=54 format=3 uid="uid://f83bnxna7dq0"]
 
 [ext_resource type="Texture2D" uid="uid://tm1ev5twn6yp" path="res://Assets/pragueSilhouette.png" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://d18vmhhyyfatc" path="res://Assets/Gradient background/gradient1.png" id="2_udbhq"]
@@ -51,8 +51,10 @@
 [ext_resource type="Texture2D" uid="uid://ciwgj7nuhl8m5" path="res://Assets/Gradient background/gradient48.png" id="49_spnvb"]
 [ext_resource type="Texture2D" uid="uid://bvq3xqy3cg245" path="res://Assets/Gradient background/gradient49.png" id="50_fei02"]
 [ext_resource type="Texture2D" uid="uid://y0xwkr5eoyl8" path="res://Assets/Gradient background/gradient50.png" id="51_0mupu"]
+[ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://animated_sprite_2d.gd" id="52_cgtu8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtu10"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -98,9 +100,6 @@ animations = [{
 "texture": ExtResource("15_lme8m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_lme8m")
-}, {
-"duration": 1.0,
 "texture": ExtResource("16_368e6")
 }, {
 "duration": 1.0,
@@ -114,9 +113,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_1tsie")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_tnoo1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("21_tnoo1")
@@ -179,10 +175,10 @@ animations = [{
 "texture": ExtResource("40_iirst")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_fu7xo")
+"texture": ExtResource("42_gdml8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_gdml8")
+"texture": ExtResource("41_fu7xo")
 }, {
 "duration": 1.0,
 "texture": ExtResource("43_qlo5d")
@@ -210,10 +206,154 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("51_0mupu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_fei02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_spnvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_p2shu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_aq55q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8rxc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_d8apq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_7jgri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qlo5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_fu7xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gdml8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iirst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_2l1nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_vixuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_vd3g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ha77m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_p5674")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_f221p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_a4w23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_xesbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4i8g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_0vtpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eo28v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_cl67r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ojvp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rjy8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_t58nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ht2o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mj6vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dxfpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tnoo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1tsie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ei7ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jl2n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_f3g82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_368e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lme8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t5h34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_imgy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_40q3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o4pox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hvv3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_txpyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fegdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_amqs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b6gc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tedhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8j0qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cgtu8")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Control" type="Control"]
@@ -226,26 +366,27 @@ grow_vertical = 2
 
 [node name="buttonStart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 21.0
-offset_right = 175.0
-offset_bottom = 52.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 57.0
+offset_bottom = 32.0
 text = "START"
+icon_alignment = 1
 
 [node name="buttonOptions" type="Button" parent="."]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 87.0
-offset_right = 193.0
-offset_bottom = 118.0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 63.0
 text = "OPTIONS"
 
 [node name="buttonExit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 135.0
-offset_top = 127.0
-offset_right = 176.0
-offset_bottom = 158.0
+offset_left = 1.0
+offset_top = 63.0
+offset_right = 42.0
+offset_bottom = 94.0
 text = "EXIT"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -261,7 +402,9 @@ texture = ExtResource("1_0fbet")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(160.5, 91.5)
+position = Vector2(160, 89)
 scale = Vector2(0.39875, 0.295)
 sprite_frames = SubResource("SpriteFrames_qtu10")
-frame_progress = 0.384769
+frame_progress = 0.393301
+speed_scale = 1.96
+script = ExtResource("52_cgtu8")
