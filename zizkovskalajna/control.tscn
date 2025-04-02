@@ -68,8 +68,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4pox"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40q3o"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imgy0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5h34"]
@@ -79,6 +77,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_368e6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3g82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40q3o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jl2n8"]
 
@@ -90,8 +90,6 @@ shader_parameter/line_thickness = 0.0
 shader_parameter/glitch_strength = 0.02
 
 [sub_resource type="GDScript" id="GDScript_b6gc8"]
-script/source = "extends Sprite2D
-"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtu10"]
 resource_local_to_scene = true
@@ -408,7 +406,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 45.0
+offset_right = 104.0
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("53_8j0qy")
 theme_override_font_sizes/font_size = 25
@@ -418,36 +416,48 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_fegdf")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_txpyq")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_hvv3a")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_o4pox")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_40q3o")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_imgy0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_t5h34")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lme8m")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_368e6")
 text = "START"
+alignment = 0
 icon_alignment = 1
 
 [node name="buttonOptions" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 32.0
-offset_right = 63.0
+offset_right = 115.0
 offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("53_8j0qy")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3g82")
 text = "OPTIONS"
+alignment = 0
 
 [node name="buttonExit" type="Button" parent="."]
 light_mask = 2
 layout_mode = 0
 offset_left = 1.0
 offset_top = 63.0
-offset_right = 35.0
+offset_right = 82.0
 offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("53_8j0qy")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_40q3o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_40q3o")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jl2n8")
 text = "EXIT"
+alignment = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
