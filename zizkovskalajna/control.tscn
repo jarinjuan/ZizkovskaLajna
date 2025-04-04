@@ -1,6 +1,6 @@
-[gd_scene load_steps=74 format=3 uid="uid://f83bnxna7dq0"]
+[gd_scene load_steps=76 format=3 uid="uid://f83bnxna7dq0"]
 
-[ext_resource type="Script" uid="uid://cfsed34meklnl" path="res://button_exit.gd" id="2_amqs4"]
+[ext_resource type="Script" uid="uid://d1c0o13n55nwk" path="res://button.gd" id="2_fegdf"]
 [ext_resource type="Texture2D" uid="uid://d18vmhhyyfatc" path="res://Assets/Gradient background/gradient1.png" id="2_udbhq"]
 [ext_resource type="Texture2D" uid="uid://di8gisj1sjmkn" path="res://Assets/menu.png" id="3_b6gc8"]
 [ext_resource type="Texture2D" uid="uid://cku0oe4h4y1l0" path="res://Assets/Gradient background/gradient2.png" id="3_cgtu8"]
@@ -56,6 +56,7 @@
 [ext_resource type="FontFile" uid="uid://dn0dqf7ujnavx" path="res://Assets/karmaFont/Karma Future.otf" id="53_8j0qy"]
 [ext_resource type="Script" uid="uid://yriwsvyb45k7" path="res://rich_text_label.gd" id="54_tedhf"]
 [ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://control.gdshader" id="55_b6gc8"]
+[ext_resource type="AudioStream" uid="uid://bmx1n7ivjdom2" path="res://Assets/main.mp3" id="57_fegdf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6gc8"]
 
@@ -80,6 +81,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei7ay"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3g82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tsie"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40q3o"]
 
@@ -440,6 +443,20 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_f3g82")
 text = "OPTIONS"
 alignment = 0
 
+[node name="buttonMute" type="Button" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 146.0
+offset_right = 318.0
+offset_bottom = 177.0
+scale = Vector2(1, 1.02478)
+theme_override_fonts/font = ExtResource("53_8j0qy")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1tsie")
+toggle_mode = true
+text = "MUTE"
+alignment = 0
+
 [node name="buttonExit" type="Button" parent="."]
 light_mask = 2
 layout_mode = 0
@@ -453,7 +470,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_40q3o")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jl2n8")
 text = "EXIT"
 alignment = 0
-script = ExtResource("2_amqs4")
+script = ExtResource("2_fegdf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -506,4 +523,9 @@ text = "Zizkovska Lajna"
 fit_content = true
 script = ExtResource("54_tedhf")
 
-[connection signal="pressed" from="buttonExit" to="buttonExit" method="_on_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("57_fegdf")
+autoplay = true
+
+[connection signal="toggled" from="buttonMute" to="buttonExit" method="_on_button_mute_toggled"]
+[connection signal="pressed" from="buttonExit" to="buttonExit" method="_on_button_exit_pressed"]
