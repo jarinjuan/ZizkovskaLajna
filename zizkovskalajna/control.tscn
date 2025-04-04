@@ -1,5 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://f83bnxna7dq0"]
+[gd_scene load_steps=74 format=3 uid="uid://f83bnxna7dq0"]
 
+[ext_resource type="Script" uid="uid://cfsed34meklnl" path="res://button_exit.gd" id="2_amqs4"]
 [ext_resource type="Texture2D" uid="uid://d18vmhhyyfatc" path="res://Assets/Gradient background/gradient1.png" id="2_udbhq"]
 [ext_resource type="Texture2D" uid="uid://di8gisj1sjmkn" path="res://Assets/menu.png" id="3_b6gc8"]
 [ext_resource type="Texture2D" uid="uid://cku0oe4h4y1l0" path="res://Assets/Gradient background/gradient2.png" id="3_cgtu8"]
@@ -51,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://ciwgj7nuhl8m5" path="res://Assets/Gradient background/gradient48.png" id="49_spnvb"]
 [ext_resource type="Texture2D" uid="uid://bvq3xqy3cg245" path="res://Assets/Gradient background/gradient49.png" id="50_fei02"]
 [ext_resource type="Texture2D" uid="uid://y0xwkr5eoyl8" path="res://Assets/Gradient background/gradient50.png" id="51_0mupu"]
-[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="52_cgtu8"]
+[ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://animated_sprite_2d.gd" id="52_cgtu8"]
 [ext_resource type="FontFile" uid="uid://dn0dqf7ujnavx" path="res://Assets/karmaFont/Karma Future.otf" id="53_8j0qy"]
 [ext_resource type="Script" uid="uid://yriwsvyb45k7" path="res://rich_text_label.gd" id="54_tedhf"]
 [ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://control.gdshader" id="55_b6gc8"]
@@ -75,6 +76,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lme8m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_368e6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei7ay"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3g82"]
 
@@ -432,6 +435,7 @@ offset_right = 115.0
 offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("53_8j0qy")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ei7ay")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_f3g82")
 text = "OPTIONS"
 alignment = 0
@@ -446,18 +450,10 @@ offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("53_8j0qy")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_40q3o")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_40q3o")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jl2n8")
 text = "EXIT"
 alignment = 0
+script = ExtResource("2_amqs4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -509,3 +505,5 @@ bbcode_enabled = true
 text = "Zizkovska Lajna"
 fit_content = true
 script = ExtResource("54_tedhf")
+
+[connection signal="pressed" from="buttonExit" to="buttonExit" method="_on_pressed"]
