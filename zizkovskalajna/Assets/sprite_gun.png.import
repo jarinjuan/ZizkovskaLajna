@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ma4ykc13c60"
-path="res://.godot/imported/topdownchar1_scaled.png-1190ffe3f5fc030c7d9107efce1ff627.ctex"
+uid="uid://vmn6j50xhpnq"
+path="res://.godot/imported/sprite_gun.png-938070deff2c39242e61ffa0a34b814e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/topdownchar1_scaled.png"
-dest_files=["res://.godot/imported/topdownchar1_scaled.png-1190ffe3f5fc030c7d9107efce1ff627.ctex"]
+source_file="res://Assets/sprite_gun.png"
+dest_files=["res://.godot/imported/sprite_gun.png-938070deff2c39242e61ffa0a34b814e.ctex"]
 
 [params]
 
