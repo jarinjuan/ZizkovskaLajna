@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2xfro0t7ilr6"]
 
-[ext_resource type="Texture2D" uid="uid://vxbfg80qmtah" path="res://Assets/testPlayer.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b865s1sv1xsyx" path="res://marker_2d.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://d4ma4ykc13c60" path="res://Assets/topdownchar1_scaled.png" id="2_onrkg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(10, 34)
 
 [node name="Player" type="CharacterBody2D"]
 
@@ -11,7 +12,10 @@
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
-texture = ExtResource("1_4flbx")
+position = Vector2(-1, 4.76837e-07)
+rotation = 1.5708
+scale = Vector2(0.11712, 0.0950831)
+texture = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_onrkg")
+shape = SubResource("RectangleShape2D_onrkg")
