@@ -15,9 +15,9 @@ size = Vector2(23, 23)
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
-offset_left = -8.0
-offset_right = 312.0
+offset_right = 320.0
 offset_bottom = 180.0
+scale = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("1_88gup")]
 position = Vector2(78, 53)
@@ -49,8 +49,17 @@ texture = ExtResource("5_ka7wq")
 disabled = true
 
 [node name="WoodWall" parent="." instance=ExtResource("7_8cv3p")]
-position = Vector2(128, 94)
+position = Vector2(243, 114)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("7_8cv3p")]
-position = Vector2(128, 122)
-rotation = 1.5708
+position = Vector2(270, 142)
+rotation = -1.5708
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_8cv3p")]
+position = Vector2(376, 405)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("7_8cv3p")]
+position = Vector2(376, 471)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("7_8cv3p")]
+position = Vector2(376, 536)

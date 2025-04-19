@@ -24,3 +24,6 @@ func _physics_process(delta: float) -> void:
 func pick_up_weapon(weapon):
 	current_weapon = weapon.weapon_name
 	print("zvednuto: " + current_weapon) #kontrola jak to de
+
+func _process(delta):
+	rotate(get_angle_to(get_global_mouse_position()))
