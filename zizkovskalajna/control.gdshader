@@ -13,15 +13,15 @@ float random(float x) {
 
 void fragment() {
     vec2 uv = UV;
-    
+
     float scanline = sin(uv.y * 500.0 + TIME * time_speed) * line_thickness;
-    
+
     float glitch = step(0.9, random(TIME + uv.y * 100.0)) * glitch_strength;
     float noise = random(uv.y + TIME * time_speed) * noise_intensity;
     vec3 color = texture(screen_texture, uv + vec2(glitch, 0.0)).rgb;
-    
+
     color += scanline;
     color += noise;
-    
+
     COLOR = vec4(color, 1.0);
 }

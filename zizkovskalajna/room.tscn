@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=9 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://player.tscn" id="1_88gup"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://player.gd" id="2_bisa2"]
@@ -6,18 +6,21 @@
 [ext_resource type="Script" uid="uid://dhpj3jxvrqjeo" path="res://character_body_2d.gd" id="3_v5vuv"]
 [ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/sprite_gun.png" id="5_ka7wq"]
 [ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://area_2d.gd" id="5_x5k2b"]
+[ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://WoodWall.tscn" id="7_8cv3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o3f6"]
+size = Vector2(23, 23)
 
 [node name="Room" type="Node2D"]
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
-offset_right = 320.0
+offset_left = -8.0
+offset_right = 312.0
 offset_bottom = 180.0
 
 [node name="Player" parent="." instance=ExtResource("1_88gup")]
-position = Vector2(76, 45)
+position = Vector2(78, 53)
 script = ExtResource("2_bisa2")
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
@@ -44,3 +47,10 @@ texture = ExtResource("5_ka7wq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 disabled = true
+
+[node name="WoodWall" parent="." instance=ExtResource("7_8cv3p")]
+position = Vector2(128, 94)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("7_8cv3p")]
+position = Vector2(128, 122)
+rotation = 1.5708
