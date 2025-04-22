@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED: int = 200
 var current_weapon = null 
+var weapon_equipped = false
 
 func _physics_process(delta: float) -> void:
 	var movement := Vector2.ZERO
@@ -23,7 +24,9 @@ func _physics_process(delta: float) -> void:
 
 func pick_up_weapon(weapon):
 	current_weapon = weapon.weapon_name
+	weapon_equipped = true
 	print("zvednuto: " + current_weapon) #kontrola jak to de
+	print(weapon_equipped)
 
 func _process(delta):
 	rotate(get_angle_to(get_global_mouse_position()))
