@@ -4,7 +4,7 @@ var bullet_speed = 1000
 const SPEED: int = 200
 var current_weapon = null 
 var weapon_equipped = false
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://Player/bullet.tscn")
 var can_fire = true
 
 

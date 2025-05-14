@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1yrsh4myo4xd"]
+
+[ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
+[ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
+[ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="3_nfrpb"]
+[ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
+[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/sprite_gun.png" id="6_wph6n"]
+[ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
+
+[node name="Room" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_4gp0m")]
+position = Vector2(78, 53)
+script = ExtResource("2_phao3")
+
+[node name="Enemy" parent="." instance=ExtResource("3_nfrpb")]
+position = Vector2(19, 20)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_nfrpb")]
+position = Vector2(191, 126)
+
+[node name="Gun" type="Area2D" parent="."]
+z_index = -1
+position = Vector2(128, 47)
+script = ExtResource("5_jghof")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_wph6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun"]
+disabled = true
+
+[node name="WoodWall" parent="." instance=ExtResource("7_03u2k")]
+position = Vector2(243, 114)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("7_03u2k")]
+position = Vector2(270, 142)
+rotation = -1.5708
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_03u2k")]
+position = Vector2(376, 405)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("7_03u2k")]
+position = Vector2(376, 471)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("7_03u2k")]
+position = Vector2(376, 536)

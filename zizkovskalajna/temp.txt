@@ -1,0 +1,6 @@
+collision layer
+1 - player
+2 - enemy
+3 - bullets
+4 - enemy bullets
+5 - objects
