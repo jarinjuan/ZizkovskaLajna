@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4ma4ykc13c60" path="res://Assets/sprite_beta_player.png" id="2_onrkg"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 4.76837e-07)
@@ -19,3 +19,6 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(4.195, 9.335)
