@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bhwudhd64b8np" path="res://Player/bullet.gd" id="1_tqmay"]
 [ext_resource type="Texture2D" uid="uid://dql6fccnpvron" path="res://Assets/bullet.png" id="2_d7yj7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
-size = Vector2(21, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqmay"]
+size = Vector2(12, 6)
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 4
@@ -14,11 +14,11 @@ max_contacts_reported = 1
 script = ExtResource("1_tqmay")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+position = Vector2(-1, 7)
 texture = ExtResource("2_d7yj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_v7oki")
+position = Vector2(-2, 5)
+shape = SubResource("RectangleShape2D_tqmay")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
