@@ -6,11 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqmay"]
 size = Vector2(12, 6)
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="Bullet" type="Area2D"]
 collision_layer = 4
 collision_mask = 18
-contact_monitor = true
-max_contacts_reported = 1
 script = ExtResource("1_tqmay")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

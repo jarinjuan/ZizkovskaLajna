@@ -1,44 +1,91 @@
 extends CharacterBody2D
 
+@export var fire_rate = 0.2;
 @onready var player = get_node("../Player")
 @onready var alive_sprite = $AliveSprite 
 @onready var dead_sprite = $DeadSprite
+@onready var ray_cast = $RayCast2D
+var bullet = preload("res://Enemy/enemy_bullet.tscn")
+var player_visible: bool = false
+var last_seen_position: Vector2 = Vector2.ZERO
+var can_fire = true
 const SPEED: int = 100
 const RUN_AWAY_DISTANCE: float = 50.0  
 const DISTANCE_MARGIN: float = 5.0 
 
-var has_weapon: bool = false #pokud ma zbran tak bezi k hraci, pokud ne tak si udrzuje vzdalenost 70px od hrace a utika od/k nemu
+var has_weapon: bool = true #pokud ma zbran tak bezi k hraci, pokud ne tak si udrzuje vzdalenost 70px od hrace a utika od/k nemu
 
 func _ready():
 	dead_sprite.visible = false
+	
+	
+func _aim():
+	if player:
+		ray_cast.target_position = to_local(player.global_position)
+		ray_cast.force_raycast_update()
+	
+func shoot_at_player():
+	
+	if has_weapon and can_fire and player_visible:
+		var bullet_instance = bullet.instantiate()
+		bullet_instance.position = $BulletPoint.get_global_position()
+		bullet_instance.rotation = (player.global_position - bullet_instance.position).angle()
+		get_tree().get_root().add_child(bullet_instance)
+		can_fire = false
+		await get_tree().create_timer(fire_rate).timeout
+		can_fire = true
+
+	
+
+	
+func update_visibility():
+	if not ray_cast:
+		player_visible = false
+		return
+
+	ray_cast.target_position = to_local(player.global_position)
+	ray_cast.force_raycast_update()
+
+	if ray_cast.is_colliding():
+		var hit = ray_cast.get_collider()
+		player_visible = (hit == player)
+	else:
+		player_visible = false
 
 func _physics_process(delta: float) -> void:
+
+	_aim()
+	update_visibility()
+
 	var to_player: Vector2 = player.position - position
 	var distance_to_player: float = to_player.length()
 	var direction: Vector2 = Vector2.ZERO
 
-	if has_weapon:
-		direction = to_player.normalized()
-	else:
-		if distance_to_player < RUN_AWAY_DISTANCE - DISTANCE_MARGIN:
-			direction = (-to_player).normalized()
-		elif distance_to_player > RUN_AWAY_DISTANCE + DISTANCE_MARGIN:
-			direction = to_player.normalized()
-		else:
-			direction = Vector2.ZERO
 
-	if direction.length() < 0.01:
-		direction = Vector2.ZERO
+	if player_visible:
+		last_seen_position = player.global_position
+		if has_weapon:
+			direction = to_player.normalized()
+			shoot_at_player()
+		else:
+			if distance_to_player < RUN_AWAY_DISTANCE - DISTANCE_MARGIN:
+				direction = (-to_player).normalized()
+			elif distance_to_player > RUN_AWAY_DISTANCE + DISTANCE_MARGIN:
+				direction = to_player.normalized()
+	else:
+		if last_seen_position != Vector2.ZERO:
+			var to_last = last_seen_position - global_position
+			if to_last.length() > 5.0:
+				direction = to_last.normalized()
+			else:
+				direction = Vector2.ZERO
 
 	var velocity = direction * SPEED
-
 	var collision = move_and_collide(velocity * delta)
 	if collision and collision.get_collider() == player:
 		velocity = Vector2.ZERO
 		
-		
 func die():
-
 	alive_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1

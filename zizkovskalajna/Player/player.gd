@@ -9,9 +9,8 @@ var can_fire = true
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: #movement
 	var movement := Vector2.ZERO
-
 	if Input.is_action_pressed("move_right"):
 		movement.x += 2
 	if Input.is_action_pressed("move_left"):
@@ -20,14 +19,12 @@ func _physics_process(delta: float) -> void:
 		movement.y += 2
 	if Input.is_action_pressed("move_up"):
 		movement.y -= 2
-
 	if movement.length() > 0:
 		movement = movement.normalized()
-
 	velocity = movement * SPEED
 	move_and_slide()
 
-func pick_up_weapon(weapon):
+func pick_up_weapon(weapon): #weapon_pickup
 	current_weapon = weapon.weapon_name
 	weapon_equipped = true
 	print("zvednuto: " + current_weapon) #kontrola jak to de
@@ -45,3 +42,7 @@ func _process(delta):
 		can_fire = false
 		await get_tree().create_timer(fire_rate).timeout
 		can_fire = true
+		
+func die():
+	print("hrac mrtev")
+	#queue_free()

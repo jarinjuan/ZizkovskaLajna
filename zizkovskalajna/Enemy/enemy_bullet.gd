@@ -12,8 +12,8 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body: Node) -> void:
-	if !body.is_in_group("player"):
+	if !body.is_in_group("enemy"):
 		queue_free()
-	if body.is_in_group("enemy"):
+	if body.is_in_group("player"):
 		if body.has_method("die"):
 			body.die()

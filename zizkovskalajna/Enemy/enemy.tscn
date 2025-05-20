@@ -9,18 +9,24 @@ size = Vector2(23, 23)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 23
+collision_mask = 21
 script = ExtResource("1_px1sc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4o3f6")
 one_way_collision_margin = 0.0
 
+[node name="DeadSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_am0pq")
+
 [node name="AliveSprite" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, -4.91738e-07)
 scale = Vector2(0.160156, 0.160156)
 texture = ExtResource("2_am0pq")
 
-[node name="DeadSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("3_am0pq")
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 17
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(9, 7)

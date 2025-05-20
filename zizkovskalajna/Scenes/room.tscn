@@ -23,7 +23,7 @@ script = ExtResource("2_phao3")
 position = Vector2(19, 20)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_nfrpb")]
-position = Vector2(191, 126)
+position = Vector2(280, 112)
 
 [node name="Gun" type="Area2D" parent="."]
 z_index = -1
