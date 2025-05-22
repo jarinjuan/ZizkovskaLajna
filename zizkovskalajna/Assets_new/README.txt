@@ -18,3 +18,4 @@ Structure:
 |---Player
 |--Tilesets
 |--UI
+|--Weapons
