@@ -24,7 +24,7 @@ var has_weapon: bool = true #pokud ma zbran tak bezi k hraci, pokud ne tak si ud
 func _ready():
 	dead_sprite.visible = false
 	home_position = global_position
-	
+	add_to_group("enemies")
 	
 func _aim():
 	if player:
@@ -111,9 +111,13 @@ func _physics_process(delta: float) -> void:
 	
 		
 func die():
+	if not is_in_group("enemies"):
+		return
+	
 	alive_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1
 	set_process(false)
 	set_physics_process(false)
 	$CollisionShape2D.queue_free()
+	remove_from_group("enemies")
