@@ -9,7 +9,7 @@ size = Vector2(23, 23)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 21
+collision_mask = 22
 script = ExtResource("1_px1sc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -30,3 +30,8 @@ collision_mask = 17
 
 [node name="BulletPoint" type="Node2D" parent="."]
 position = Vector2(9, 7)
+
+[node name="NavAgent" type="NavigationAgent2D" parent="."]
+target_desired_distance = 4.0
+path_max_distance = 1000.0
+navigation_layers = 16
