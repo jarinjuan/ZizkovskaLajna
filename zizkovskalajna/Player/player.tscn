@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
+
+[ext_resource type="Texture2D" uid="uid://d4ma4ykc13c60" path="res://Assets/sprite_beta_player.png" id="2_onrkg"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 24
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 4.76837e-07)
+rotation = 1.5708
+scale = Vector2(0.11712, 0.0950831)
+texture = ExtResource("2_onrkg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(-6, -19, -6, 19, 5, 19, 5, -19)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="BulletPoint" type="Node2D" parent="."]
+position = Vector2(4.195, 9.335)
