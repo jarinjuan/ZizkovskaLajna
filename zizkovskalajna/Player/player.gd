@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @export var fire_rate = 0.2;
+@export var melee_range: float = 50.0
 var bullet_speed = 1000
 const SPEED: int = 200
 var current_weapon = null 
@@ -42,6 +43,16 @@ func _process(delta):
 		can_fire = false
 		await get_tree().create_timer(fire_rate).timeout
 		can_fire = true
+
+	# MELEE pokud nemám zbraň
+	elif not weapon_equipped and Input.is_action_just_pressed("fire"):
+		var enemies = get_tree().get_nodes_in_group("enemies")
+		for enemy in enemies:
+			if global_position.distance_to(enemy.global_position) <= melee_range:
+				if enemy.has_method("die"):
+					enemy.die()
+					print("enemy died using melee")
+
 		
 func die():
 	print("hrac mrtev")
