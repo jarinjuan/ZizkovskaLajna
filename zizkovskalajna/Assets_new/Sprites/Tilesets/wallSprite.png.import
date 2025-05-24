@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://so5tfux2xjcc"
-path="res://.godot/imported/wallSprite.png-919334c37e9753e28e2b7bfaa5ab2ee8.ctex"
+path="res://.godot/imported/wallSprite.png-1104c9a78a481bc9da190ac662d29186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wallSprite.png"
-dest_files=["res://.godot/imported/wallSprite.png-919334c37e9753e28e2b7bfaa5ab2ee8.ctex"]
+source_file="res://Assets_new/Sprites/Tilesets/wallSprite.png"
+dest_files=["res://.godot/imported/wallSprite.png-1104c9a78a481bc9da190ac662d29186.ctex"]
 
 [params]
 

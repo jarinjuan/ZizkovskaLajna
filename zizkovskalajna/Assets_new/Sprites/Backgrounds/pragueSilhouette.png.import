@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tm1ev5twn6yp"
-path="res://.godot/imported/pragueSilhouette.png-99ed4e891f08a22baaafa4f3eadcaa4a.ctex"
+path="res://.godot/imported/pragueSilhouette.png-4feed0d555506d468c5770ff2ceeac99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pragueSilhouette.png"
-dest_files=["res://.godot/imported/pragueSilhouette.png-99ed4e891f08a22baaafa4f3eadcaa4a.ctex"]
+source_file="res://Assets_new/Sprites/Backgrounds/pragueSilhouette.png"
+dest_files=["res://.godot/imported/pragueSilhouette.png-4feed0d555506d468c5770ff2ceeac99.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://biow7bmoib6w8"
-path="res://.godot/imported/menu6.mp3-31b71783b3657cdcbed9f98d27d8aff6.mp3str"
+path="res://.godot/imported/menu6.mp3-d757657fac17fd72aaf7278f8d3f454d.mp3str"
 
 [deps]
 
-source_file="res://Assets/menu6.mp3"
-dest_files=["res://.godot/imported/menu6.mp3-31b71783b3657cdcbed9f98d27d8aff6.mp3str"]
+source_file="res://Assets_new/Audio/Music/menu6.mp3"
+dest_files=["res://.godot/imported/menu6.mp3-d757657fac17fd72aaf7278f8d3f454d.mp3str"]
 
 [params]
 

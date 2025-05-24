@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbsfosrggxvgm"
-path="res://.godot/imported/gradient24.png-44ecd7bf9d605a12126b0cfeba04d3d8.ctex"
+path="res://.godot/imported/gradient24.png-f383b824a45fbcfc56563b9d2ca00b37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gradient background/gradient24.png"
-dest_files=["res://.godot/imported/gradient24.png-44ecd7bf9d605a12126b0cfeba04d3d8.ctex"]
+source_file="res://Assets_new/Sprites/Backgrounds/GradientBackground/gradient24.png"
+dest_files=["res://.godot/imported/gradient24.png-f383b824a45fbcfc56563b9d2ca00b37.ctex"]
 
 [params]
 

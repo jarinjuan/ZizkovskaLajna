@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2atgjwvqvj3p"
-path="res://.godot/imported/deadBody.png-8e2901ef434bd6b104b062593e961425.ctex"
+path="res://.godot/imported/deadBody.png-d998f6e52acea4d8b6eb4a602c7f1b28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/deadBody.png"
-dest_files=["res://.godot/imported/deadBody.png-8e2901ef434bd6b104b062593e961425.ctex"]
+source_file="res://Assets_new/Sprites/Characters/deadBody.png"
+dest_files=["res://.godot/imported/deadBody.png-d998f6e52acea4d8b6eb4a602c7f1b28.ctex"]
 
 [params]
 

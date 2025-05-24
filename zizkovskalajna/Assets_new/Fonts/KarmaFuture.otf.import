@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dn0dqf7ujnavx"
-path="res://.godot/imported/Karma Future.otf-7dc1643dc1160543239a97a9c7a87074.fontdata"
+path="res://.godot/imported/KarmaFuture.otf-1969a8fe7b80410e00bf0ff6076e7390.fontdata"
 
 [deps]
 
-source_file="res://Assets/karmaFont/Karma Future.otf"
-dest_files=["res://.godot/imported/Karma Future.otf-7dc1643dc1160543239a97a9c7a87074.fontdata"]
+source_file="res://Assets_new/Fonts/KarmaFuture.otf"
+dest_files=["res://.godot/imported/KarmaFuture.otf-1969a8fe7b80410e00bf0ff6076e7390.fontdata"]
 
 [params]
 

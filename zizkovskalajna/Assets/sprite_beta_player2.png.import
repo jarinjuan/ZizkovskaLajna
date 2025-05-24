@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f7l8gh53klpb"
-path="res://.godot/imported/floor_sprite.png-395fb7689b9a73bb27eeea5e9acdf733.ctex"
+uid="uid://beeegl03wo8dg"
+path="res://.godot/imported/sprite_beta_player2.png-e5a0d5a69949f92b28b7e1d096d560d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets_new/Sprites/Tilesets/floor_sprite.png"
-dest_files=["res://.godot/imported/floor_sprite.png-395fb7689b9a73bb27eeea5e9acdf733.ctex"]
+source_file="res://Assets/sprite_beta_player2.png"
+dest_files=["res://.godot/imported/sprite_beta_player2.png-e5a0d5a69949f92b28b7e1d096d560d1.ctex"]
 
 [params]
 
