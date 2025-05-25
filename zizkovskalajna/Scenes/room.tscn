@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="3_nfrpb"]
 [ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
-[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/sprites/sprite_gun.png" id="6_wph6n"]
+[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets_new/Sprites/Weapons/sprite_gun.png" id="6_wph6n"]
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
 [ext_resource type="Script" uid="uid://le33gk2ajxth" path="res://Scenes/rigid_body_2d.gd" id="7_4gp0m"]
 [ext_resource type="Texture2D" uid="uid://cjg7l48sgwhs4" path="res://Assets/sprite_wall_stone.png" id="8_phao3"]
@@ -16,6 +16,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojh4s"]
 size = Vector2(8, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phao3"]
+radius = 4.0
 
 [node name="Room" type="Node2D"]
 position = Vector2(0, 3)
@@ -69,18 +72,32 @@ position = Vector2(-4, -7)
 navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(103, 129)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(243, 69)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+position = Vector2(1, 14)
 mass = 0.024
 gravity_scale = 0.0
 linear_damp = 5.0
 script = ExtResource("7_4gp0m")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(0, 14)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -14)
 texture = ExtResource("8_phao3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 14)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -14)
 shape = SubResource("RectangleShape2D_ojh4s")
 one_way_collision_margin = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_phao3")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Node2D"]
+position = Vector2(0, 12)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")
