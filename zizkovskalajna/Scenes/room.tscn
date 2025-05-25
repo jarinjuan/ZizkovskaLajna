@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="3_nfrpb"]
 [ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
-[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/sprite_gun.png" id="6_wph6n"]
+[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/Sprites/Weapons/sprite_gun.png" id="6_wph6n"]
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
