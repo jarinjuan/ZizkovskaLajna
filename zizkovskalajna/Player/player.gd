@@ -50,7 +50,7 @@ func _process(delta):
 			if global_position.distance_to(thing.global_position) <= melee_range:
 				if thing.has_method("break_glass"):
 					thing.break_glass()
-					print("Rozjebáno na střepy!")
+					
 
 		var enemies = get_tree().get_nodes_in_group("enemies")
 		for enemy in enemies:
