@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ciafk3iay8j"]
+
+[ext_resource type="Script" uid="uid://ckri4mimnf5bb" path="res://Mechanics/dialog.gd" id="1_87kay"]
+[ext_resource type="Texture2D" uid="uid://cutm51g02t1b6" path="res://Assets/Sprites/Tilesets/New Piskel.png" id="1_edf0l"]
+[ext_resource type="Texture2D" uid="uid://f7l8gh53klpb" path="res://Assets/Sprites/Tilesets/floor_sprite.png" id="2_87kay"]
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87kay")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_top = 112.0
+offset_right = 207.0
+offset_bottom = 180.0
+texture = ExtResource("1_edf0l")
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2"]
+modulate = Color(1, 1, 1, 0.254902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.254902)
+texture_filter = 1
+layout_mode = 0
+offset_left = 207.0
+offset_top = 112.0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_87kay")
+stretch_mode = 1
