@@ -9,8 +9,11 @@ var current_weapon: Weapon = null
 var weapon_equipped := false
 var bullet = preload("res://Player/bullet.tscn")
 var can_fire = true
+var is_waiting_for_restart := false
+@onready var death_screen := $DeathScreen
 
-
+func _ready():
+	Engine.time_scale = 1
 
 func _physics_process(delta: float) -> void: #movement
 	var movement := Vector2.ZERO
@@ -48,8 +51,9 @@ func _process(delta):
 				if enemy.has_method("die"):
 					enemy.die()
 					print("enemy died using melee")
+					
+					
 
 		
 func die():
-	print("hrac mrtev")
-	#queue_free()
+	death_screen.show_wasted()

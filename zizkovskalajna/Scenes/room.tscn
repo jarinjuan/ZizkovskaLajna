@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="8_phao3"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/spite_pistol_fl.png" id="9_jghof"]
 [ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="9_ojh4s"]
+[ext_resource type="PackedScene" uid="uid://dex4x7nybcljd" path="res://Scenes/DeadScreen/DeathScreen.tscn" id="10_ilpkg"]
 [ext_resource type="Texture2D" uid="uid://dgrvju3w8uu4o" path="res://Assets/Sprites/Weapons/sprite_ar_fl.png" id="11_wph6n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
@@ -19,13 +20,16 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
+offset_top = 1.0
 offset_right = 320.0
-offset_bottom = 180.0
+offset_bottom = 181.0
 scale = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("1_4gp0m")]
 position = Vector2(78, 53)
 script = ExtResource("2_phao3")
+
+[node name="DeathScreen" parent="Player" instance=ExtResource("10_ilpkg")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(426, 405)
