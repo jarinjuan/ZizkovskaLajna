@@ -7,7 +7,7 @@ const SPEED: int = 200
 @onready var weapon_socket = $WeaponSocket
 var current_weapon: Weapon = null
 var weapon_equipped := false
-var bullet = preload("res://Player/bullet.tscn")
+
 var can_fire = true
 var is_waiting_for_restart := false
 @onready var death_screen := $DeathScreen
