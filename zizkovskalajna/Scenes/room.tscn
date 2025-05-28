@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=10 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
 [ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets/Sprites/Weapons/sprite_gun.png" id="6_wph6n"]
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
+[ext_resource type="PackedScene" uid="uid://cnvyc1d3jambv" path="res://drink_can.tscn" id="7_phao3"]
+[ext_resource type="PackedScene" uid="uid://wj2hlpasw8v7" path="res://shorts.tscn" id="8_phao3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
 vertices = PackedVector2Array(496.719, 459.102, 403.594, 459.898, 409.578, 356.289, 403.883, 13.1016, 323.813, 169, 324.039, 118.18, 13.9688, 15.0391, 219.727, 15.9531, 218, 83.8672, 13.0234, 345.273, 218, 169, 267, 82, 267, 14.8672, 267.781, 117.172)
@@ -62,3 +64,9 @@ position = Vector2(295, 257)
 position = Vector2(-4, -7)
 navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
+
+[node name="DrinkCan" parent="." instance=ExtResource("7_phao3")]
+position = Vector2(111, 72)
+
+[node name="Shorts" parent="." instance=ExtResource("8_phao3")]
+position = Vector2(126, 71)

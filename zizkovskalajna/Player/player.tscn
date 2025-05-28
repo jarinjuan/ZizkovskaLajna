@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
 
-[ext_resource type="Texture2D" uid="uid://d4ma4ykc13c60" path="res://Assets/sprite_beta_player.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b51wt18u5dc22" path="res://Assets/Sprites/Characters/Player/sprite_player.png" id="1_l8h54"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 24
@@ -8,8 +8,8 @@ collision_mask = 24
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 4.76837e-07)
 rotation = 1.5708
-scale = Vector2(0.11712, 0.0950831)
-texture = ExtResource("2_onrkg")
+scale = Vector2(1, 0.812)
+texture = ExtResource("1_l8h54")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 0)
