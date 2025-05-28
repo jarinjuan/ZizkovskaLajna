@@ -1,5 +1,6 @@
 extends CharacterBody2D
-@export var fire_rate = 0.2;
+
+@export var fire_rate = 0.2
 @export var melee_range: float = 50.0
 var bullet_speed = 1000
 const SPEED: int = 200
@@ -8,9 +9,7 @@ var weapon_equipped = false
 var bullet = preload("res://Player/bullet.tscn")
 var can_fire = true
 
-
-
-func _physics_process(delta: float) -> void: #movement
+func _physics_process(delta: float) -> void:
 	var movement := Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		movement.x += 2
@@ -25,10 +24,10 @@ func _physics_process(delta: float) -> void: #movement
 	velocity = movement * SPEED
 	move_and_slide()
 
-func pick_up_weapon(weapon): #weapon_pickup
+func pick_up_weapon(weapon):
 	current_weapon = weapon.weapon_name
 	weapon_equipped = true
-	print("zvednuto: " + current_weapon) #kontrola jak to de
+	print("zvednuto: " + current_weapon)
 	print(weapon_equipped)
 
 func _process(delta):
@@ -44,16 +43,21 @@ func _process(delta):
 		await get_tree().create_timer(fire_rate).timeout
 		can_fire = true
 
-	# MELEE pokud nemám zbraň
+
 	elif not weapon_equipped and Input.is_action_just_pressed("fire"):
+		var things_to_smash = get_tree().get_nodes_in_group("glass")
+		for thing in things_to_smash:
+			if global_position.distance_to(thing.global_position) <= melee_range:
+				if thing.has_method("break_glass"):
+					thing.break_glass()
+					print("Rozjebáno na střepy!")
+
 		var enemies = get_tree().get_nodes_in_group("enemies")
 		for enemy in enemies:
 			if global_position.distance_to(enemy.global_position) <= melee_range:
 				if enemy.has_method("die"):
 					enemy.die()
-					print("enemy died using melee")
+					print("enemy dead")
 
-		
 func die():
-	print("hrac mrtev")
-	#queue_free()
+	print("hráč mrtev")
