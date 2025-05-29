@@ -1,25 +1,30 @@
 extends Resource
 
 class_name Save_Load
-const SAVE_FILE = "user://saves//saves.json"
-const SECURITY_KEY = "VYSERSIOKO"
 
-func _init():
-	load_data()
+const SAVE_PATH = "user://saves/"
+const SAVE_FILE = SAVE_PATH + "save.json"
 
-static var max_unlocked_level = 0
+#In here you define whats store in save file and its deafult values
+#If you want to get or store some data you can acces it with |Save_Load.data["key"]|
+#But if you want to get it you have to load it firts or when store it save after with functions
+const data_deafult = {
+	"max_unlocked_level": 0
+}
 
-static func save_data(dataInput: Save_Data):
-	var file = FileAccess.open_encrypted_with_pass(SAVE_FILE, FileAccess.WRITE, SECURITY_KEY)
+static var data = {}
+
+static func save_data():
+	var dir = DirAccess.open("user://")
+	dir.make_dir_recursive(SAVE_PATH)
+	
+	var file = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
 	if file == null:
 		Log.write_log("Couldnt open file for saves", Log.MessageLevel.ERROR)
 		return
 	
-	var data = {
-		"player_data":{
-			"maxUnlockedLevel": dataInput.max_unlocked_level
-		}
-	}
+	if data == {}:
+		data = data_deafult
 	
 	var json_string = JSON.stringify(data, "\t")
 	file.store_string(json_string)
@@ -30,16 +35,33 @@ static func save_data(dataInput: Save_Data):
 static func load_data():
 	if !FileAccess.file_exists(SAVE_FILE):
 		Log.write_log("Youre trying to load when thers no save", Log.MessageLevel.WARNING)
+		data = data_deafult
+		print(0)
 		return
 		
-	var file = FileAccess.open_encrypted_with_pass(SAVE_FILE,FileAccess.READ,SECURITY_KEY)
+	var file = FileAccess.open(SAVE_FILE,FileAccess.READ)
 	if file == null:
+		data = data_deafult
 		Log.write_log("Error while opening file" + error_string(FileAccess.get_open_error()), Log.MessageLevel.ERROR)
+		print(1)
 		return
 		
 	var content = file.get_as_text()
 	file.close()
 	
-	var data = JSON.parse_string(content)
+	var json = JSON.new()
+	var error_code = json.parse(content)
+	if error_code != OK:
+		Log.write_log("JSON parse error: " + json.get_error_message(), Log.MessageLevel.ERROR)
+		data = data_deafult.duplicate(true)
+		print(2)
+		return
 	
-	max_unlocked_level = data.player_data.max_unlocked_level
+	var parsed_data = json.get_data()
+	if typeof(parsed_data) != TYPE_DICTIONARY:
+		Log.write_log("Parsed data is not a dictionary!", Log.MessageLevel.ERROR)
+		data = data_deafult.duplicate(true)
+		print(3)
+		return
+
+	data = parsed_data
