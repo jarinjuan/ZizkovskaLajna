@@ -1,11 +1,22 @@
+<<<<<<< HEAD
+[gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
+=======
 
 [gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
 
+>>>>>>> dev
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="3_nfrpb"]
+<<<<<<< HEAD
+[ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
+[ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets_new/Sprites/Weapons/sprite_gun.png" id="6_wph6n"]
+=======
+>>>>>>> dev
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
+[ext_resource type="Script" uid="uid://le33gk2ajxth" path="res://Scenes/rigid_body_2d.gd" id="7_4gp0m"]
+[ext_resource type="Texture2D" uid="uid://cjg7l48sgwhs4" path="res://Assets/sprite_wall_stone.png" id="8_phao3"]
 
 [ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/WeaponPickup.tscn" id="7_4gp0m"]
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="8_phao3"]
@@ -22,7 +33,14 @@ vertices = PackedVector2Array(496.719, 459.102, 403.594, 459.898, 409.578, 356.2
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 10), PackedInt32Array(2, 9, 10, 4), PackedInt32Array(11, 12, 3, 5, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 3, 355, 399, 366, 393, 470, 509, 469, 412, 3, 257, 5, 257, 82, 258, 127, 314, 128, 313.858, 159, 228, 159)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojh4s"]
+size = Vector2(8, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phao3"]
+radius = 4.0
+
 [node name="Room" type="Node2D"]
+position = Vector2(0, 3)
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
@@ -65,6 +83,37 @@ position = Vector2(-4, -7)
 navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
 
+<<<<<<< HEAD
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(243, 69)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+position = Vector2(1, 14)
+mass = 0.024
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("7_4gp0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -14)
+texture = ExtResource("8_phao3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -14)
+shape = SubResource("RectangleShape2D_ojh4s")
+one_way_collision_margin = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_phao3")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Node2D"]
+position = Vector2(0, 12)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")
+=======
 
 [node name="WeaponPickup2" parent="." instance=ExtResource("7_4gp0m")]
 position = Vector2(177, 56)
@@ -83,3 +132,4 @@ position = Vector2(111, 72)
 [node name="Shorts" parent="." instance=ExtResource("8_phao3")]
 position = Vector2(126, 71)
 
+>>>>>>> dev

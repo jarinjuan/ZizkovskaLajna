@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/New Piskel.png.import
+uid="uid://cutm51g02t1b6"
+path="res://.godot/imported/New Piskel.png-d3c2efd1191b9a8e881cb9473c8a4d40.ctex"
+=======
 uid="uid://uhq4bs8dokt5"
 path="res://.godot/imported/bullet_m4.png-e0340fef5aa2e33e5d7e906e674b8b87.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/bullet_m4.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/New Piskel.png.import
+source_file="res://Assets/sprites/New Piskel.png"
+dest_files=["res://.godot/imported/New Piskel.png-d3c2efd1191b9a8e881cb9473c8a4d40.ctex"]
+=======
 source_file="res://Assets/Sprites/Weapons/bullet_m4.png"
 dest_files=["res://.godot/imported/bullet_m4.png-e0340fef5aa2e33e5d7e906e674b8b87.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/bullet_m4.png.import
 
 [params]
 

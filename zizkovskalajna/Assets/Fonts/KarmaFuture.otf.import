@@ -3,12 +3,21 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dn0dqf7ujnavx"
+<<<<<<< HEAD:zizkovskalajna/Assets_new/Fonts/KarmaFuture.otf.import
+path="res://.godot/imported/KarmaFuture.otf-1969a8fe7b80410e00bf0ff6076e7390.fontdata"
+
+[deps]
+
+source_file="res://Assets_new/Fonts/KarmaFuture.otf"
+dest_files=["res://.godot/imported/KarmaFuture.otf-1969a8fe7b80410e00bf0ff6076e7390.fontdata"]
+=======
 path="res://.godot/imported/KarmaFuture.otf-22b1d9b58e0fa260bd9a5046aaa7b416.fontdata"
 
 [deps]
 
 source_file="res://Assets/Fonts/KarmaFuture.otf"
 dest_files=["res://.godot/imported/KarmaFuture.otf-22b1d9b58e0fa260bd9a5046aaa7b416.fontdata"]
+>>>>>>> dev:zizkovskalajna/Assets/Fonts/KarmaFuture.otf.import
 
 [params]
 

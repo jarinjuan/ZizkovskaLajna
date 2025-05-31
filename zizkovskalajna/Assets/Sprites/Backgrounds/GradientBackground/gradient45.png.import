@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpu6ly2c1abuk"
+<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Backgrounds/GradientBackground/gradient45.png.import
+path="res://.godot/imported/gradient45.png-738d7b4c65f34a4f0a59d14a5e1bfb6f.ctex"
+=======
 path="res://.godot/imported/gradient45.png-ca0c391e2b20bbb46247e73f60039db8.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/GradientBackground/gradient45.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Backgrounds/GradientBackground/gradient45.png.import
+source_file="res://Assets_new/Sprites/Backgrounds/GradientBackground/gradient45.png"
+dest_files=["res://.godot/imported/gradient45.png-738d7b4c65f34a4f0a59d14a5e1bfb6f.ctex"]
+=======
 source_file="res://Assets/Sprites/Backgrounds/GradientBackground/gradient45.png"
 dest_files=["res://.godot/imported/gradient45.png-ca0c391e2b20bbb46247e73f60039db8.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/GradientBackground/gradient45.png.import
 
 [params]
 
