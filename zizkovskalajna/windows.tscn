@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkfmidp55n5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ujho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22j4m"]
+
+[node name="Windows" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ujho")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_22j4m")
