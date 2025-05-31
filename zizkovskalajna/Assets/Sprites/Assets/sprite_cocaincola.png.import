@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjyta08ujr3cd"
-path="res://.godot/imported/sprite_cocaincola.png-4f29dee122e8d17d06c0eeaa22acc06e.ctex"
+path="res://.godot/imported/sprite_cocaincola.png-a0a1bf3b3eefdc936d341d8d7c6799ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Assets/sprite_cocaincola.png"
-dest_files=["res://.godot/imported/sprite_cocaincola.png-4f29dee122e8d17d06c0eeaa22acc06e.ctex"]
+source_file="res://Assets/sprites/Assets/sprite_cocaincola.png"
+dest_files=["res://.godot/imported/sprite_cocaincola.png-a0a1bf3b3eefdc936d341d8d7c6799ba.ctex"]
 
 [params]
 

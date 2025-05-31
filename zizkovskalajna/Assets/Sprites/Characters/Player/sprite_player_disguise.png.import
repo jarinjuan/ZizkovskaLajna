@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsccm0nwdeiom"
-path="res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"
+path="res://.godot/imported/sprite_player_disguise.png-bf089aa5178bdd6ff7f962217466f54e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png"
-dest_files=["res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"]
+source_file="res://Assets/sprites/Characters/Player/sprite_player_disguise.png"
+dest_files=["res://.godot/imported/sprite_player_disguise.png-bf089aa5178bdd6ff7f962217466f54e.ctex"]
 
 [params]
 

@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di8gisj1sjmkn"
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/menu.png.import
-path="res://.godot/imported/menu.png-8f253fe74a74480b7aa8e2b8f8c61c45.ctex"
-=======
-path="res://.godot/imported/menu.png-0488af455d440bff6882b83da7cfee87.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/menu.png.import
+uid="uid://bb0bhg3ndhi56"
+path="res://.godot/imported/menu.png-7e800b39fe98f94a9a31197392f8cc6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/menu.png.import
-source_file="res://Assets/sprites/menu.png"
-dest_files=["res://.godot/imported/menu.png-8f253fe74a74480b7aa8e2b8f8c61c45.ctex"]
-=======
-source_file="res://Assets/Sprites/Backgrounds/menu.png"
-dest_files=["res://.godot/imported/menu.png-0488af455d440bff6882b83da7cfee87.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/menu.png.import
+source_file="res://Assets/sprites/Backgrounds/menu.png"
+dest_files=["res://.godot/imported/menu.png-7e800b39fe98f94a9a31197392f8cc6b.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://nl21i3juy0m4"]
 
 [ext_resource type="Script" uid="uid://bhwudhd64b8np" path="res://Weapons/Bullets/M4/bullet.gd" id="1_j13re"]
-[ext_resource type="Texture2D" uid="uid://7ekgni2o3kfx" path="res://Assets/Sprites/Weapons/bullet_pistol.png" id="2_j13re"]
+[ext_resource type="Texture2D" uid="uid://7ekgni2o3kfx" path="res://Assets/sprites/Weapons/bullet_pistol.png" id="2_j13re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tgwe"]
 size = Vector2(2.3082, 4.38861)

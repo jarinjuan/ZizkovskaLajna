@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btgxn5dyxbh6t"
-path="res://.godot/imported/sprite_player_yellowshirt.png-0390459766730f1a9a98afd72b319710.ctex"
+path="res://.godot/imported/sprite_player_yellowshirt.png-568108c1cedaebadf85b7c9bdc2d93f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_yellowshirt.png"
-dest_files=["res://.godot/imported/sprite_player_yellowshirt.png-0390459766730f1a9a98afd72b319710.ctex"]
+source_file="res://Assets/sprites/Characters/Player/sprite_player_yellowshirt.png"
+dest_files=["res://.godot/imported/sprite_player_yellowshirt.png-568108c1cedaebadf85b7c9bdc2d93f5.ctex"]
 
 [params]
 

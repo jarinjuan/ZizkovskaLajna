@@ -67,4 +67,3 @@ func _process(delta):
 
 func die():
 	death_screen.show_wasted()
-

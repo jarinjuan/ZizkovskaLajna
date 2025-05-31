@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f7l8gh53klpb"
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/floor_sprite.png.import
-path="res://.godot/imported/floor_sprite.png-eac665b593f13aba55c9db21ac8c9c6e.ctex"
-=======
-path="res://.godot/imported/floor_sprite.png-e339f96c1e922a25bc7ce1c5247a4743.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/floor_sprite.png.import
+uid="uid://dhdpp00urg5ao"
+path="res://.godot/imported/floor_sprite.png-2e363c9f3f09aca917a446bf60ea2820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/floor_sprite.png.import
-source_file="res://Assets/sprites/floor_sprite.png"
-dest_files=["res://.godot/imported/floor_sprite.png-eac665b593f13aba55c9db21ac8c9c6e.ctex"]
-=======
-source_file="res://Assets/Sprites/Tilesets/floor_sprite.png"
-dest_files=["res://.godot/imported/floor_sprite.png-e339f96c1e922a25bc7ce1c5247a4743.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/floor_sprite.png.import
+source_file="res://Assets/sprites/Tilesets/floor_sprite.png"
+dest_files=["res://.godot/imported/floor_sprite.png-2e363c9f3f09aca917a446bf60ea2820.ctex"]
 
 [params]
 

@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/anim1.png.import
-uid="uid://5upn8rbescg8"
-path="res://.godot/imported/anim1.png-d037a8a2664f6673a94d34e294bed31e.ctex"
-=======
-uid="uid://7vsbn6pswuf3"
-path="res://.godot/imported/sprite_table.png-d8e995602b838dc1f93c2433552f433b.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Assets/sprite_table.png.import
+uid="uid://06jn7atqael3"
+path="res://.godot/imported/sprite_table.png-844d88c0892efdc14a9d9aafd1940ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/anim1.png.import
-source_file="res://Assets/sprites/anim1.png"
-dest_files=["res://.godot/imported/anim1.png-d037a8a2664f6673a94d34e294bed31e.ctex"]
-=======
-source_file="res://Assets/Sprites/Assets/sprite_table.png"
-dest_files=["res://.godot/imported/sprite_table.png-d8e995602b838dc1f93c2433552f433b.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Assets/sprite_table.png.import
+source_file="res://Assets/sprites/Assets/sprite_table.png"
+dest_files=["res://.godot/imported/sprite_table.png-844d88c0892efdc14a9d9aafd1940ecf.ctex"]
 
 [params]
 

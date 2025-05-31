@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gfqvi8feehs5"
-path="res://.godot/imported/sprite_floor_wood.png-e4c91380a8fd5fe2a66a26a7fb427051.ctex"
+path="res://.godot/imported/sprite_floor_wood.png-9593ab3ee0b9e17fefdf21dea5b79dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tilesets/sprite_floor_wood.png"
-dest_files=["res://.godot/imported/sprite_floor_wood.png-e4c91380a8fd5fe2a66a26a7fb427051.ctex"]
+source_file="res://Assets/sprites/Tilesets/sprite_floor_wood.png"
+dest_files=["res://.godot/imported/sprite_floor_wood.png-9593ab3ee0b9e17fefdf21dea5b79dd8.ctex"]
 
 [params]
 

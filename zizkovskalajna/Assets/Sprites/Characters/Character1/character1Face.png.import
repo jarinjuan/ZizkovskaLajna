@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy5vrrswwbtky"
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/character1Face.png.import
-path="res://.godot/imported/character1Face.png-add97a6cfebde5a150eb1c7c2b8c3527.ctex"
-=======
-path="res://.godot/imported/character1Face.png-4a15379dda9f804dafbe8fd8bc9d5b8c.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Characters/Character1/character1Face.png.import
+uid="uid://bd6gvsxqiadvk"
+path="res://.godot/imported/character1Face.png-e1081fca3124d7c1571799ccc0417ccc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/character1Face.png.import
-source_file="res://Assets/sprites/character1Face.png"
-dest_files=["res://.godot/imported/character1Face.png-add97a6cfebde5a150eb1c7c2b8c3527.ctex"]
-=======
-source_file="res://Assets/Sprites/Characters/Character1/character1Face.png"
-dest_files=["res://.godot/imported/character1Face.png-4a15379dda9f804dafbe8fd8bc9d5b8c.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Characters/Character1/character1Face.png.import
+source_file="res://Assets/sprites/Characters/Character1/character1Face.png"
+dest_files=["res://.godot/imported/character1Face.png-e1081fca3124d7c1571799ccc0417ccc.ctex"]
 
 [params]
 

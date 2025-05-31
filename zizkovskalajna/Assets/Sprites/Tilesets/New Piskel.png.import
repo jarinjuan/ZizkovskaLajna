@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cutm51g02t1b6"
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Tilesets/New Piskel.png.import
-path="res://.godot/imported/New Piskel.png-42d584861b4846d1460dc09f51848d8b.ctex"
-=======
-path="res://.godot/imported/New Piskel.png-87ca0fea1b09945276bdc1a1cbc334ae.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/New Piskel.png.import
+uid="uid://1gg42w4k1v1g"
+path="res://.godot/imported/New Piskel.png-9c6dc00b30114373bab496b0cb8e2336.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Tilesets/New Piskel.png.import
-source_file="res://Assets_new/Sprites/Tilesets/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-42d584861b4846d1460dc09f51848d8b.ctex"]
-=======
-source_file="res://Assets/Sprites/Tilesets/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-87ca0fea1b09945276bdc1a1cbc334ae.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/New Piskel.png.import
+source_file="res://Assets/sprites/Tilesets/New Piskel.png"
+dest_files=["res://.godot/imported/New Piskel.png-9c6dc00b30114373bab496b0cb8e2336.ctex"]
 
 [params]
 

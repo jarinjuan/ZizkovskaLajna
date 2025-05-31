@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tm1ev5twn6yp"
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/pragueSilhouette.png.import
-path="res://.godot/imported/pragueSilhouette.png-c6dc44f9352afe0847f97a783c9e0ee1.ctex"
-=======
-path="res://.godot/imported/pragueSilhouette.png-cb001cb71bc9f78350893244f1ce36a3.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/pragueSilhouette.png.import
+uid="uid://jmnhqnep7ymj"
+path="res://.godot/imported/pragueSilhouette.png-4b07694dfc9373c87a5c5ea261e08f5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets/sprites/pragueSilhouette.png.import
-source_file="res://Assets/sprites/pragueSilhouette.png"
-dest_files=["res://.godot/imported/pragueSilhouette.png-c6dc44f9352afe0847f97a783c9e0ee1.ctex"]
-=======
-source_file="res://Assets/Sprites/Backgrounds/pragueSilhouette.png"
-dest_files=["res://.godot/imported/pragueSilhouette.png-cb001cb71bc9f78350893244f1ce36a3.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/pragueSilhouette.png.import
+source_file="res://Assets/sprites/Backgrounds/pragueSilhouette.png"
+dest_files=["res://.godot/imported/pragueSilhouette.png-4b07694dfc9373c87a5c5ea261e08f5b.ctex"]
 
 [params]
 

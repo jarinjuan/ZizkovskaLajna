@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gsdgxbb8vlg7"
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Backgrounds/GradientBackground/gradient38.png.import
-path="res://.godot/imported/gradient38.png-ca8ddcc7bb2fd9cb2e42dd3d005d25a7.ctex"
-=======
-path="res://.godot/imported/gradient38.png-15cbeb90818de0d0151a205eec8db65c.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/GradientBackground/gradient38.png.import
+uid="uid://2e0qypjddgqp"
+path="res://.godot/imported/gradient38.png-5ec093470cd5497f5768733fe244dd53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Backgrounds/GradientBackground/gradient38.png.import
-source_file="res://Assets_new/Sprites/Backgrounds/GradientBackground/gradient38.png"
-dest_files=["res://.godot/imported/gradient38.png-ca8ddcc7bb2fd9cb2e42dd3d005d25a7.ctex"]
-=======
-source_file="res://Assets/Sprites/Backgrounds/GradientBackground/gradient38.png"
-dest_files=["res://.godot/imported/gradient38.png-15cbeb90818de0d0151a205eec8db65c.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Sprites/Backgrounds/GradientBackground/gradient38.png.import
+source_file="res://Assets/sprites/Backgrounds/GradientBackground/gradient38.png"
+dest_files=["res://.godot/imported/gradient38.png-5ec093470cd5497f5768733fe244dd53.ctex"]
 
 [params]
 

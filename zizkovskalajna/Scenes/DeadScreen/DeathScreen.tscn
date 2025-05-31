@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dex4x7nybcljd"]
 
 [ext_resource type="Script" uid="uid://0n0ebyh7jqmt" path="res://Scenes/DeadScreen/death_screen.gd" id="1_lilqj"]
-[ext_resource type="FontFile" uid="uid://dn0dqf7ujnavx" path="res://Assets/Fonts/KarmaFuture.otf" id="2_d53hx"]
+[ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="2_d53hx"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3

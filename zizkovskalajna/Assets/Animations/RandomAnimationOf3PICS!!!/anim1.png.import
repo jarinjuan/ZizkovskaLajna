@@ -2,25 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5upn8rbescg8"
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Animations/RandomAnimationOf3PICS!!!/anim1.png.import
-path="res://.godot/imported/anim1.png-66a7eacb44203aeb16133d8c384d5104.ctex"
-=======
+uid="uid://dakmux0m6k27g"
 path="res://.godot/imported/anim1.png-4fc5d1712b934d94e667cc1292da9c80.ctex"
->>>>>>> dev:zizkovskalajna/Assets/Animations/RandomAnimationOf3PICS!!!/anim1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< HEAD:zizkovskalajna/Assets_new/Animations/RandomAnimationOf3PICS!!!/anim1.png.import
-source_file="res://Assets_new/Animations/RandomAnimationOf3PICS!!!/anim1.png"
-dest_files=["res://.godot/imported/anim1.png-66a7eacb44203aeb16133d8c384d5104.ctex"]
-=======
 source_file="res://Assets/Animations/RandomAnimationOf3PICS!!!/anim1.png"
 dest_files=["res://.godot/imported/anim1.png-4fc5d1712b934d94e667cc1292da9c80.ctex"]
->>>>>>> dev:zizkovskalajna/Assets/Animations/RandomAnimationOf3PICS!!!/anim1.png.import
 
 [params]
 
