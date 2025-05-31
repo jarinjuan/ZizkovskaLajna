@@ -1,6 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
 
+
+[ext_resource type="Texture2D" uid="uid://d4ma4ykc13c60" path="res://Assets/Sprites/Characters/Player/sprite_beta_player.png" id="2_onrkg"]
+
 [ext_resource type="Texture2D" uid="uid://b51wt18u5dc22" path="res://Assets/Sprites/Characters/Player/sprite_player.png" id="1_l8h54"]
+
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 24
@@ -23,3 +27,6 @@ drag_vertical_enabled = true
 
 [node name="BulletPoint" type="Node2D" parent="."]
 position = Vector2(4.195, 9.335)
+
+[node name="WeaponSocket" type="Node2D" parent="."]
+position = Vector2(0, 12)
