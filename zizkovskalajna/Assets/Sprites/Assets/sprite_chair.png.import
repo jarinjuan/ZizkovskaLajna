@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/OutsideWall.png.import
+uid="uid://b3127gxcahgfr"
+path="res://.godot/imported/OutsideWall.png-69f3ce3f77ba2822e0b4531f88cd4bc2.ctex"
+=======
+uid="uid://islon0jif80n"
+path="res://.godot/imported/sprite_chair.png-f49bfc832881a0bbcc55ec73dd31ec29.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Assets/sprite_chair.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/OutsideWall.png.import
+source_file="res://Assets/sprites/OutsideWall.png"
+dest_files=["res://.godot/imported/OutsideWall.png-69f3ce3f77ba2822e0b4531f88cd4bc2.ctex"]
+=======
+source_file="res://Assets/Sprites/Assets/sprite_chair.png"
+dest_files=["res://.godot/imported/sprite_chair.png-f49bfc832881a0bbcc55ec73dd31ec29.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Assets/sprite_chair.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

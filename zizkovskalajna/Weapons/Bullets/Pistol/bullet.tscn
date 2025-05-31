@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://nl21i3juy0m4"]
+
+[ext_resource type="Script" uid="uid://bhwudhd64b8np" path="res://Weapons/Bullets/M4/bullet.gd" id="1_j13re"]
+[ext_resource type="Texture2D" uid="uid://7ekgni2o3kfx" path="res://Assets/Sprites/Weapons/bullet_pistol.png" id="2_j13re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tgwe"]
+size = Vector2(2.3082, 4.38861)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_j13re")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.55276, 6.58511)
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("2_j13re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.45136, 6.95824)
+rotation = -1.5708
+scale = Vector2(1.455, 1.455)
+shape = SubResource("RectangleShape2D_7tgwe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

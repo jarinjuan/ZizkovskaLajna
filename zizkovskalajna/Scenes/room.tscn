@@ -1,13 +1,32 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
+=======
+
+[gd_scene load_steps=12 format=3 uid="uid://d1yrsh4myo4xd"]
+
+>>>>>>> dev
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="3_nfrpb"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://d25p8k37lmial" path="res://Player/area_2d.gd" id="5_jghof"]
 [ext_resource type="Texture2D" uid="uid://vmn6j50xhpnq" path="res://Assets_new/Sprites/Weapons/sprite_gun.png" id="6_wph6n"]
+=======
+>>>>>>> dev
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/WoodWall.tscn" id="7_03u2k"]
 [ext_resource type="Script" uid="uid://le33gk2ajxth" path="res://Scenes/rigid_body_2d.gd" id="7_4gp0m"]
 [ext_resource type="Texture2D" uid="uid://cjg7l48sgwhs4" path="res://Assets/sprite_wall_stone.png" id="8_phao3"]
+
+[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/WeaponPickup.tscn" id="7_4gp0m"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="8_phao3"]
+[ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/spite_pistol_fl.png" id="9_jghof"]
+[ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="9_ojh4s"]
+[ext_resource type="PackedScene" uid="uid://dex4x7nybcljd" path="res://Scenes/DeadScreen/DeathScreen.tscn" id="10_ilpkg"]
+[ext_resource type="Texture2D" uid="uid://dgrvju3w8uu4o" path="res://Assets/Sprites/Weapons/sprite_ar_fl.png" id="11_wph6n"]
+
+[ext_resource type="PackedScene" uid="uid://cnvyc1d3jambv" path="res://drink_can.tscn" id="7_phao3"]
+[ext_resource type="PackedScene" uid="uid://wj2hlpasw8v7" path="res://shorts.tscn" id="8_phao3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
 vertices = PackedVector2Array(496.719, 459.102, 403.594, 459.898, 409.578, 356.289, 403.883, 13.1016, 323.813, 169, 324.039, 118.18, 13.9688, 15.0391, 219.727, 15.9531, 218, 83.8672, 13.0234, 345.273, 218, 169, 267, 82, 267, 14.8672, 267.781, 117.172)
@@ -25,31 +44,22 @@ position = Vector2(0, 3)
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -2
+offset_top = 1.0
 offset_right = 320.0
-offset_bottom = 180.0
+offset_bottom = 181.0
 scale = Vector2(5, 5)
 
 [node name="Player" parent="." instance=ExtResource("1_4gp0m")]
 position = Vector2(78, 53)
 script = ExtResource("2_phao3")
 
+[node name="DeathScreen" parent="Player" instance=ExtResource("10_ilpkg")]
+
 [node name="Enemy" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(426, 405)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(280, 112)
-
-[node name="Gun" type="Area2D" parent="."]
-z_index = -1
-position = Vector2(128, 47)
-script = ExtResource("5_jghof")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gun"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_wph6n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun"]
-disabled = true
 
 [node name="WoodWall" parent="." instance=ExtResource("7_03u2k")]
 position = Vector2(243, 114)
@@ -68,10 +78,12 @@ position = Vector2(295, 320)
 position = Vector2(295, 257)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(-4, -7)
 navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
 
+<<<<<<< HEAD
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(243, 69)
 
@@ -101,3 +113,23 @@ shape = SubResource("CircleShape2D_phao3")
 position = Vector2(0, 12)
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
+=======
+
+[node name="WeaponPickup2" parent="." instance=ExtResource("7_4gp0m")]
+position = Vector2(177, 56)
+weapon_scene = ExtResource("8_phao3")
+weapon_texture = ExtResource("9_jghof")
+
+[node name="WeaponPickup" parent="." instance=ExtResource("7_4gp0m")]
+position = Vector2(130, 112)
+scale = Vector2(0.05, 0.05)
+weapon_scene = ExtResource("9_ojh4s")
+weapon_texture = ExtResource("11_wph6n")
+
+[node name="DrinkCan" parent="." instance=ExtResource("7_phao3")]
+position = Vector2(111, 72)
+
+[node name="Shorts" parent="." instance=ExtResource("8_phao3")]
+position = Vector2(126, 71)
+
+>>>>>>> dev

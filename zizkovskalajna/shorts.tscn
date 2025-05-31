@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wj2hlpasw8v7"]
+
+[ext_resource type="Texture2D" uid="uid://1edeorewphkl" path="res://Assets/Sprites/Assets/sprite_redshorts.png" id="1_vgfm2"]
+
+[node name="Shorts" type="Sprite2D"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_vgfm2")
