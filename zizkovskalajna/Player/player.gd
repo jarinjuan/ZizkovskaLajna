@@ -1,15 +1,25 @@
 extends CharacterBody2D
 
-@export var fire_rate = 0.2
+@export var fire_rate = 0.1;
+
 @export var melee_range: float = 50.0
+@export var bullets = 30
 var bullet_speed = 1000
 const SPEED: int = 200
-var current_weapon = null 
-var weapon_equipped = false
-var bullet = preload("res://Player/bullet.tscn")
-var can_fire = true
+@onready var weapon_socket = $WeaponSocket
+var current_weapon: Weapon = null
+var weapon_equipped := false
 
-func _physics_process(delta: float) -> void:
+var can_fire = true
+var is_waiting_for_restart := false
+@onready var death_screen := $DeathScreen
+
+
+func _ready():
+	Engine.time_scale = 1
+
+func _physics_process(delta: float) -> void: #movement
+
 	var movement := Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		movement.x += 2
@@ -24,24 +34,20 @@ func _physics_process(delta: float) -> void:
 	velocity = movement * SPEED
 	move_and_slide()
 
-func pick_up_weapon(weapon):
-	current_weapon = weapon.weapon_name
+
+func pick_up_weapon(weapon_scene: PackedScene) -> void:
+	if current_weapon:
+		current_weapon.queue_free()        # drop old gun
+	current_weapon = weapon_scene.instantiate() as Weapon
+	weapon_socket.add_child(current_weapon)
 	weapon_equipped = true
-	print("zvednuto: " + current_weapon)
-	print(weapon_equipped)
+
 
 func _process(delta):
 	rotate(get_angle_to(get_global_mouse_position()))
 
-	if weapon_equipped and Input.is_action_pressed("fire") and can_fire:
-		var bullet_instance = bullet.instantiate()
-		bullet_instance.position = $BulletPoint.get_global_position()
-		var direction_to_mouse = (get_global_mouse_position() - bullet_instance.position).normalized()
-		bullet_instance.rotation = direction_to_mouse.angle()
-		get_tree().get_root().add_child(bullet_instance)
-		can_fire = false
-		await get_tree().create_timer(fire_rate).timeout
-		can_fire = true
+	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
+		current_weapon.shoot(get_global_mouse_position())
 
 
 	elif not weapon_equipped and Input.is_action_just_pressed("fire"):
@@ -57,7 +63,8 @@ func _process(delta):
 			if global_position.distance_to(enemy.global_position) <= melee_range:
 				if enemy.has_method("die"):
 					enemy.die()
-					print("enemy dead")
+
 
 func die():
-	print("hráč mrtev")
+	death_screen.show_wasted()
+

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2atgjwvqvj3p"
-path="res://.godot/imported/deadBody.png-f8de0ff9d2a8e7f306e1f6d1e2b1b097.ctex"
+uid="uid://b51wt18u5dc22"
+path="res://.godot/imported/sprite_player.png-824b5870d6a385597961ee4f400d3367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/deadBody.png"
-dest_files=["res://.godot/imported/deadBody.png-f8de0ff9d2a8e7f306e1f6d1e2b1b097.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/sprite_player.png"
+dest_files=["res://.godot/imported/sprite_player.png-824b5870d6a385597961ee4f400d3367.ctex"]
 
 [params]
 
