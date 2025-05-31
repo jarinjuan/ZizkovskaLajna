@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3127gxcahgfr" path="res://Assets/Sprites/Tilesets/OutsideWall.png" id="1_h1u01"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5k2b"]
 size = Vector2(10, 66)
 
@@ -13,6 +14,6 @@ collision_mask = 15
 shape = SubResource("RectangleShape2D_x5k2b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.62939e-06, -9.53674e-07)
+position = Vector2(4.54747e-13, 0)
 scale = Vector2(0.34375, 2.05469)
 texture = ExtResource("1_h1u01")

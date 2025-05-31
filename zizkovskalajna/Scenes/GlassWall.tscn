@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b607k8pc3kbyp"]
+
+[ext_resource type="Script" path="res://Scenes/glass_wall.gd" id="1_wdc86"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/sprite_window.png" id="2_wdc86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5k2b"]
+size = Vector2(2, 66)
+
+[node name="StaticBody2D2" type="StaticBody2D" groups=["glass"]]
+collision_layer = 16
+collision_mask = 15
+script = ExtResource("1_wdc86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x5k2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, -9.53674e-07)
+scale = Vector2(0.34375, 2.05469)
+texture = ExtResource("2_wdc86")

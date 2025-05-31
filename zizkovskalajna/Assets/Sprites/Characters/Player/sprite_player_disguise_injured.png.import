@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bohbktidrdxju"
-path="res://.godot/imported/sprite_beta_player1.png-a5679cb809ec9e1b27af6d71b1467edd.ctex"
+uid="uid://c05j873muwskh"
+path="res://.godot/imported/sprite_player_disguise_injured.png-cc96eabaf90721168f967b2fdf72025d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_beta_player1.png"
-dest_files=["res://.godot/imported/sprite_beta_player1.png-a5679cb809ec9e1b27af6d71b1467edd.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/sprite_player_disguise_injured.png"
+dest_files=["res://.godot/imported/sprite_player_disguise_injured.png-cc96eabaf90721168f967b2fdf72025d.ctex"]
 
 [params]
 
