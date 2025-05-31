@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dql6fccnpvron"
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/bullet.png.import
+path="res://.godot/imported/bullet.png-e67c1f085d03b4f6bcc9cd3cc6b91d80.ctex"
+=======
 path="res://.godot/imported/bullet.png-df776de52c1369c9351b2a9a936d0fd9.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/bullet.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/bullet.png.import
+source_file="res://Assets/sprites/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-e67c1f085d03b4f6bcc9cd3cc6b91d80.ctex"]
+=======
 source_file="res://Assets/Sprites/Weapons/bullet.png"
 dest_files=["res://.godot/imported/bullet.png-df776de52c1369c9351b2a9a936d0fd9.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/bullet.png.import
 
 [params]
 

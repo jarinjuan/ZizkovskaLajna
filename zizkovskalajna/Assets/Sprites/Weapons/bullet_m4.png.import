@@ -3,6 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 
+
+
 uid="uid://uhq4bs8dokt5"
 path="res://.godot/imported/bullet_m4.png-e0340fef5aa2e33e5d7e906e674b8b87.ctex"
 
@@ -11,6 +13,7 @@ metadata={
 }
 
 [deps]
+
 
 
 source_file="res://Assets/Sprites/Weapons/bullet_m4.png"

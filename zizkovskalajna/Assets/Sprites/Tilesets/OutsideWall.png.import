@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3127gxcahgfr"
+<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Tilesets/OutsideWall.png.import
+path="res://.godot/imported/OutsideWall.png-0149611309d2a666687d22975555d20f.ctex"
+=======
 path="res://.godot/imported/OutsideWall.png-1233f2bb0f2cf0202885af8065092174.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/OutsideWall.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:zizkovskalajna/Assets_new/Sprites/Tilesets/OutsideWall.png.import
+source_file="res://Assets_new/Sprites/Tilesets/OutsideWall.png"
+dest_files=["res://.godot/imported/OutsideWall.png-0149611309d2a666687d22975555d20f.ctex"]
+=======
 source_file="res://Assets/Sprites/Tilesets/OutsideWall.png"
 dest_files=["res://.godot/imported/OutsideWall.png-1233f2bb0f2cf0202885af8065092174.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Tilesets/OutsideWall.png.import
 
 [params]
 

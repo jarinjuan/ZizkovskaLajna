@@ -3,15 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vmn6j50xhpnq"
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/sprite_gun.png.import
+path="res://.godot/imported/sprite_gun.png-6f1212308c746bd4e52bf82cc3b502aa.ctex"
+=======
 path="res://.godot/imported/sprite_gun.png-b49b212d40a658dd6f65f31cad0d6689.ctex"
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/sprite_gun.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:zizkovskalajna/Assets/sprites/sprite_gun.png.import
+source_file="res://Assets/sprites/sprite_gun.png"
+dest_files=["res://.godot/imported/sprite_gun.png-6f1212308c746bd4e52bf82cc3b502aa.ctex"]
+=======
 source_file="res://Assets/Sprites/Weapons/sprite_gun.png"
 dest_files=["res://.godot/imported/sprite_gun.png-b49b212d40a658dd6f65f31cad0d6689.ctex"]
+>>>>>>> dev:zizkovskalajna/Assets/Sprites/Weapons/sprite_gun.png.import
 
 [params]
 
