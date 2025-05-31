@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d152v2hctvvdd"]
 
 [ext_resource type="Script" uid="uid://dkuv00jah664w" path="res://Enemy/enemy_bullet.gd" id="1_ijxx3"]
-[ext_resource type="Texture2D" uid="uid://5upn8rbescg8" path="res://Assets/anim1.png" id="2_4rn1g"]
+[ext_resource type="Texture2D" uid="uid://dakmux0m6k27g" path="res://Assets/Animations/RandomAnimationOf3PICS!!!/anim1.png" id="2_4rn1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ig04"]
 size = Vector2(49, 27)

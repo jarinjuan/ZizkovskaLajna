@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dex4x7nybcljd"]
+
+[ext_resource type="Script" uid="uid://0n0ebyh7jqmt" path="res://Scenes/DeadScreen/death_screen.gd" id="1_lilqj"]
+[ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="2_d53hx"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_lilqj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_colors/default_color = Color(1, 0, 0, 0.658824)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_d53hx")
+theme_override_font_sizes/normal_font_size = 25
+text = "WASTED"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

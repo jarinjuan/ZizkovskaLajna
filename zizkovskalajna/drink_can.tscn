@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnvyc1d3jambv"]
+
+[ext_resource type="Texture2D" uid="uid://bjyta08ujr3cd" path="res://Assets/Sprites/Assets/sprite_cocaincola.png" id="1_gi5bl"]
+
+[node name="DrinkCan" type="Sprite2D"]
+z_index = -1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_gi5bl")

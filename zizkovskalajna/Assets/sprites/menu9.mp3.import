@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dsda8avv5kd58"
-path="res://.godot/imported/menu9.mp3-5c8761cf0b527c63829369daf32ea52f.mp3str"
+path="res://.godot/imported/menu9.mp3-f1862382bff3119c78d185d75d238833.mp3str"
 
 [deps]
 
-source_file="res://Assets/menu9.mp3"
-dest_files=["res://.godot/imported/menu9.mp3-5c8761cf0b527c63829369daf32ea52f.mp3str"]
+source_file="res://Assets/sprites/menu9.mp3"
+dest_files=["res://.godot/imported/menu9.mp3-f1862382bff3119c78d185d75d238833.mp3str"]
 
 [params]
 
