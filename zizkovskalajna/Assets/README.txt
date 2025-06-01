@@ -1,6 +1,7 @@
 Pravidla:
 -Pojmenování složek je psáno metodou camel a vždy začíná velkým písmenem -> NewFolder
 -Do struktury se píše jen obecná struktura pro přehlednost
+NUH UH
 
 Structure:
 |Assets_new

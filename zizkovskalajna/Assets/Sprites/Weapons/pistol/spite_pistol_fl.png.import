@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1edeorewphkl"
-path="res://.godot/imported/sprite_redshorts.png-17cd5b1d40ad15c88ed287ebfa412587.ctex"
+uid="uid://c6kdrgf4wv2x0"
+path="res://.godot/imported/spite_pistol_fl.png-a7f6e304419f50bc4943c8675edc4c73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Assets/sprite_redshorts.png"
-dest_files=["res://.godot/imported/sprite_redshorts.png-17cd5b1d40ad15c88ed287ebfa412587.ctex"]
+source_file="res://Assets/Sprites/Weapons/spite_pistol_fl.png"
+dest_files=["res://.godot/imported/spite_pistol_fl.png-a7f6e304419f50bc4943c8675edc4c73.ctex"]
 
 [params]
 

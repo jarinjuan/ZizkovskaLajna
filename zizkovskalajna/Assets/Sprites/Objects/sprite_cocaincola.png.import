@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ekgni2o3kfx"
-path="res://.godot/imported/bullet_pistol.png-b436b84e3ddce5d37675218bc4e95f45.ctex"
+uid="uid://bjyta08ujr3cd"
+path="res://.godot/imported/sprite_cocaincola.png-dea243218c79281b963471a942f3a093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Weapons/bullet_pistol.png"
-dest_files=["res://.godot/imported/bullet_pistol.png-b436b84e3ddce5d37675218bc4e95f45.ctex"]
+source_file="res://Assets/Sprites/Objects/sprite_cocaincola.png"
+dest_files=["res://.godot/imported/sprite_cocaincola.png-dea243218c79281b963471a942f3a093.ctex"]
 
 [params]
 

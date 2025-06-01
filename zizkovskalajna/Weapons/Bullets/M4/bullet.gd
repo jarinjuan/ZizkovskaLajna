@@ -13,6 +13,8 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node) -> void:
 	if !body.is_in_group("player"):
+		if body.has_method("break_glass"):
+			body.break_glass()
 		queue_free()
 	if body.is_in_group("enemy"):
 		if body.has_method("die"):

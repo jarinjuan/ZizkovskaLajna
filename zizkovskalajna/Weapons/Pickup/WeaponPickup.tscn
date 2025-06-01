@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk47wbug2mjse"]
 
-[ext_resource type="Script" uid="uid://ldligglkpf8t" path="res://Weapons/weapon_pickup.gd" id="1_kfefk"]
+[ext_resource type="Script" uid="uid://ldligglkpf8t" path="res://Weapons/Pickup/weapon_pickup.gd" id="1_kfefk"]
 
 [node name="WeaponPickup" type="Area2D"]
 script = ExtResource("1_kfefk")
