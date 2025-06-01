@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://d152v2hctvvdd"]
+[gd_scene load_steps=4 format=3 uid="uid://lanisg5lxxmn"]
 
-[ext_resource type="Script" uid="uid://dkuv00jah664w" path="res://Enemy/enemy_bullet.gd" id="1_ijxx3"]
 [ext_resource type="Texture2D" uid="uid://dakmux0m6k27g" path="res://Assets/Animations/RandomAnimationOf3PICS!!!/anim1.png" id="2_4rn1g"]
+
+[sub_resource type="GDScript" id="GDScript_rfj1v"]
+script/source = "extends Area2D
+@export var speed = 600
+@export var direction := Vector2.RIGHT
+
+
+
+func _ready():
+	direction = Vector2.RIGHT.rotated(rotation)
+
+func _physics_process(delta):
+	position += direction * speed * delta
+
+
+func _on_body_entered(body: Node) -> void:
+	if !body.is_in_group(\"enemy\"):
+		queue_free()
+	if body.is_in_group(\"player\"):
+		if body.has_method(\"die\"):
+			body.die()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ig04"]
 size = Vector2(49, 27)
@@ -9,7 +30,7 @@ size = Vector2(49, 27)
 [node name="enemy_bullet" type="Area2D"]
 collision_layer = 8
 collision_mask = 17
-script = ExtResource("1_ijxx3")
+script = SubResource("GDScript_rfj1v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.22, 0.22)

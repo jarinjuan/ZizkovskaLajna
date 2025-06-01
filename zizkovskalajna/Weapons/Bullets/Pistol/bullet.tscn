@@ -8,7 +8,7 @@ size = Vector2(2.3082, 4.38861)
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 4
-collision_mask = 18
+collision_mask = 19
 script = ExtResource("1_j13re")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

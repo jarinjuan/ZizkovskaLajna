@@ -1,32 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cuifw4nyhafpy"]
 
-[ext_resource type="PackedScene" uid="uid://nl21i3juy0m4" path="res://Weapons/Bullets/Pistol/bullet.tscn" id="1_c0qr3"]
+[ext_resource type="Script" uid="uid://uwq3pdpd3kii" path="res://Weapons/Pistol/pistol.gd" id="1_c0qr3"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="2_jb0rd"]
-
-[sub_resource type="GDScript" id="GDScript_wl3ew"]
-script/source = "extends \"res://Weapons/weapon.gd\"
-
-@export var bullet_scene: PackedScene
-@onready var muzzle = $Muzzle
-
-func shoot(target_pos: Vector2) -> void:
-	if !can_fire or ammo <= 0:
-		return
-
-	var bullet = bullet_scene.instantiate()
-	bullet.position = muzzle.global_position
-	bullet.rotation = (target_pos - bullet.position).angle()
-	get_tree().root.add_child(bullet)
-
-	ammo -= 1
-	can_fire = false
-	await get_tree().create_timer(fire_rate).timeout
-	can_fire = true
-"
+[ext_resource type="PackedScene" uid="uid://nl21i3juy0m4" path="res://Weapons/Bullets/Pistol/bullet.tscn" id="2_wbbrg"]
 
 [node name="Pistol" type="Node2D"]
-script = SubResource("GDScript_wl3ew")
-bullet_scene = ExtResource("1_c0qr3")
+script = ExtResource("1_c0qr3")
+bullet_scene = ExtResource("2_wbbrg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

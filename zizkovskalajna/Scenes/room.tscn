@@ -43,9 +43,11 @@ script = ExtResource("2_phao3")
 
 [node name="Enemy" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(431, 368)
+weapon_scene = ExtResource("7_wph6n")
 
 [node name="Enemy2" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(280, 112)
+weapon_scene = ExtResource("9_ojh4s")
 
 [node name="WoodWall" parent="." instance=ExtResource("7_03u2k")]
 position = Vector2(243, 114)
@@ -69,7 +71,7 @@ navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(243, 69)
+position = Vector2(375, 33)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
 position = Vector2(1, 14)
@@ -81,11 +83,12 @@ linear_damp = 5.0
 position = Vector2(-1, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
-position = Vector2(-1, -14)
+position = Vector2(-7, -12)
 shape = SubResource("RectangleShape2D_ojh4s")
 one_way_collision_margin = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2(0, 12)

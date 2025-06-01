@@ -33,3 +33,6 @@ position = Vector2(9, 7)
 target_desired_distance = 4.0
 path_max_distance = 1000.0
 navigation_layers = 16
+
+[node name="WeaponSocket" type="Node2D" parent="."]
+position = Vector2(12, -2)

@@ -39,6 +39,8 @@ func pick_up_weapon(weapon_scene: PackedScene) -> void:
 	if current_weapon:
 		current_weapon.queue_free()        # drop old gun
 	current_weapon = weapon_scene.instantiate() as Weapon
+	current_weapon.weapon_owner = self
+	
 	weapon_socket.add_child(current_weapon)
 	weapon_equipped = true
 
@@ -48,6 +50,8 @@ func _process(delta):
 
 	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
 		current_weapon.shoot(get_global_mouse_position())
+
+		
 
 
 	elif not weapon_equipped and Input.is_action_just_pressed("fire"):

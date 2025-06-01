@@ -1,15 +1,21 @@
 extends CharacterBody2D
 
-@export var fire_rate = 0.2;
+@export var weapon_scene: PackedScene  # <- zbraň přiřadíš v editoru
+
 @onready var player = get_node("../Player")
 @onready var alive_sprite = $AliveSprite 
 @onready var dead_sprite = $DeadSprite
 @onready var ray_cast = $RayCast2D
 @onready var nav_agent = $NavAgent
-var bullet = preload("res://Enemy/enemy_bullet.tscn")
+@onready var weapon_socket = $WeaponSocket  # musíš přidat uzel do scény enemy
+@onready var bullet_point = $BulletPoint
+
+var current_weapon: Weapon = null
 var player_visible: bool = false
 var last_seen_position: Vector2 = Vector2.ZERO
 var can_fire = true
+var has_weapon: bool = false
+
 const SPEED: int = 100
 const RUN_AWAY_DISTANCE: float = 50.0  
 const DISTANCE_MARGIN: float = 5.0 
@@ -19,32 +25,39 @@ const RETURN_HOME_TIME: float = 5.0
 var returning_home := false
 
 
-var has_weapon: bool = true #pokud ma zbran tak bezi k hraci, pokud ne tak si udrzuje vzdalenost 70px od hrace a utika od/k nemu
-
 func _ready():
 	dead_sprite.visible = false
 	home_position = global_position
 	add_to_group("enemies")
-	
+	add_to_group("characters")
+	add_to_group("enemy")
+
+	if weapon_scene:
+		equip_weapon(weapon_scene)
+
+
+func equip_weapon(weapon_packed: PackedScene):
+	if current_weapon:
+		current_weapon.queue_free()
+
+	current_weapon = weapon_packed.instantiate() as Weapon
+	current_weapon.weapon_owner = self
+	weapon_socket.add_child(current_weapon)
+	has_weapon = true
+
+
 func _aim():
 	if player:
 		ray_cast.target_position = to_local(player.global_position)
 		ray_cast.force_raycast_update()
-	
+
+
 func shoot_at_player():
-	
-	if has_weapon and can_fire and player_visible:
-		var bullet_instance = bullet.instantiate()
-		bullet_instance.position = $BulletPoint.get_global_position()
-		bullet_instance.rotation = (player.global_position - bullet_instance.position).angle()
-		get_tree().get_root().add_child(bullet_instance)
-		can_fire = false
-		await get_tree().create_timer(fire_rate).timeout
-		can_fire = true
+	if has_weapon and can_fire and player_visible and current_weapon:
+		current_weapon.shoot(player.global_position)
 
-	
 
-	
+
 func update_visibility():
 	if not ray_cast:
 		player_visible = false
@@ -58,6 +71,7 @@ func update_visibility():
 		player_visible = (hit == player)
 	else:
 		player_visible = false
+
 
 func _physics_process(delta: float) -> void:
 	_aim()
@@ -108,12 +122,11 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
-	
-		
+
+
 func die():
-	if not is_in_group("enemies"):
-		return
-	
+
+
 	alive_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1
