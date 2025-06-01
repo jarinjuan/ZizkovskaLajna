@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-@export var weapon_scene: PackedScene  # <- zbraň přiřadíš v editoru
+@export var weapon_scene: PackedScene
 
 @onready var player = get_node("../Player")
 @onready var alive_sprite = $AliveSprite 
 @onready var dead_sprite = $DeadSprite
 @onready var ray_cast = $RayCast2D
 @onready var nav_agent = $NavAgent
-@onready var weapon_socket = $WeaponSocket  # musíš přidat uzel do scény enemy
-@onready var bullet_point = $BulletPoint
+@onready var weapon_socket = $WeaponSocket
+
 
 var current_weapon: Weapon = null
 var player_visible: bool = false
@@ -24,6 +24,10 @@ var lost_sight_timer := 0.0
 const RETURN_HOME_TIME: float = 5.0
 var returning_home := false
 
+# --- ADDED ---
+var reaction_timer := 0.0
+const REACTION_TIME := 0.5
+var player_spotted := false
 
 func _ready():
 	dead_sprite.visible = false
@@ -53,9 +57,8 @@ func _aim():
 
 
 func shoot_at_player():
-	if has_weapon and can_fire and player_visible and current_weapon:
+	if has_weapon and can_fire and current_weapon:
 		current_weapon.shoot(player.global_position)
-
 
 
 func update_visibility():
@@ -81,20 +84,40 @@ func _physics_process(delta: float) -> void:
 	var distance_to_player: float = to_player.length()
 	var direction: Vector2 = Vector2.ZERO
 
+	# --- ROTATION UPDATE ---
 	if player_visible:
+		look_at(player.global_position)
+	elif not returning_home and last_seen_position != Vector2.ZERO:
+		look_at(last_seen_position)
+	elif returning_home:
+		look_at(home_position)
+	# ------------------------
+
+	if player_visible:
+		if not player_spotted:
+			player_spotted = true
+			reaction_timer = 0.0
+		else:
+			reaction_timer += delta
+
 		last_seen_position = player.global_position
 		lost_sight_timer = 0.0
 		returning_home = false
+
 		if has_weapon:
 			direction = to_player.normalized()
-			shoot_at_player()
+			if reaction_timer >= REACTION_TIME:
+				shoot_at_player()
 		else:
 			if distance_to_player < RUN_AWAY_DISTANCE - DISTANCE_MARGIN:
 				direction = (-to_player).normalized()
 			elif distance_to_player > RUN_AWAY_DISTANCE + DISTANCE_MARGIN:
 				direction = to_player.normalized()
 	else:
+		player_spotted = false
+		reaction_timer = 0.0
 		lost_sight_timer += delta
+
 	if lost_sight_timer >= RETURN_HOME_TIME:
 		returning_home = true
 
@@ -105,8 +128,6 @@ func _physics_process(delta: float) -> void:
 		if not nav_agent.is_navigation_finished():
 			var to_home = nav_agent.get_next_path_position() - global_position
 			direction = to_home.normalized()
-		else:
-			direction = Vector2.ZERO
 	else:
 		if last_seen_position != Vector2.ZERO:
 			if nav_agent.get_target_position() != last_seen_position:
@@ -125,8 +146,6 @@ func _physics_process(delta: float) -> void:
 
 
 func die():
-
-
 	alive_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1

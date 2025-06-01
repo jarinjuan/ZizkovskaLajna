@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed = 600
-@export var direction := Vector2.RIGHT
+var direction = Vector2.ZERO
 var shooter: Node = null  # <- kdo střelil (hráč nebo enemy)
 
 func _ready():
@@ -9,6 +9,10 @@ func _ready():
 
 func _physics_process(delta):
 	position += direction * speed * delta
+	
+func _process(delta: float) -> void:
+	if direction != Vector2.ZERO:
+		position += direction * speed * delta
 
 func _on_body_entered(body: Node) -> void:
 

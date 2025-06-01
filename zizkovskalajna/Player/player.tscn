@@ -21,8 +21,5 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="BulletPoint" type="Node2D" parent="."]
-position = Vector2(4.195, 9.335)
-
 [node name="WeaponSocket" type="Node2D" parent="."]
 position = Vector2(0, 12)

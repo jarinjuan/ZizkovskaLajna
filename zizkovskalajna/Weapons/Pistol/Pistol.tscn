@@ -16,4 +16,4 @@ texture = ExtResource("2_jb0rd")
 position = Vector2(22, -1)
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(6, 0)
+position = Vector2(6.64772, -5.8574)
