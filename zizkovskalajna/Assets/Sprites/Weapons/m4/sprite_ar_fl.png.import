@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgrvju3w8uu4o"
-path="res://.godot/imported/sprite_ar_fl.png-3d008c1c494f08930de696e59cb479f6.ctex"
+path="res://.godot/imported/sprite_ar_fl.png-0a28c601e99cba33f1ebca51130af6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Weapons/sprite_ar_fl.png"
-dest_files=["res://.godot/imported/sprite_ar_fl.png-3d008c1c494f08930de696e59cb479f6.ctex"]
+source_file="res://Assets/Sprites/Weapons/m4/sprite_ar_fl.png"
+dest_files=["res://.godot/imported/sprite_ar_fl.png-0a28c601e99cba33f1ebca51130af6a4.ctex"]
 
 [params]
 

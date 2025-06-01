@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfbxopo1dl1pu"]
 
 [ext_resource type="Script" uid="uid://c3mtqf7itf2ko" path="res://Scenes/Materials/Glass/glass_wall.gd" id="1_wdc86"]
-[ext_resource type="Texture2D" uid="uid://b0g5cje5s1swh" path="res://Assets/sprites/sprite_window.png" id="2_wdc86"]
+[ext_resource type="Texture2D" uid="uid://b0g5cje5s1swh" path="res://Assets/Sprites/Tilesets/sprite_window.png" id="2_wdc86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5k2b"]
 size = Vector2(2, 66)

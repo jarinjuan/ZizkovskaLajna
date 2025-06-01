@@ -7,8 +7,8 @@ var is_broken = false
 
 
 func _ready():
-	intact_texture = load("res://Assets/Sprites/sprite_window.png") 
-	broken_texture = load("res://Assets/Sprites/sprite_windowbroken.png")
+	intact_texture = load("res://Assets/Sprites/Tilesets/sprite_window.png") 
+	broken_texture = load("res://Assets/Sprites/Tilesets/sprite_windowbroken.png")
 	$Sprite2D.texture = intact_texture
 	
 
