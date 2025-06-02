@@ -38,6 +38,7 @@ scale = Vector2(5, 5)
 [node name="Player" parent="." instance=ExtResource("1_4gp0m")]
 position = Vector2(78, 53)
 script = ExtResource("2_phao3")
+weapon_pickup_scene = ExtResource("7_4gp0m")
 
 [node name="DeathScreen" parent="Player" instance=ExtResource("10_ilpkg")]
 
@@ -107,12 +108,16 @@ position = Vector2(243, 55)
 position = Vector2(75, 102)
 weapon_scene = ExtResource("7_wph6n")
 weapon_texture = ExtResource("9_jghof")
+texture_scale = Vector2(0.5, 0.5)
+ammo_count = 15
 
 [node name="WeaponPickup" parent="." instance=ExtResource("7_4gp0m")]
 position = Vector2(130, 112)
 scale = Vector2(0.05, 0.05)
 weapon_scene = ExtResource("9_ojh4s")
 weapon_texture = ExtResource("11_wph6n")
+texture_scale = Vector2(1, 1)
+ammo_count = 30
 
 [node name="DrinkCan" parent="." instance=ExtResource("7_phao3")]
 position = Vector2(111, 72)

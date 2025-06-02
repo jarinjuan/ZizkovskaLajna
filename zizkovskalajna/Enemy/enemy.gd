@@ -143,6 +143,9 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
+	
+func knock_down():
+	print("Knock")
 
 
 func die():

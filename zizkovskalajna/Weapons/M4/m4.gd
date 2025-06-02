@@ -3,6 +3,7 @@ extends Weapon
 
 @export var bullet_scene: PackedScene
 @onready var muzzle = $Muzzle
+@export var ammo: int
 
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:
