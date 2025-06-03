@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
 
-[ext_resource type="Texture2D" uid="uid://dt2rha4hx7hmg" path="res://Assets/Sprites/Characters/Player/sprite_player_new.png" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://bl4iunfgugbq7" path="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png" id="1_l8h54"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 20
