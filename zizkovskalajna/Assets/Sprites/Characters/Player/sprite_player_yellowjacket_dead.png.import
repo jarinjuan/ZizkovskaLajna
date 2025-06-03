@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btgxn5dyxbh6t"
-path="res://.godot/imported/sprite_player_yellowshirt.png-0390459766730f1a9a98afd72b319710.ctex"
+uid="uid://tvwlxds22t7j"
+path="res://.godot/imported/sprite_player_yellowjacket_dead.png-37c7a30767fb26982d0d909e6e6844b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_yellowshirt.png"
-dest_files=["res://.godot/imported/sprite_player_yellowshirt.png-0390459766730f1a9a98afd72b319710.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/sprite_player_yellowjacket_dead.png"
+dest_files=["res://.godot/imported/sprite_player_yellowjacket_dead.png-37c7a30767fb26982d0d909e6e6844b5.ctex"]
 
 [params]
 
