@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d22v2vy3dr87t"]
+
+[ext_resource type="Script" uid="uid://dscffhjtycbgr" path="res://Weapons/Throw/throw.gd" id="1_yevqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yevqm"]
+size = Vector2(5, 5)
+
+[node name="RigidBody2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 26
+script = ExtResource("1_yevqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, -7.5)
+shape = SubResource("RectangleShape2D_yevqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

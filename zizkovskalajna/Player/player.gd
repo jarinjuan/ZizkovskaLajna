@@ -56,26 +56,35 @@ func drop_weapon():
 
 
 
-func throw_weapon():#not working
-	if current_weapon:
-		var thrown_weapon = current_weapon.duplicate() as Weapon
-		thrown_weapon.weapon_owner = null
-		thrown_weapon.global_position = weapon_socket.global_position
+func throw_weapon():
+	if not current_weapon:
+		return
+	
+	var thrown_scene = preload("res://Weapons/Throw/throw.tscn").instantiate()
+	thrown_scene.global_position = weapon_socket.global_position
 
-		var direction = (get_global_mouse_position() - global_position).normalized()
-		thrown_weapon.rotation = direction.angle()
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	thrown_scene.velocity = direction * 600  # custom variable in Area2D script
+	thrown_scene.rotation = direction.angle()
 
-		var body = RigidBody2D.new()
-		body.global_position = global_position
-		body.linear_velocity = direction * 800 
-		body.gravity_scale = 0
-		body.add_child(thrown_weapon)
+	# Přenést vzhled zbraně
+	var sprite_node = current_weapon.get_node_or_null("Sprite2D")
+	if sprite_node:
+		thrown_scene.weapon_texture = sprite_node.texture
+		thrown_scene.texture_scale = sprite_node.scale
 
-		get_tree().current_scene.add_child(body)
+	# Přenést zbraňovou scénu a počet nábojů
+	thrown_scene.weapon_scene = load(current_weapon.scene_file_path)
+	thrown_scene.ammo_count = current_weapon.ammo
 
-		current_weapon.queue_free()
-		current_weapon = null
-		weapon_equipped = false
+	# Přidat do scény
+	get_tree().current_scene.add_child(thrown_scene)
+
+	# Odstranit zbraň z hráče
+	current_weapon.queue_free()
+	current_weapon = null
+	weapon_equipped = false
+
 
 
 func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
@@ -104,7 +113,7 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 	current_weapon_scale = new_weapon_scale
 	current_weapon.ammo = new_weapon_ammo
 	weapon_socket.add_child(current_weapon)
-	print(current_weapon.ammo)
+	
 	weapon_equipped = true
 
 
@@ -115,7 +124,7 @@ func _process(delta):
 		current_weapon.shoot(get_global_mouse_position())
 
 	elif weapon_equipped and Input.is_action_just_pressed("mouse_right"):
-		drop_weapon()
+		throw_weapon()
 
 
 	elif not weapon_equipped and Input.is_action_just_pressed("fire"):
