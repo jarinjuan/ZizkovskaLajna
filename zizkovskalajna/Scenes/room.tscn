@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="13_03u2k"]
 [ext_resource type="Texture2D" uid="uid://b0g5cje5s1swh" path="res://Assets/Sprites/Tilesets/sprite_window.png" id="14_08xfw"]
 [ext_resource type="Texture2D" uid="uid://brdxf0rqrejo5" path="res://Assets/Sprites/Tilesets/sprite_windowbroken.png" id="15_0tv2a"]
-[ext_resource type="Texture2D" uid="uid://c6ll8or5q3kkb" path="res://Assets/Sprites/UI/sprite_crosshair.png" id="17_rp6s2"]
+[ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://crosshair.tscn" id="17_b8klh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
 vertices = PackedVector2Array(323.813, 169, 324.039, 118.18, 403.891, 13.1328, 496.719, 459.102, 409.578, 356.289, 230.063, 16, 268, 69.9531, 403.594, 459.898, 13.0234, 345.273, 218, 169, 13.9688, 15.0391, 218, 74.9531, 268, 117.172)
@@ -133,6 +133,4 @@ position = Vector2(160, 40)
 intact_texture = ExtResource("14_08xfw")
 broken_texture = ExtResource("15_0tv2a")
 
-[node name="Crosshair" type="Sprite2D" parent="."]
-scale = Vector2(0.008, 0.008)
-texture = ExtResource("17_rp6s2")
+[node name="Crosshair" parent="." instance=ExtResource("17_b8klh")]

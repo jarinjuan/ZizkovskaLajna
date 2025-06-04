@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://cjtd4q6kik0vl"]
+
+[ext_resource type="Texture2D" uid="uid://gfqvi8feehs5" path="res://Assets/Sprites/Tilesets/sprite_floor_wood.png" id="1_5wyom"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5wyom"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ael0"]
+texture = ExtResource("1_5wyom")
+0:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_5wyom")
+sources/1 = SubResource("TileSetAtlasSource_6ael0")
