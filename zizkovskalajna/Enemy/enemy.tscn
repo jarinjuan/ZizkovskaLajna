@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://scu5wudpsmj3"]
 
 [ext_resource type="Script" uid="uid://dhpj3jxvrqjeo" path="res://Enemy/enemy.gd" id="1_px1sc"]
-[ext_resource type="Texture2D" uid="uid://baps5dn0qmeqy" path="res://Assets/Sprites/Characters/Enemies/sprite_beta_enemy1_dead.png" id="2_am0pq"]
+[ext_resource type="Texture2D" uid="uid://b1si6t0reful3" path="res://Assets/Sprites/Characters/Enemies/sprite_enemy_dead.png" id="2_am0pq"]
 [ext_resource type="Texture2D" uid="uid://k47nglwv2td2" path="res://Assets/Sprites/Characters/Enemies/sprite_enemy.png" id="3_eqilm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o3f6"]
@@ -19,6 +19,7 @@ one_way_collision_margin = 0.0
 
 [node name="DeadSprite" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_am0pq")
 
 [node name="AliveSprite" type="Sprite2D" parent="."]
