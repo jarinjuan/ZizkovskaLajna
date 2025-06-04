@@ -9,8 +9,8 @@ extends CharacterBody2D
 @onready var ray_cast = $RayCast2D
 @onready var nav_agent = $NavAgent
 @onready var weapon_socket = $WeaponSocket
-
-
+var target_pickup: Node2D = null
+var is_dead := false
 var current_weapon: Weapon = null
 var player_visible: bool = false
 var last_seen_position: Vector2 = Vector2.ZERO
@@ -40,7 +40,6 @@ func _ready():
 	if weapon_scene:
 		equip_weapon(weapon_scene)
 
-
 func equip_weapon(weapon_packed: PackedScene):
 	if current_weapon:
 		current_weapon.queue_free()
@@ -51,32 +50,31 @@ func equip_weapon(weapon_packed: PackedScene):
 	has_weapon = true
 
 func drop_weapon():
-	var dropped = preload("res://Weapons/Pickup/WeaponPickup.tscn").instantiate()
-	dropped.global_position = weapon_socket.global_position
-	dropped.weapon_scene = load(current_weapon.scene_file_path)
+	if has_weapon:
+		var dropped = preload("res://Weapons/Pickup/WeaponPickup.tscn").instantiate()
+		dropped.global_position = weapon_socket.global_position
+		dropped.weapon_scene = load(current_weapon.scene_file_path)
 		
-	var sprite_node = current_weapon.get_node_or_null("Sprite2D")
-	if sprite_node:
-		dropped.weapon_texture = sprite_node.texture
-		dropped.texture_scale = sprite_node.scale 
+		var sprite_node = current_weapon.get_node_or_null("Sprite2D")
+		if sprite_node:
+			dropped.weapon_texture = sprite_node.texture
+			dropped.texture_scale = sprite_node.scale 
 		
-	dropped.ammo_count = current_weapon.ammo
+		dropped.ammo_count = current_weapon.ammo
 		
-	get_tree().current_scene.add_child(dropped)
-	current_weapon.queue_free()
-	current_weapon = null
-	has_weapon = false
+		get_tree().current_scene.add_child(dropped)
+		current_weapon.queue_free()
+		current_weapon = null
+		has_weapon = false
 
 func _aim():
 	if player:
 		ray_cast.target_position = to_local(player.global_position)
 		ray_cast.force_raycast_update()
 
-
 func shoot_at_player():
 	if has_weapon and can_fire and current_weapon:
 		current_weapon.shoot(player.global_position)
-
 
 func update_visibility():
 	if not ray_cast:
@@ -92,11 +90,44 @@ func update_visibility():
 	else:
 		player_visible = false
 
-
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	_aim()
 	update_visibility()
 
+	# Vyhledání nejbližší zbraně, pokud ji nemáme
+	if not has_weapon and target_pickup == null:
+		var closest_pickup = null
+		var closest_dist = INF
+		for pickup in get_tree().get_nodes_in_group("weapon_pickup"):			
+			var dist = pickup.global_position.distance_to(global_position)
+			if dist < closest_dist:
+				closest_dist = dist
+				closest_pickup = pickup
+		if closest_pickup:
+			target_pickup = closest_pickup
+			nav_agent.set_target_position(target_pickup.global_position)
+
+	# PRIORITA: Pickup režim → nic jiného neřešíme
+	if not has_weapon and target_pickup:
+		if nav_agent.get_target_position() != target_pickup.global_position:
+			nav_agent.set_target_position(target_pickup.global_position)
+
+		if not nav_agent.is_navigation_finished():
+			var to_pickup = nav_agent.get_next_path_position() - global_position
+			velocity = to_pickup.normalized() * SPEED
+			move_and_slide()
+			return
+		else:
+			if global_position.distance_to(target_pickup.global_position) <= 20.0:
+				equip_weapon(target_pickup.weapon_scene)
+				target_pickup.queue_free()
+				target_pickup = null
+				has_weapon = true
+			return
+
+	# --- Normální AI logika ---
 	var to_player: Vector2 = player.global_position - global_position
 	var distance_to_player: float = to_player.length()
 	var direction: Vector2 = Vector2.ZERO
@@ -158,8 +189,10 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
-	
+
 func knock_down():
+	if is_dead:
+		return
 	alive_sprite.visible = false
 	knocked_sprite.visible = true
 	drop_weapon()	
@@ -170,6 +203,8 @@ func knock_down():
 	if has_node("AIController"):
 		$AIController.set_active(false)
 	await get_tree().create_timer(2).timeout
+	if is_dead:
+		return
 	set_process(true)
 	set_physics_process(true)
 	if has_node("AIController"):
@@ -177,14 +212,17 @@ func knock_down():
 	alive_sprite.visible = true
 	knocked_sprite.visible = false
 
-
 func die():
+	if is_dead:
+		return
 	alive_sprite.visible = false
 	knocked_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1
-	drop_weapon()
+	is_dead = true
+	if has_weapon:
+		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
 	$CollisionShape2D.queue_free()
-	remove_from_group("enemies")
+	remove_from_group("enemy")

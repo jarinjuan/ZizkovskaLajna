@@ -18,7 +18,7 @@ func _ready():
 	sprite.texture = weapon_texture
 	sprite.scale = texture_scale
 	start_position = global_position
-	connect("body_entered", Callable(self, "_on_body_entered"))
+
 
 	await get_tree().create_timer(0.5).timeout
 	spawn_pickup_and_die()
