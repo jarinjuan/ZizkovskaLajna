@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var player = get_node("../Player")
 @onready var alive_sprite = $AliveSprite 
 @onready var dead_sprite = $DeadSprite
+@onready var knocked_sprite = $KnockedSprite
 @onready var ray_cast = $RayCast2D
 @onready var nav_agent = $NavAgent
 @onready var weapon_socket = $WeaponSocket
@@ -15,7 +16,7 @@ var player_visible: bool = false
 var last_seen_position: Vector2 = Vector2.ZERO
 var can_fire = true
 var has_weapon: bool = false
-
+var current_weapon_scale: Vector2
 const SPEED: int = 100
 const RUN_AWAY_DISTANCE: float = 50.0  
 const DISTANCE_MARGIN: float = 5.0 
@@ -24,13 +25,13 @@ var lost_sight_timer := 0.0
 const RETURN_HOME_TIME: float = 5.0
 var returning_home := false
 
-# --- ADDED ---
 var reaction_timer := 0.0
 const REACTION_TIME := 0.5
 var player_spotted := false
 
 func _ready():
 	dead_sprite.visible = false
+	knocked_sprite.visible = false
 	home_position = global_position
 	add_to_group("enemies")
 	add_to_group("characters")
@@ -49,6 +50,22 @@ func equip_weapon(weapon_packed: PackedScene):
 	weapon_socket.add_child(current_weapon)
 	has_weapon = true
 
+func drop_weapon():
+	var dropped = preload("res://Weapons/Pickup/WeaponPickup.tscn").instantiate()
+	dropped.global_position = weapon_socket.global_position
+	dropped.weapon_scene = load(current_weapon.scene_file_path)
+		
+	var sprite_node = current_weapon.get_node_or_null("Sprite2D")
+	if sprite_node:
+		dropped.weapon_texture = sprite_node.texture
+		dropped.texture_scale = sprite_node.scale 
+		
+	dropped.ammo_count = current_weapon.ammo
+		
+	get_tree().current_scene.add_child(dropped)
+	current_weapon.queue_free()
+	current_weapon = null
+	has_weapon = false
 
 func _aim():
 	if player:
@@ -84,14 +101,12 @@ func _physics_process(delta: float) -> void:
 	var distance_to_player: float = to_player.length()
 	var direction: Vector2 = Vector2.ZERO
 
-	# --- ROTATION UPDATE ---
 	if player_visible:
 		look_at(player.global_position)
 	elif not returning_home and last_seen_position != Vector2.ZERO:
 		look_at(last_seen_position)
 	elif returning_home:
 		look_at(home_position)
-	# ------------------------
 
 	if player_visible:
 		if not player_spotted:
@@ -145,13 +160,30 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func knock_down():
-	print("Knock")
+	alive_sprite.visible = false
+	knocked_sprite.visible = true
+	drop_weapon()	
+	set_process(false)
+	set_physics_process(false)
+	velocity = Vector2.ZERO
+	move_and_slide()
+	if has_node("AIController"):
+		$AIController.set_active(false)
+	await get_tree().create_timer(2).timeout
+	set_process(true)
+	set_physics_process(true)
+	if has_node("AIController"):
+		$AIController.set_active(true)
+	alive_sprite.visible = true
+	knocked_sprite.visible = false
 
 
 func die():
 	alive_sprite.visible = false
+	knocked_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1
+	drop_weapon()
 	set_process(false)
 	set_physics_process(false)
 	$CollisionShape2D.queue_free()

@@ -39,8 +39,8 @@ func _on_body_entered(body: Node):
 		return
 	has_hit = true
 
-	if body.is_in_group("enemy") and body.has_method("die"):
-		body.die()
+	if body.is_in_group("enemy") and body.has_method("knock_down"):
+		body.knock_down()
 	elif !body.is_in_group("enemy"):
 			if body.has_method("break_glass"):
 				body.break_glass()
