@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 GameManager="*res://Mechanics/game_manager.gd"
+Ui="*res://Scenes/UI/ui.gd"
 
 [display]
 

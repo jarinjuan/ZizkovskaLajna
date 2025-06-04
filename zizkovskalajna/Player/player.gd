@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-const bullet_ui = preload("res://Scenes/Game UI/bullet.tscn")
-var ui_instance
-
 @export var fire_rate = 0.1;
 @export var weapon_pickup_scene: PackedScene 
 @export var melee_range: float = 50.0
@@ -57,7 +54,7 @@ func drop_weapon():
 		current_weapon = null
 		weapon_equipped = false
 		
-		remove_child(ui_instance)
+		Ui.close_ammo()
 
 
 
@@ -82,7 +79,7 @@ func throw_weapon():#not working
 		current_weapon = null
 		weapon_equipped = false
 		
-		remove_child(ui_instance)
+		Ui.close_ammo()
 
 
 func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
@@ -114,10 +111,10 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 	print(current_weapon.ammo)
 	weapon_equipped = true
 	
-	ui_instance = bullet_ui.instantiate()
-	add_child(ui_instance)
+	Ui.show_ammo()
 	GameManager.ammo = current_weapon.ammo
-	ui_instance.update_bullet_ui()
+	GameManager.original_ammo_count = current_weapon.original_ammo
+	Ui.pick_up_bullet_ui()
 
 
 func _process(delta):
@@ -126,7 +123,7 @@ func _process(delta):
 	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
 		current_weapon.shoot(get_global_mouse_position())
 		GameManager.ammo = current_weapon.ammo
-		ui_instance.update_bullet_ui()
+		Ui.update_bullet_ui()
 
 	elif weapon_equipped and Input.is_action_just_pressed("mouse_right"):
 		drop_weapon()

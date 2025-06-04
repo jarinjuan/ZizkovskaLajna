@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bfsektxmc7cxi"]
+
+[ext_resource type="FontFile" uid="uid://c5t5cxhn1257c" path="res://Assets/Fonts/r-classic_8.ttf" id="1_hmprh"]
+
+[resource]
+default_font = ExtResource("1_hmprh")
+default_font_size = 16
+Label/colors/font_outline_color = Color(0.313726, 0.0352941, 0.239216, 1)
+Label/constants/outline_size = 4

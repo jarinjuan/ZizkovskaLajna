@@ -16,10 +16,13 @@ scale = Vector2(1, 0.927632)
 polygon = PackedVector2Array(-8, -18.5418, -9, 12.7206, 11, 13.7986, 10, -19.6199)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+position_smoothing_speed = 100.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 position = Vector2(0, 12)

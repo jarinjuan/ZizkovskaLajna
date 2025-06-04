@@ -2,6 +2,7 @@ extends Node
 
 var max_unlocked_level
 var ammo: int
+var original_ammo_count
 
 func _notification(what):
 	if what != NOTIFICATION_WM_CLOSE_REQUEST:
