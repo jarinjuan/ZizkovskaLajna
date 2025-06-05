@@ -24,10 +24,33 @@ var home_position: Vector2
 var lost_sight_timer := 0.0
 const RETURN_HOME_TIME: float = 5.0
 var returning_home := false
-
+var is_onehit = false
 var reaction_timer := 0.0
 const REACTION_TIME := 0.5
 var player_spotted := false
+
+var blood_textures := [
+	preload("res://Assets/Sprites/Objects/Blood/blood1.png"),
+	preload("res://Assets/Sprites/Objects/Blood/blood2.png"),
+	preload("res://Assets/Sprites/Objects/Blood/blood3.png")
+]
+
+func spawn_blood_splatter(pos: Vector2, min: int, max: int) -> void:
+	var count = randi_range(min, max)
+
+	for i in count:
+		var stain = Sprite2D.new()
+		stain.texture = blood_textures[randi() % blood_textures.size()]
+		
+		var offset_radius = randf_range(20.0, 70.0)  # větší rozptyl
+		var offset_angle = randf() * TAU
+		var offset = Vector2.RIGHT.rotated(offset_angle) * offset_radius
+
+		stain.position = pos + offset
+		stain.rotation = randf() * TAU
+		stain.scale = Vector2.ONE * 2 # větší velikost
+		stain.z_index = -2
+		get_tree().current_scene.add_child(stain)
 
 func _ready():
 	dead_sprite.visible = false
@@ -195,6 +218,8 @@ func knock_down():
 		return
 	alive_sprite.visible = false
 	knocked_sprite.visible = true
+	is_onehit = true
+	spawn_blood_splatter(global_position, 2, 5)
 	drop_weapon()	
 	set_process(false)
 	set_physics_process(false)
@@ -211,6 +236,35 @@ func knock_down():
 		$AIController.set_active(true)
 	alive_sprite.visible = true
 	knocked_sprite.visible = false
+	
+func get_punched():
+	if is_dead:
+		return
+	if is_onehit == true:
+		die()
+		print(2)
+	else:
+		print(1)
+		is_onehit = true
+		spawn_blood_splatter(global_position, 1, 3)
+		alive_sprite.visible = false
+		knocked_sprite.visible = true
+		drop_weapon()	
+		set_process(false)
+		set_physics_process(false)
+		velocity = Vector2.ZERO
+		move_and_slide()
+		if has_node("AIController"):
+			$AIController.set_active(false)
+		await get_tree().create_timer(2).timeout
+		if is_dead:
+			return
+		set_process(true)
+		set_physics_process(true)
+		if has_node("AIController"):
+			$AIController.set_active(true)
+		alive_sprite.visible = true
+		knocked_sprite.visible = false
 
 func die():
 	if is_dead:
@@ -219,6 +273,7 @@ func die():
 	knocked_sprite.visible = false
 	dead_sprite.visible = true
 	dead_sprite.z_index = -1
+	spawn_blood_splatter(global_position, 3, 8)
 	is_dead = true
 	if has_weapon:
 		drop_weapon()
