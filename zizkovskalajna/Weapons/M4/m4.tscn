@@ -8,7 +8,7 @@
 script = ExtResource("1_fxnl0")
 bullet_scene = ExtResource("2_cu8a2")
 ammo = 30
-fire_rate = 0.06
+fire_rate = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://coakn86wc5u5p"]
+
+[ext_resource type="Script" uid="uid://deu5sqtrup4qi" path="res://Weapons/Bullets/Shotgun/bullet.gd" id="1_bmpmc"]
+[ext_resource type="Texture2D" uid="uid://dxt12t5pyqx35" path="res://Assets/Sprites/Weapons/Shotgun/shotgun_bullet.png" id="2_3ugwh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8ndj"]
+radius = 1.5
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 26
+script = ExtResource("1_bmpmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.55276, 6.58511)
+scale = Vector2(0.755, 0.755)
+texture = ExtResource("2_3ugwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.54105, 5.86199)
+rotation = -1.5708
+scale = Vector2(1.455, 1.455)
+shape = SubResource("CircleShape2D_y8ndj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

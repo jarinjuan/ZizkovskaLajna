@@ -9,10 +9,7 @@ func _ready():
 
 func _physics_process(delta):
 	position += direction * speed * delta
-	
-func _process(delta: float) -> void:
-	if direction != Vector2.ZERO:
-		position += direction * speed * delta
+
 
 func _on_body_entered(body: Node) -> void:
 

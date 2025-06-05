@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=23 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_phao3"]
@@ -11,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="9_jghof"]
 [ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="9_ojh4s"]
 [ext_resource type="PackedScene" uid="uid://dex4x7nybcljd" path="res://Scenes/DeadScreen/DeathScreen.tscn" id="10_ilpkg"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="11_b8klh"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="11_jc8dp"]
 [ext_resource type="Texture2D" uid="uid://dgrvju3w8uu4o" path="res://Assets/Sprites/Weapons/m4/sprite_ar_fl.png" id="11_wph6n"]
+[ext_resource type="Texture2D" uid="uid://dwhx24ryps1t0" path="res://Assets/Sprites/Weapons/Shotgun/shotgun.png" id="12_jc8dp"]
 [ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="13_03u2k"]
 [ext_resource type="Texture2D" uid="uid://b0g5cje5s1swh" path="res://Assets/Sprites/Tilesets/sprite_window.png" id="14_08xfw"]
+[ext_resource type="Texture2D" uid="uid://dj5wvw003fgmv" path="res://Assets/Sprites/Weapons/uzi/uzi.png" id="14_jc8dp"]
 [ext_resource type="Texture2D" uid="uid://brdxf0rqrejo5" path="res://Assets/Sprites/Tilesets/sprite_windowbroken.png" id="15_0tv2a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
@@ -115,6 +119,20 @@ weapon_texture = ExtResource("11_wph6n")
 texture_scale = Vector2(1, 1)
 ammo_count = 30
 
+[node name="WeaponPickup4" parent="." instance=ExtResource("7_4gp0m")]
+position = Vector2(52, 82)
+weapon_scene = ExtResource("11_jc8dp")
+weapon_texture = ExtResource("12_jc8dp")
+texture_scale = Vector2(0.8, 0.8)
+ammo_count = 8
+
+[node name="WeaponPickup3" parent="." instance=ExtResource("7_4gp0m")]
+position = Vector2(36, 52)
+weapon_scene = ExtResource("11_b8klh")
+weapon_texture = ExtResource("14_jc8dp")
+texture_scale = Vector2(0.8, 0.8)
+ammo_count = 30
+
 [node name="DrinkCan" parent="." instance=ExtResource("7_phao3")]
 position = Vector2(111, 72)
 
@@ -122,6 +140,6 @@ position = Vector2(111, 72)
 position = Vector2(126, 71)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("13_03u2k")]
-position = Vector2(160, 40)
+position = Vector2(168, 40)
 intact_texture = ExtResource("14_08xfw")
 broken_texture = ExtResource("15_0tv2a")
