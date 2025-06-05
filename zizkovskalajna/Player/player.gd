@@ -34,9 +34,16 @@ func _physics_process(delta: float) -> void:
 
 	if movement.length() > 0:
 		movement = movement.normalized()
+		velocity = movement * SPEED
+		move_and_slide()
 
-	velocity = movement * SPEED
-	move_and_slide()
+		# animace
+		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.position = $AnimatedSprite2D.position.round()
+		
+	else:
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 0  # idle frame
 
 
 func _process(delta: float) -> void:
