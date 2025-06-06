@@ -7,7 +7,7 @@
 [node name="Shotgun" type="Node2D"]
 script = ExtResource("1_lwqk7")
 bullet_scene = ExtResource("2_e1bfy")
-ammo = 8
+ammo = 6
 spread_angle_deg = 40.0
 fire_rate = 0.7
 

@@ -54,6 +54,8 @@ func _process(delta: float) -> void:
 			if Input.is_action_pressed("fire"):
 				if current_weapon.has_method("shoot"):
 					current_weapon.shoot(get_global_mouse_position())
+					GameManager.ammo = current_weapon.ammo
+					Ui.update_bullet_ui()
 				elif current_weapon.has_method("swing"):
 					current_weapon.swing()
 			elif Input.is_action_just_pressed("mouse_right"): 
@@ -117,41 +119,18 @@ func throw_weapon():
 	
 	get_tree().current_scene.add_child(thrown_scene)
 
-
+	Ui.close_ammo()
 	current_weapon.queue_free()
 	current_weapon = fists
 	fists.show()
 	weapon_equipped = false
 
 
+
 func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
 	if current_weapon and current_weapon != fists:
 		drop_weapon()
-
-		current_weapon.queue_free()
-		current_weapon = null
-		weapon_equipped = false
-		
-		Ui.close_ammo()
-
-
-func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
-	if current_weapon:
-		if weapon_pickup_scene:
-			var dropped = weapon_pickup_scene.instantiate()
-			dropped.texture_scale = current_weapon_scale
-			dropped.global_position = weapon_socket.global_position
-			dropped.weapon_scene = load(current_weapon.scene_file_path)
-		
-			var sprite_node = current_weapon.get_node_or_null("Sprite2D")
-			if sprite_node:
-				dropped.weapon_texture = sprite_node.texture
-				dropped.texture_scale = sprite_node.scale 
-		
-			dropped.ammo_count = current_weapon_bullets
-			
-			get_tree().root.add_child(dropped)
-
+	Ui.close_ammo()
 
 	fists.hide()
 
@@ -162,30 +141,22 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 
 	if current_weapon.has_method("shoot"):
 		current_weapon.ammo = new_weapon_ammo
+		Ui.show_ammo()
+		GameManager.ammo = current_weapon.ammo
+		GameManager.original_ammo_count = current_weapon.original_ammo
+		Ui.pick_up_bullet_ui()
 
-	current_weapon.ammo = new_weapon_ammo
+	
 	weapon_socket.add_child(current_weapon)
-	print(current_weapon.ammo)
 	weapon_equipped = true
 	
-	Ui.show_ammo()
-	GameManager.ammo = current_weapon.ammo
-	GameManager.original_ammo_count = current_weapon.original_ammo
-	Ui.pick_up_bullet_ui()
+	
 
 
-func _process(delta):
-	rotate(get_angle_to(get_global_mouse_position()))
-
-	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
-		current_weapon.shoot(get_global_mouse_position())
-		GameManager.ammo = current_weapon.ammo
-		Ui.update_bullet_ui()
 
 
-	weapon_socket.add_child(current_weapon)
-	weapon_equipped = true
 
 
 func die():
 	death_screen.show_wasted()
+	Ui.close_ammo()

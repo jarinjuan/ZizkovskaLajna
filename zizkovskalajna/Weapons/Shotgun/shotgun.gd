@@ -5,7 +5,7 @@ extends Weapon
 @export var ammo: int
 @export var pellets_per_shot: int = 6
 @export var spread_angle_deg: float = 10.0 # degrees
-
+@export var original_ammo = 6
 
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:

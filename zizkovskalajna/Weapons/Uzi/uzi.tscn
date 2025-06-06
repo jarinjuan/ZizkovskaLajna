@@ -7,7 +7,7 @@
 [node name="Uzi" type="Node2D"]
 script = ExtResource("1_x33ya")
 bullet_scene = ExtResource("2_f4o6n")
-ammo = 30
+ammo = 35
 fire_rate = 0.07
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
