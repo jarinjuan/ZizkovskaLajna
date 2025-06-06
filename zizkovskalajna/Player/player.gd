@@ -53,6 +53,8 @@ func drop_weapon():
 		current_weapon.queue_free()
 		current_weapon = null
 		weapon_equipped = false
+		
+		Ui.close_ammo()
 
 
 
@@ -76,6 +78,8 @@ func throw_weapon():#not working
 		current_weapon.queue_free()
 		current_weapon = null
 		weapon_equipped = false
+		
+		Ui.close_ammo()
 
 
 func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
@@ -92,7 +96,7 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 				dropped.texture_scale = sprite_node.scale 
 		
 			dropped.ammo_count = current_weapon_bullets
-
+			
 			get_tree().root.add_child(dropped)
 
 		current_weapon.queue_free()
@@ -106,6 +110,11 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 	weapon_socket.add_child(current_weapon)
 	print(current_weapon.ammo)
 	weapon_equipped = true
+	
+	Ui.show_ammo()
+	GameManager.ammo = current_weapon.ammo
+	GameManager.original_ammo_count = current_weapon.original_ammo
+	Ui.pick_up_bullet_ui()
 
 
 func _process(delta):
@@ -113,6 +122,8 @@ func _process(delta):
 
 	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
 		current_weapon.shoot(get_global_mouse_position())
+		GameManager.ammo = current_weapon.ammo
+		Ui.update_bullet_ui()
 
 	elif weapon_equipped and Input.is_action_just_pressed("mouse_right"):
 		drop_weapon()

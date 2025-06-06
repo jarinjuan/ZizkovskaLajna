@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
 
+
 [ext_resource type="Texture2D" uid="uid://bln2wh0row5vs" path="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png" id="1_l8h54"]
+
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 20
@@ -16,10 +18,13 @@ scale = Vector2(1, 0.927632)
 polygon = PackedVector2Array(-8, -18.5418, -9, 12.7206, 10, 12.7206, 10, -18.5418)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+position_smoothing_speed = 100.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 position = Vector2(0, 12)
