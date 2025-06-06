@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bln2wh0row5vs"
-
-path="res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"
+uid="uid://c5ersegoxocsg"
+path="res://.godot/imported/sprite_player_redjacket_dead.png-c1ac3dbfb1ca6d6f1278a6eb6b9bf75d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png"
-dest_files=["res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/sprite_player_redjacket_dead.png"
+dest_files=["res://.godot/imported/sprite_player_redjacket_dead.png-c1ac3dbfb1ca6d6f1278a6eb6b9bf75d.ctex"]
 
 [params]
 

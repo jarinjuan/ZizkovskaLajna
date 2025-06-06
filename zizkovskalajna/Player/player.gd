@@ -81,6 +81,13 @@ func drop_weapon():
 		get_tree().current_scene.add_child(dropped)
 		current_weapon.queue_free()
 
+		current_weapon = null
+		weapon_equipped = false
+		
+		Ui.close_ammo()
+
+
+
 		current_weapon = fists
 		fists.show()
 		weapon_equipped = false
@@ -110,6 +117,7 @@ func throw_weapon():
 	
 	get_tree().current_scene.add_child(thrown_scene)
 
+
 	current_weapon.queue_free()
 	current_weapon = fists
 	fists.show()
@@ -120,14 +128,60 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 	if current_weapon and current_weapon != fists:
 		drop_weapon()
 
+		current_weapon.queue_free()
+		current_weapon = null
+		weapon_equipped = false
+		
+		Ui.close_ammo()
+
+
+func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
+	if current_weapon:
+		if weapon_pickup_scene:
+			var dropped = weapon_pickup_scene.instantiate()
+			dropped.texture_scale = current_weapon_scale
+			dropped.global_position = weapon_socket.global_position
+			dropped.weapon_scene = load(current_weapon.scene_file_path)
+		
+			var sprite_node = current_weapon.get_node_or_null("Sprite2D")
+			if sprite_node:
+				dropped.weapon_texture = sprite_node.texture
+				dropped.texture_scale = sprite_node.scale 
+		
+			dropped.ammo_count = current_weapon_bullets
+			
+			get_tree().root.add_child(dropped)
+
+
 	fists.hide()
 
 	current_weapon = new_weapon_scene.instantiate()
 	current_weapon.weapon_owner = self
 	current_weapon_scale = new_weapon_scale
 
+
 	if current_weapon.has_method("shoot"):
 		current_weapon.ammo = new_weapon_ammo
+
+	current_weapon.ammo = new_weapon_ammo
+	weapon_socket.add_child(current_weapon)
+	print(current_weapon.ammo)
+	weapon_equipped = true
+	
+	Ui.show_ammo()
+	GameManager.ammo = current_weapon.ammo
+	GameManager.original_ammo_count = current_weapon.original_ammo
+	Ui.pick_up_bullet_ui()
+
+
+func _process(delta):
+	rotate(get_angle_to(get_global_mouse_position()))
+
+	if weapon_equipped and Input.is_action_pressed("fire") and current_weapon:
+		current_weapon.shoot(get_global_mouse_position())
+		GameManager.ammo = current_weapon.ammo
+		Ui.update_bullet_ui()
+
 
 	weapon_socket.add_child(current_weapon)
 	weapon_equipped = true

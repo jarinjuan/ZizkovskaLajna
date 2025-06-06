@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://bln2wh0row5vs"
-
-path="res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"
+uid="uid://c6ll8or5q3kkb"
+path="res://.godot/imported/sprite_crosshair.png-061ed6d23f6c0efe3a112a3076588bd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png"
-dest_files=["res://.godot/imported/sprite_player_disguise.png-b46fc6f0d16f8afb16363fb000e3c03d.ctex"]
+source_file="res://Assets/Sprites/UI/sprite_crosshair.png"
+dest_files=["res://.godot/imported/sprite_crosshair.png-061ed6d23f6c0efe3a112a3076588bd3.ctex"]
 
 [params]
 

@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://fgxikbg4on0t"]
+
+[ext_resource type="Script" uid="uid://cf38x52vchdvh" path="res://Scenes/Level Selector/level_selector.gd" id="1_5xm0l"]
+[ext_resource type="FontFile" uid="uid://c5t5cxhn1257c" path="res://Assets/Fonts/r-classic_8.ttf" id="1_eyl4p"]
+[ext_resource type="Texture2D" uid="uid://1edeorewphkl" path="res://Assets/Sprites/Objects/sprite_redshorts.png" id="2_vkaki"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5xm0l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.0526037, 0.144738, 0.0885338, 1)
+metadata/_edit_lock_ = true
+
+[node name="left" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -24.0
+offset_right = -48.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="right" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -24.0
+offset_right = 98.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="center" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="right_button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_vkaki")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="left_button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture_normal = ExtResource("2_vkaki")
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = 45.0
+offset_right = 31.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_eyl4p")
+theme_override_font_sizes/font_size = 16
+text = "PLAY"
+
+[connection signal="pressed" from="right_button" to="." method="right_button_pressed"]
+[connection signal="pressed" from="left_button" to="." method="left_button_pressed"]
+[connection signal="pressed" from="play" to="." method="play_pressed"]

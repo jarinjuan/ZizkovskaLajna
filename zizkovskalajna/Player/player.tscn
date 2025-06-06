@@ -1,5 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2xfro0t7ilr6"]
 
+
 [ext_resource type="Texture2D" uid="uid://dt2rha4hx7hmg" path="res://Assets/Sprites/Characters/Player/sprite_player_new.png" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://do0fp4epf2oku" path="res://Assets/Animations/Player_walk/biker2-1.png.png" id="2_vtle1"]
 [ext_resource type="Texture2D" uid="uid://dw0ub7760kd0y" path="res://Assets/Animations/Player_walk/biker2-2.png.png" id="3_od3ui"]
@@ -34,6 +35,7 @@ animations = [{
 "speed": 12.0
 }]
 
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 20
 
@@ -46,13 +48,18 @@ texture = ExtResource("1_l8h54")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 2.2)
 scale = Vector2(1, 0.927632)
+
 polygon = PackedVector2Array(-4, -14.2298, -7, 9.48652, 0, 11.6425, 10, 10.5645, 7, -13.1518, 1, -16.3858)
 
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+position_smoothing_speed = 100.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 position = Vector2(0, 12)
