@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="ZizkovskaLajna"
-run/main_scene="uid://d1yrsh4myo4xd"
+run/main_scene="uid://fgxikbg4on0t"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+GameManager="*res://Mechanics/game_manager.gd"
+Ui="*res://Scenes/UI/ui.gd"
 
 [display]
 
@@ -59,5 +64,9 @@ fire={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk47wbug2mjse"]
+
+[ext_resource type="Script" uid="uid://ldligglkpf8t" path="res://Weapons/Pickup/weapon_pickup.gd" id="1_kfefk"]
+
+[node name="WeaponPickup" type="Area2D" groups=["weapon_pickup"]]
+script = ExtResource("1_kfefk")
+texture_scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

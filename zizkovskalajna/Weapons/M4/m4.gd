@@ -1,16 +1,24 @@
-# pistol.gd
+# m4.gd
 extends Weapon
 
 @export var bullet_scene: PackedScene
 @onready var muzzle = $Muzzle
+@export var ammo: int
+@export var original_ammo = 30
 
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:
 		return
 
 	var bullet = bullet_scene.instantiate()
-	bullet.position = muzzle.global_position
-	bullet.rotation = (target_pos - bullet.position).angle()
+	bullet.global_position = muzzle.global_position
+	
+	var angle = (target_pos - weapon_owner.global_position).angle()
+	var direction = Vector2.RIGHT.rotated(angle)
+	bullet.rotation = angle
+	bullet.direction = direction
+
+	bullet.shooter = weapon_owner
 	get_tree().root.add_child(bullet)
 
 	ammo -= 1
