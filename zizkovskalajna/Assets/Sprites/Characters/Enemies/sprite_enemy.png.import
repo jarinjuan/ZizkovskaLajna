@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbdv5vecrkxpr"
-path="res://.godot/imported/sprite_beta_enemy3_dead.png-0a4e3e1ef09c56bd2fb53cb65d52c0a5.ctex"
+uid="uid://k47nglwv2td2"
+path="res://.godot/imported/sprite_enemy.png-e3990f12e7cb36f60a2be3bd4ff58519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Enemies/sprite_beta_enemy3_dead.png"
-dest_files=["res://.godot/imported/sprite_beta_enemy3_dead.png-0a4e3e1ef09c56bd2fb53cb65d52c0a5.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/sprite_enemy.png"
+dest_files=["res://.godot/imported/sprite_enemy.png-e3990f12e7cb36f60a2be3bd4ff58519.ctex"]
 
 [params]
 

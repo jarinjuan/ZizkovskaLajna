@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1gg42w4k1v1g"
-path="res://.godot/imported/New Piskel.png-87ca0fea1b09945276bdc1a1cbc334ae.ctex"
+uid="uid://6ep1fiw2klji"
+path="res://.godot/imported/sprite_enemy_gingerhair.png-d0c7d1f9e6ed2f776621de254b6c76b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tilesets/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-87ca0fea1b09945276bdc1a1cbc334ae.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/sprite_enemy_gingerhair.png"
+dest_files=["res://.godot/imported/sprite_enemy_gingerhair.png-d0c7d1f9e6ed2f776621de254b6c76b3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bogtfs2joel4k"
-path="res://.godot/imported/sprite_player_redshirt.png-a02c8ba84dd4570bd8120e330522989f.ctex"
+uid="uid://sdpms30jj8kr"
+path="res://.godot/imported/sprite_enemy_blackhair.png-71f3e8285926dd1acda90b0c79f76add.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_redshirt.png"
-dest_files=["res://.godot/imported/sprite_player_redshirt.png-a02c8ba84dd4570bd8120e330522989f.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/sprite_enemy_blackhair.png"
+dest_files=["res://.godot/imported/sprite_enemy_blackhair.png-71f3e8285926dd1acda90b0c79f76add.ctex"]
 
 [params]
 
