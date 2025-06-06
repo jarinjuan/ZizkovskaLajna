@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bogtfs2joel4k"
-path="res://.godot/imported/sprite_player_redshirt.png-a02c8ba84dd4570bd8120e330522989f.ctex"
+uid="uid://blj6nmhabi4j3"
+path="res://.godot/imported/sprite_player_redjacket.png-dddf1869f58478f8651639b09589b785.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Player/sprite_player_redshirt.png"
-dest_files=["res://.godot/imported/sprite_player_redshirt.png-a02c8ba84dd4570bd8120e330522989f.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/sprite_player_redjacket.png"
+dest_files=["res://.godot/imported/sprite_player_redjacket.png-dddf1869f58478f8651639b09589b785.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://scu5wudpsmj3"]
 
 [ext_resource type="Script" uid="uid://dhpj3jxvrqjeo" path="res://Enemy/enemy.gd" id="1_px1sc"]
-[ext_resource type="Texture2D" uid="uid://baps5dn0qmeqy" path="res://Assets/Sprites/Characters/Enemies/sprite_beta_enemy1_dead.png" id="2_am0pq"]
-[ext_resource type="Texture2D" uid="uid://bh5ftjrt8doy3" path="res://Assets/Sprites/Characters/Enemies/sprite_beta_enemy1.png" id="3_eqilm"]
+[ext_resource type="Texture2D" uid="uid://b1si6t0reful3" path="res://Assets/Sprites/Characters/Enemies/sprite_enemy_dead.png" id="2_am0pq"]
+[ext_resource type="Texture2D" uid="uid://k47nglwv2td2" path="res://Assets/Sprites/Characters/Enemies/sprite_enemy.png" id="3_eqilm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o3f6"]
 size = Vector2(13.6247, 28.0623)
@@ -19,11 +19,13 @@ one_way_collision_margin = 0.0
 
 [node name="DeadSprite" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_am0pq")
 
 [node name="AliveSprite" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, -4.91738e-07)
 rotation = 1.5708
+scale = Vector2(0.045, 0.045)
 texture = ExtResource("3_eqilm")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

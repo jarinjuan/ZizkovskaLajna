@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh5ftjrt8doy3"
-path="res://.godot/imported/sprite_beta_enemy1.png-485268e1035782e1a98b9d3ec60d998c.ctex"
+uid="uid://6ep1fiw2klji"
+path="res://.godot/imported/sprite_enemy_gingerhair.png-d0c7d1f9e6ed2f776621de254b6c76b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Enemies/sprite_beta_enemy1.png"
-dest_files=["res://.godot/imported/sprite_beta_enemy1.png-485268e1035782e1a98b9d3ec60d998c.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/sprite_enemy_gingerhair.png"
+dest_files=["res://.godot/imported/sprite_enemy_gingerhair.png-d0c7d1f9e6ed2f776621de254b6c76b3.ctex"]
 
 [params]
 

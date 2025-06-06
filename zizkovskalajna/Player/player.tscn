@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2xfro0t7ilr6"]
 
-[ext_resource type="Texture2D" uid="uid://dt2rha4hx7hmg" path="res://Assets/Sprites/Characters/Player/sprite_player_new.png" id="1_l8h54"]
+[ext_resource type="Texture2D" uid="uid://bln2wh0row5vs" path="res://Assets/Sprites/Characters/Player/sprite_player_disguise.png" id="1_l8h54"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 20
@@ -13,7 +13,7 @@ texture = ExtResource("1_l8h54")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 2.2)
 scale = Vector2(1, 0.927632)
-polygon = PackedVector2Array(-8, -18.5418, -9, 12.7206, 11, 13.7986, 10, -19.6199)
+polygon = PackedVector2Array(-8, -18.5418, -9, 12.7206, 10, 12.7206, 10, -18.5418)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
