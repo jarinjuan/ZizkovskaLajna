@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://pb58ae6iwnvh"]
+
+[ext_resource type="Texture2D" uid="uid://6qy6c26pto8p" path="res://Assets/Sprites/Tilesets/sprite_stonewall.png" id="1_hdtwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5k2b"]
+size = Vector2(10, 66)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x5k2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.54747e-13, 9.53674e-07)
+scale = Vector2(0.01, 0.0644531)
+texture = ExtResource("1_hdtwd")
