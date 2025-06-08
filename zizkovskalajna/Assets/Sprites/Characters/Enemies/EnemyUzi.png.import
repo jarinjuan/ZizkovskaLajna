@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkars70lfneg"
-path="res://.godot/imported/blood2.png-c2f4eaaa488e43d182586fd46ac389b0.ctex"
+uid="uid://d1u6dgmt763mg"
+path="res://.godot/imported/EnemyUzi.png-daaaf2cb497cb40d33afe53ae74dfafa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Blood/blood2.png"
-dest_files=["res://.godot/imported/blood2.png-c2f4eaaa488e43d182586fd46ac389b0.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/EnemyUzi.png"
+dest_files=["res://.godot/imported/EnemyUzi.png-daaaf2cb497cb40d33afe53ae74dfafa.ctex"]
 
 [params]
 

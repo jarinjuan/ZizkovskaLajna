@@ -7,7 +7,7 @@ const SPEED: int = 200
 @onready var weapon_socket = $WeaponSocket
 @onready var death_screen := $DeathScreen
 @onready var fists_scene: PackedScene = preload("res://Weapons/Melee/fists.tscn")
-@onready var player_pistol = $PlayerPistol
+#@onready var player_pistol = $PlayerPistol
 var current_weapon: Node = null  # může být Weapon nebo MeleeWeapon
 var current_weapon_scale: Vector2
 var current_weapon_bullets: int
@@ -23,7 +23,11 @@ func _ready():
 	weapon_socket.add_child(fists)
 	current_weapon = fists
 	weapon_equipped = false
-	player_pistol.visible = false
+	$Player_Pistol.visible = false
+	$Player_M4.visible = false
+	$Player_Shotgun.visible = false
+	$Player_Uzi.visible = false
+	$Player_Bbat.visible = false
 
 
 func _physics_process(delta: float) -> void:
@@ -39,12 +43,12 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 		# animace
-		$AnimatedSprite2D.play("walk")
-		$AnimatedSprite2D.position = $AnimatedSprite2D.position.round()
+		$Player_Unarmed.play("walk")
+		$Player_Unarmed.position = $Player_Unarmed.position.round()
 		
 	else:
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.frame = 0  # idle frame
+		$Player_Unarmed.stop()
+		$Player_Unarmed.frame = 0  # idle frame
 
 	
 func _process(delta: float) -> void:
@@ -90,7 +94,7 @@ func drop_weapon():
 		Ui.close_ammo()
 
 
-
+		update_weapon_sprite("unarmed")
 		current_weapon = fists
 		fists.show()
 		weapon_equipped = false
@@ -124,6 +128,7 @@ func throw_weapon():
 	current_weapon.queue_free()
 	current_weapon = fists
 	fists.show()
+	update_weapon_sprite("unarmed")
 	weapon_equipped = false
 
 
@@ -148,13 +153,37 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 		Ui.pick_up_bullet_ui()
 
 	
-	#weapon_socket.add_child(current_weapon)
+	weapon_socket.add_child(current_weapon)
 	weapon_equipped = true
-	$AnimatedSprite2D.stop()
-	player_pistol.visible = true
+	var weapon_name = new_weapon_scene.resource_path.get_file().get_basename().to_lower()
+	update_weapon_sprite(weapon_name)
 
 
+func update_weapon_sprite(weapon_name: String) -> void:
+	for child in get_children():
+		if child is Sprite2D or child is AnimatedSprite2D:
+			child.visible = false
 
+	var sprite_name = "Player_" + capitalize_first(weapon_name)
+	var sprite = get_node_or_null(sprite_name)
+	if sprite:
+		sprite.visible = true
+	else:
+		print("Sprite ", sprite_name, " nebyl nalezen!")
+
+func capitalize_first(text: String) -> String:
+	if text.length() == 0:
+		return text
+	return text[0].to_upper() + text.substr(1)
+
+func get_muzzle_position() -> Vector2:
+	for child in get_children():
+		if child is Sprite2D and child.visible:
+			var muzzle := child.get_node_or_null("Muzzle")
+			
+			if muzzle:
+				return muzzle.global_position
+	return global_position
 
 
 
