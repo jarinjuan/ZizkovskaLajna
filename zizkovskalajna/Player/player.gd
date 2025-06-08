@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.frame = 0  # idle frame
 
-
+	
 func _process(delta: float) -> void:
 	rotate(get_angle_to(get_global_mouse_position()))
 
