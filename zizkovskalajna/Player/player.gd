@@ -7,7 +7,7 @@ const SPEED: int = 200
 @onready var weapon_socket = $WeaponSocket
 @onready var death_screen := $DeathScreen
 @onready var fists_scene: PackedScene = preload("res://Weapons/Melee/fists.tscn")
-
+@onready var player_pistol = $PlayerPistol
 var current_weapon: Node = null  # může být Weapon nebo MeleeWeapon
 var current_weapon_scale: Vector2
 var current_weapon_bullets: int
@@ -23,6 +23,7 @@ func _ready():
 	weapon_socket.add_child(fists)
 	current_weapon = fists
 	weapon_equipped = false
+	player_pistol.visible = false
 
 
 func _physics_process(delta: float) -> void:
@@ -147,10 +148,10 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 		Ui.pick_up_bullet_ui()
 
 	
-	weapon_socket.add_child(current_weapon)
+	#weapon_socket.add_child(current_weapon)
 	weapon_equipped = true
-	
-	
+	$AnimatedSprite2D.stop()
+	player_pistol.visible = true
 
 
 

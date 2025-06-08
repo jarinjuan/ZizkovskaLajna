@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2xfro0t7ilr6"]
+[gd_scene load_steps=9 format=3 uid="uid://c2xfro0t7ilr6"]
 
 [ext_resource type="Texture2D" uid="uid://do0fp4epf2oku" path="res://Assets/Animations/Player_walk/biker2-1.png.png" id="2_vtle1"]
 [ext_resource type="Texture2D" uid="uid://dw0ub7760kd0y" path="res://Assets/Animations/Player_walk/biker2-2.png.png" id="3_od3ui"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtwa176wprt4" path="res://Assets/Animations/Player_walk/biker2-4.png.png" id="5_x3vf3"]
 [ext_resource type="Texture2D" uid="uid://wsihd7op68yt" path="res://Assets/Animations/Player_walk/biker2-5.png.png" id="6_apopc"]
 [ext_resource type="Texture2D" uid="uid://gfw8oredvpu" path="res://Assets/Animations/Player_walk/biker2-6.png.png" id="7_5htga"]
+[ext_resource type="Texture2D" uid="uid://dnnwsmuyatict" path="res://Assets/Sprites/Characters/Player/PlayerPistol.png" id="7_vtle1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
@@ -61,3 +62,6 @@ position = Vector2(0, 12)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p5o4e")
 animation = &"walk"
+
+[node name="PlayerPistol" type="Sprite2D" parent="."]
+texture = ExtResource("7_vtle1")
