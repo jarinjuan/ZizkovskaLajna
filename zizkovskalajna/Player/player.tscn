@@ -62,7 +62,6 @@ drag_bottom_margin = 0.15
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 visible = false
-position = Vector2(0, 12)
 
 [node name="Player_Unarmed" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p5o4e")
