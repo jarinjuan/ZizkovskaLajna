@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1i7intpuafnj"
-path="res://.godot/imported/sprite_knocked_enemy.png-98a27f43b1e0c99886d5e048cd3f07a8.ctex"
+uid="uid://3gm5n4654v2b"
+path="res://.godot/imported/sprite_enemy_knocked.png-3253c45134c1591efca793b7cdd4b774.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Enemies/sprite_knocked_enemy.png"
-dest_files=["res://.godot/imported/sprite_knocked_enemy.png-98a27f43b1e0c99886d5e048cd3f07a8.ctex"]
+source_file="res://Assets/Sprites/Characters/Enemies/sprite_enemy_knocked.png"
+dest_files=["res://.godot/imported/sprite_enemy_knocked.png-3253c45134c1591efca793b7cdd4b774.ctex"]
 
 [params]
 
