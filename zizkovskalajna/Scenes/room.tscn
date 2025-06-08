@@ -25,9 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="21_l1ysi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
-vertices = PackedVector2Array(230.039, 16, 562.492, 12.1328, 324.039, 118.18, 268, 69.9531, 323.813, 169, 500.281, 459.07, 409.578, 356.289, 403.594, 459.898, 13.0234, 345.273, 218, 169, 13.9688, 15.0391, 218, 74.9531, 268, 117.172)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5, 6), PackedInt32Array(5, 7, 6), PackedInt32Array(4, 6, 8, 9), PackedInt32Array(9, 8, 10, 11), PackedInt32Array(11, 10, 0, 3), PackedInt32Array(3, 2, 12)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 3, 355, 399, 366, 393, 470, 509, 469, 574, 2, 230, 6, 228, 84, 258, 81, 258, 127, 314, 128, 313.858, 159, 228, 159)])
+vertices = PackedVector2Array(230.039, 16, 562.492, 12.1328, 324.039, 118.18, 268, 69.9531, 323.813, 169, 500.281, 459.07, 409.578, 356.289, 327.906, 202.617, 262.047, 198.328, 261.063, 404.43, 13.0234, 347.047, 218, 169, 403.594, 459.898, 13.9688, 15.0391, 218, 74.9531, 268, 117.172, 329.391, 354.047)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(5, 12, 6), PackedInt32Array(10, 13, 0, 14), PackedInt32Array(2, 15, 3), PackedInt32Array(0, 3, 14), PackedInt32Array(10, 14, 11), PackedInt32Array(8, 11, 4, 7), PackedInt32Array(7, 6, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 3, 355, 271, 417, 272, 209, 318, 212, 319.495, 363.792, 399, 366, 393, 470, 509, 469, 574, 2, 230, 6, 228, 84, 258, 81, 258, 127, 314, 128, 313.858, 159, 228, 159)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojh4s"]
 size = Vector2(8, 30)
@@ -76,7 +76,7 @@ position = Vector2(295, 320)
 position = Vector2(295, 257)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-4, -7)
+position = Vector2(5, 3)
 navigation_polygon = SubResource("NavigationPolygon_nfrpb")
 navigation_layers = 16
 
