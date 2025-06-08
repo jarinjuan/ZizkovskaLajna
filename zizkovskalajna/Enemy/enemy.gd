@@ -46,6 +46,9 @@ func _ready():
 	$Enemy_Knocked.visible = false
 	$Enemy_Dead.visible = false
 	$Enemy_Bbat.visible = false
+	$AliveShape.disabled = false
+	$KnockedShape.disabled = true
+	
 
 	if weapon_scene:
 		equip_weapon(weapon_scene)
@@ -84,7 +87,7 @@ func spawn_blood_splatter(pos: Vector2, min: int, max: int) -> void:
 		stain.position = pos + offset
 		stain.rotation = randf() * TAU
 		stain.scale = Vector2.ONE * 2 
-		stain.z_index = -2
+		stain.z_index = -1
 		get_tree().current_scene.add_child(stain)
 
 
@@ -249,12 +252,16 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
+	
+
 
 func knock_down():
 	if is_dead:
 		return
 	removeSprites()
 	$Enemy_Knocked.visible = true
+	$AliveShape.disabled = true
+	$KnockedShape.disabled = false
 	is_onehit = true
 	spawn_blood_splatter(global_position, 2, 5)
 	drop_weapon()	
@@ -273,19 +280,21 @@ func knock_down():
 		$AIController.set_active(true)
 	removeSprites()
 	$Enemy_Unarmed.visible = true
+	$AliveShape.disabled = false
+	$KnockedShape.disabled = true
 	
 func get_punched():
 	if is_dead:
 		return
 	if is_onehit == true:
 		die()
-		print(2)
 	else:
-		print(1)
-		is_onehit = true
-		spawn_blood_splatter(global_position, 1, 3)
 		removeSprites()
 		$Enemy_Knocked.visible = true
+		$AliveShape.disabled = true
+		$KnockedShape.disabled = false
+		is_onehit = true
+		spawn_blood_splatter(global_position, 2, 5)
 		drop_weapon()	
 		set_process(false)
 		set_physics_process(false)
@@ -302,6 +311,8 @@ func get_punched():
 			$AIController.set_active(true)
 		removeSprites()
 		$Enemy_Unarmed.visible = true
+		$AliveShape.disabled = false
+		$KnockedShape.disabled = true
 
 func die():
 	if is_dead:
@@ -315,5 +326,6 @@ func die():
 		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
-	$CollisionShape2D.queue_free()
+	$AliveShape.queue_free()
+	$KnockedShape.queue_free()
 	remove_from_group("enemy")
