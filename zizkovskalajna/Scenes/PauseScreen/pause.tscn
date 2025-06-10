@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq5ga8s5pql7y"]
+
+[ext_resource type="Script" uid="uid://ly5mf7y1p8so" path="res://Scenes/PauseScreen/pause.gd" id="1_u0mc4"]
+[ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://Scenes/Main/control.gdshader" id="4_aac60"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0mc4"]
+shader = ExtResource("4_aac60")
+shader_parameter/time_speed = 0.1
+shader_parameter/noise_intensity = 0.0
+shader_parameter/line_thickness = 0.0
+shader_parameter/glitch_strength = 0.02
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_u0mc4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_u0mc4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.243137)
+
+[node name="ButtonContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="ButtonContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="RestartButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Zizkovska lajna"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -27,6 +27,7 @@ func _ready():
 	$Player_Shotgun.visible = false
 	$Player_Uzi.visible = false
 	$Player_Bbat.visible = false
+	Ui.close_ammo()
 
 
 func _physics_process(delta: float) -> void:
