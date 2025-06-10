@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2xfro0t7ilr6"]
+[gd_scene load_steps=13 format=3 uid="uid://c2xfro0t7ilr6"]
 
 [ext_resource type="Texture2D" uid="uid://do0fp4epf2oku" path="res://Assets/Animations/Player_walk/biker2-1.png.png" id="2_vtle1"]
 [ext_resource type="Texture2D" uid="uid://dw0ub7760kd0y" path="res://Assets/Animations/Player_walk/biker2-2.png.png" id="3_od3ui"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://wsihd7op68yt" path="res://Assets/Animations/Player_walk/biker2-5.png.png" id="6_apopc"]
 [ext_resource type="Texture2D" uid="uid://gfw8oredvpu" path="res://Assets/Animations/Player_walk/biker2-6.png.png" id="7_5htga"]
 [ext_resource type="Texture2D" uid="uid://dnnwsmuyatict" path="res://Assets/Sprites/Characters/Player/PlayerPistol.png" id="7_vtle1"]
+[ext_resource type="Texture2D" uid="uid://stmijmcpbrih" path="res://Assets/Sprites/Characters/Player/PlayerM4.png" id="8_apopc"]
+[ext_resource type="Texture2D" uid="uid://dbuv8qfvddepe" path="res://Assets/Sprites/Characters/Player/PlayerShotgun.png" id="8_od3ui"]
+[ext_resource type="Texture2D" uid="uid://ck7c0jn8ti8aa" path="res://Assets/Sprites/Characters/Player/PlayerUzi.png" id="9_00tjw"]
+[ext_resource type="Texture2D" uid="uid://chw2egj0jdpvn" path="res://Assets/Sprites/Characters/Player/Player_BBat.png" id="10_x3vf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
@@ -57,11 +61,36 @@ drag_right_margin = 0.15
 drag_bottom_margin = 0.15
 
 [node name="WeaponSocket" type="Node2D" parent="."]
-position = Vector2(0, 12)
+visible = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Player_Unarmed" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p5o4e")
 animation = &"walk"
 
-[node name="PlayerPistol" type="Sprite2D" parent="."]
+[node name="Player_Pistol" type="Sprite2D" parent="."]
 texture = ExtResource("7_vtle1")
+
+[node name="Muzzle" type="Marker2D" parent="Player_Pistol"]
+position = Vector2(22, -6)
+
+[node name="Player_M4" type="Sprite2D" parent="."]
+texture = ExtResource("8_apopc")
+
+[node name="Muzzle" type="Marker2D" parent="Player_M4"]
+position = Vector2(22, -6)
+
+[node name="Player_Shotgun" type="Sprite2D" parent="."]
+texture = ExtResource("8_od3ui")
+
+[node name="Muzzle" type="Marker2D" parent="Player_Shotgun"]
+position = Vector2(22, -6)
+
+[node name="Player_Uzi" type="Sprite2D" parent="."]
+texture = ExtResource("9_00tjw")
+
+[node name="Muzzle" type="Marker2D" parent="Player_Uzi"]
+position = Vector2(22, -6)
+
+[node name="Player_Bbat" type="Sprite2D" parent="."]
+scale = Vector2(1.19, 1.19)
+texture = ExtResource("10_x3vf3")

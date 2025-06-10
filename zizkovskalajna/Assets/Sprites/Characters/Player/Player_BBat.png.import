@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkars70lfneg"
-path="res://.godot/imported/blood2.png-c2f4eaaa488e43d182586fd46ac389b0.ctex"
+uid="uid://chw2egj0jdpvn"
+path="res://.godot/imported/Player_BBat.png-31f2280fdccc6b382680a2059803ee88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Blood/blood2.png"
-dest_files=["res://.godot/imported/blood2.png-c2f4eaaa488e43d182586fd46ac389b0.ctex"]
+source_file="res://Assets/Sprites/Characters/Player/Player_BBat.png"
+dest_files=["res://.godot/imported/Player_BBat.png-31f2280fdccc6b382680a2059803ee88.ctex"]
 
 [params]
 

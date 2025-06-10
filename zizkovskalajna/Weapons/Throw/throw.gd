@@ -44,6 +44,7 @@ func _on_body_entered(body: Node):
 	elif !body.is_in_group("enemy"):
 			if body.has_method("break_glass"):
 				body.break_glass()
+				print("x")
 	spawn_pickup_and_die()
 
 func spawn_pickup_and_die():

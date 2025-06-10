@@ -3,9 +3,7 @@ extends CharacterBody2D
 @export var weapon_scene: PackedScene
 
 @onready var player = get_node("../Player")
-@onready var alive_sprite = $AliveSprite 
-@onready var dead_sprite = $DeadSprite
-@onready var knocked_sprite = $KnockedSprite
+
 @onready var ray_cast = $RayCast2D
 @onready var nav_agent = $NavAgent
 @onready var weapon_socket = $WeaponSocket
@@ -35,6 +33,46 @@ var blood_textures := [
 	preload("res://Assets/Sprites/Objects/Blood/blood3.png")
 ]
 
+func _ready():
+	home_position = global_position
+	add_to_group("enemies")
+	add_to_group("characters")
+	add_to_group("enemy")
+	$Enemy_M4.visible = false
+	$Enemy_Pistol.visible = false
+	$Enemy_Uzi.visible = false
+	$Enemy_Shotgun.visible = false
+	$Enemy_Unarmed.visible = true
+	$Enemy_Knocked.visible = false
+	$Enemy_Dead.visible = false
+	$Enemy_Bbat.visible = false
+	$AliveShape.disabled = false
+	$KnockedShape.disabled = true
+	
+
+	if weapon_scene:
+		equip_weapon(weapon_scene)
+
+func removeSprites():
+	for child in get_children():
+		if child is Sprite2D or child is AnimatedSprite2D:
+			child.visible = false
+
+func update_weapon_sprite(weapon_name: String) -> void:
+	removeSprites()
+	
+	var sprite_name = "Enemy_" + capitalize_first(weapon_name)
+	var sprite = get_node_or_null(sprite_name)
+	if sprite:
+		sprite.visible = true
+	else:
+		print("Sprite ", sprite_name, " nebyl nalezen!")
+		
+func capitalize_first(text: String) -> String:
+	if text.length() == 0:
+		return text
+	return text[0].to_upper() + text.substr(1)
+
 func spawn_blood_splatter(pos: Vector2, min: int, max: int) -> void:
 	var count = randi_range(min, max)
 
@@ -42,26 +80,17 @@ func spawn_blood_splatter(pos: Vector2, min: int, max: int) -> void:
 		var stain = Sprite2D.new()
 		stain.texture = blood_textures[randi() % blood_textures.size()]
 		
-		var offset_radius = randf_range(20.0, 70.0)  # větší rozptyl
+		var offset_radius = randf_range(20.0, 70.0)  
 		var offset_angle = randf() * TAU
 		var offset = Vector2.RIGHT.rotated(offset_angle) * offset_radius
 
 		stain.position = pos + offset
 		stain.rotation = randf() * TAU
-		stain.scale = Vector2.ONE * 2 # větší velikost
-		stain.z_index = -2
+		stain.scale = Vector2.ONE * 2 
+		stain.z_index = -1
 		get_tree().current_scene.add_child(stain)
 
-func _ready():
-	dead_sprite.visible = false
-	knocked_sprite.visible = false
-	home_position = global_position
-	add_to_group("enemies")
-	add_to_group("characters")
-	add_to_group("enemy")
 
-	if weapon_scene:
-		equip_weapon(weapon_scene)
 
 func equip_weapon(weapon_packed: PackedScene):
 	if current_weapon:
@@ -70,6 +99,8 @@ func equip_weapon(weapon_packed: PackedScene):
 	current_weapon = weapon_packed.instantiate() as Weapon
 	current_weapon.weapon_owner = self
 	weapon_socket.add_child(current_weapon)
+	var weapon_name = weapon_packed.resource_path.get_file().get_basename().to_lower()
+	update_weapon_sprite(weapon_name)
 	has_weapon = true
 
 func drop_weapon():
@@ -89,6 +120,15 @@ func drop_weapon():
 		current_weapon.queue_free()
 		current_weapon = null
 		has_weapon = false
+		
+func get_muzzle_position() -> Vector2:
+	for child in get_children():
+		if child is Sprite2D and child.visible:
+			var muzzle := child.get_node_or_null("Muzzle")
+			
+			if muzzle:
+				return muzzle.global_position
+	return global_position  # fallback pro jistotu
 
 func _aim():
 	if player:
@@ -212,12 +252,16 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction * SPEED
 	move_and_slide()
+	
+
 
 func knock_down():
 	if is_dead:
 		return
-	alive_sprite.visible = false
-	knocked_sprite.visible = true
+	removeSprites()
+	$Enemy_Knocked.visible = true
+	$AliveShape.disabled = true
+	$KnockedShape.disabled = false
 	is_onehit = true
 	spawn_blood_splatter(global_position, 2, 5)
 	drop_weapon()	
@@ -234,21 +278,23 @@ func knock_down():
 	set_physics_process(true)
 	if has_node("AIController"):
 		$AIController.set_active(true)
-	alive_sprite.visible = true
-	knocked_sprite.visible = false
+	removeSprites()
+	$Enemy_Unarmed.visible = true
+	$AliveShape.disabled = false
+	$KnockedShape.disabled = true
 	
 func get_punched():
 	if is_dead:
 		return
 	if is_onehit == true:
 		die()
-		print(2)
 	else:
-		print(1)
+		removeSprites()
+		$Enemy_Knocked.visible = true
+		$AliveShape.disabled = true
+		$KnockedShape.disabled = false
 		is_onehit = true
-		spawn_blood_splatter(global_position, 1, 3)
-		alive_sprite.visible = false
-		knocked_sprite.visible = true
+		spawn_blood_splatter(global_position, 2, 5)
 		drop_weapon()	
 		set_process(false)
 		set_physics_process(false)
@@ -263,21 +309,23 @@ func get_punched():
 		set_physics_process(true)
 		if has_node("AIController"):
 			$AIController.set_active(true)
-		alive_sprite.visible = true
-		knocked_sprite.visible = false
+		removeSprites()
+		$Enemy_Unarmed.visible = true
+		$AliveShape.disabled = false
+		$KnockedShape.disabled = true
 
 func die():
 	if is_dead:
 		return
-	alive_sprite.visible = false
-	knocked_sprite.visible = false
-	dead_sprite.visible = true
-	dead_sprite.z_index = -1
+	removeSprites()
+	$Enemy_Dead.visible = true
+	$Enemy_Dead.z_index = -1
 	spawn_blood_splatter(global_position, 3, 8)
 	is_dead = true
 	if has_weapon:
 		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
-	$CollisionShape2D.queue_free()
+	$AliveShape.queue_free()
+	$KnockedShape.queue_free()
 	remove_from_group("enemy")
