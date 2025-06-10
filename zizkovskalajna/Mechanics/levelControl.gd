@@ -12,6 +12,7 @@ var pause_menu_scene: PackedScene = preload("res://Scenes/PauseScreen/pause.tscn
 var pause_menu_instance: CanvasLayer = null # To hold the instantiated pause menu
 
 func _ready():
+	Audio.stop_music()
 	current_level_time = 0.0
 	enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
@@ -86,5 +87,7 @@ func _restart_game():
 	get_tree().reload_current_scene()
 
 func _quit_game():
-	_unpause_game() 
+	_unpause_game()
+	Ui.close_ammo()
+	Audio.play_music() 
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

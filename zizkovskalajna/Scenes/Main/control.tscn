@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://f83bnxna7dq0"]
+[gd_scene load_steps=75 format=3 uid="uid://f83bnxna7dq0"]
 
 [ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="1_etrpk"]
 [ext_resource type="Script" uid="uid://d1c0o13n55nwk" path="res://Scenes/Main/button.gd" id="2_qa1if"]
@@ -56,7 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://dxoqqswgrrhui" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient50.png" id="54_a6k1n"]
 [ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://Scenes/Main/animated_sprite_2d.gd" id="55_q2qhb"]
 [ext_resource type="Script" uid="uid://yriwsvyb45k7" path="res://Scenes/Main/rich_text_label.gd" id="56_ue06g"]
-[ext_resource type="AudioStream" uid="uid://bmx1n7ivjdom2" path="res://Assets/Audio/Music/main.mp3" id="57_22q2b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6gc8"]
 
@@ -523,9 +522,7 @@ text = "Zizkovska Lajna"
 fit_content = true
 script = ExtResource("56_ue06g")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("57_22q2b")
-autoplay = true
-
+[connection signal="pressed" from="buttonStart" to="buttonExit" method="_on_button_start_pressed"]
+[connection signal="pressed" from="buttonOptions" to="buttonExit" method="_on_button_options_pressed"]
 [connection signal="toggled" from="buttonMute" to="buttonExit" method="_on_button_mute_toggled"]
 [connection signal="pressed" from="buttonExit" to="buttonExit" method="_on_button_exit_pressed"]

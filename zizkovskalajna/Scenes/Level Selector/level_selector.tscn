@@ -589,6 +589,23 @@ theme_override_fonts/font = ExtResource("1_eyl4p")
 theme_override_font_sizes/font_size = 16
 text = "PLAY"
 
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -87.0
+offset_right = -111.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_eyl4p")
+theme_override_font_sizes/font_size = 11
+text = "BACK"
+
 [node name="left_button_sprite" type="AnimatedSprite2D" parent="." groups=["button_animations"]]
 position = Vector2(16, 90)
 rotation = -1.5708
@@ -608,3 +625,4 @@ autoplay = "new_animation"
 [connection signal="pressed" from="right_button" to="." method="right_button_pressed"]
 [connection signal="pressed" from="left_button" to="." method="left_button_pressed"]
 [connection signal="pressed" from="play" to="." method="play_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
