@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://by4xij6k0r2ij"]
+[gd_scene load_steps=66 format=4 uid="uid://by4xij6k0r2ij"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_38jjh"]
 [ext_resource type="PackedScene" uid="uid://butgtqtckmnye" path="res://gradient_background.tscn" id="1_dg7am"]
@@ -54,13 +54,15 @@
 [ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/Materials/Wood/WoodWall.tscn" id="52_nqohf"]
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="53_757t1"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="54_wjupe"]
-[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/porsche.tscn" id="56_dg7am"]
+[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="56_dg7am"]
 [ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="56_e1pa7"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="57_c4ee1"]
 [ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="58_lb6wy"]
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="59_0u7ta"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="60_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="61_0u7ta"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="63_2dgai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ee1"]
 resource_local_to_scene = true
@@ -471,6 +473,7 @@ tile_set = ExtResource("56_e1pa7")
 [node name="Porsche" parent="." instance=ExtResource("56_dg7am")]
 position = Vector2(943, 350)
 scale = Vector2(0.09, 0.09)
+level_controller_path = NodePath("../Node2D")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yi4xm")
@@ -498,3 +501,10 @@ texture_scale = Vector2(0.5, 0.5)
 ammo_count = 15
 
 [node name="Crosshair" parent="." instance=ExtResource("61_0u7ta")]
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+script = ExtResource("62_kho0l")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D" instance=ExtResource("63_2dgai")]
+visible = false

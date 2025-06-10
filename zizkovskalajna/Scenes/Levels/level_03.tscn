@@ -54,7 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="52_uygxn"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="53_08p4i"]
 [ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="54_qd208"]
-[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/porsche.tscn" id="55_wdrce"]
+[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="55_wdrce"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="56_h5pn7"]
 [ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="57_vb1u5"]
 

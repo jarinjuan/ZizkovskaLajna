@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var weapon_scene: PackedScene
-
+signal enemy_died
 @onready var player = get_node("../Player")
 
 @onready var ray_cast = $RayCast2D
@@ -159,7 +159,7 @@ func _physics_process(delta: float) -> void:
 	_aim()
 	update_visibility()
 
-	# Vyhledání nejbližší zbraně, pokud ji nemáme
+
 	if not has_weapon and target_pickup == null:
 		var closest_pickup = null
 		var closest_dist = INF
@@ -172,7 +172,6 @@ func _physics_process(delta: float) -> void:
 			target_pickup = closest_pickup
 			nav_agent.set_target_position(target_pickup.global_position)
 
-	# PRIORITA: Pickup režim → nic jiného neřešíme
 	if not has_weapon and target_pickup:
 		if nav_agent.get_target_position() != target_pickup.global_position:
 			nav_agent.set_target_position(target_pickup.global_position)
@@ -328,4 +327,5 @@ func die():
 	set_physics_process(false)
 	$AliveShape.queue_free()
 	$KnockedShape.queue_free()
+	enemy_died.emit()
 	remove_from_group("enemy")

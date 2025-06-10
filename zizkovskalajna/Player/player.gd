@@ -7,8 +7,7 @@ const SPEED: int = 200
 @onready var weapon_socket = $WeaponSocket
 @onready var death_screen := $DeathScreen
 @onready var fists_scene: PackedScene = preload("res://Weapons/Melee/fists.tscn")
-#@onready var player_pistol = $PlayerPistol
-var current_weapon: Node = null  # může být Weapon nebo MeleeWeapon
+var current_weapon: Node = null  
 var current_weapon_scale: Vector2
 var current_weapon_bullets: int
 var weapon_equipped := false
