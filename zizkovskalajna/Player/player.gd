@@ -27,6 +27,11 @@ func _ready():
 	$Player_Shotgun.visible = false
 	$Player_Uzi.visible = false
 	$Player_Bbat.visible = false
+	$Player_Pistol_collision.disabled = true
+	$Player_M4_collision.disabled = true
+	$Player_Shotgun_collision.disabled = true
+	$Player_Uzi_collision.disabled = true
+	$Player_Bbat_collision.disabled = true
 	Ui.close_ammo()
 
 
@@ -163,11 +168,16 @@ func update_weapon_sprite(weapon_name: String) -> void:
 	for child in get_children():
 		if child is Sprite2D or child is AnimatedSprite2D:
 			child.visible = false
+		elif child is CollisionPolygon2D:
+			child.disabled = true
 
 	var sprite_name = "Player_" + capitalize_first(weapon_name)
 	var sprite = get_node_or_null(sprite_name)
-	if sprite:
+	var collision_shape = get_node_or_null(sprite_name + "_collision")
+
+	if sprite and collision_shape:
 		sprite.visible = true
+		collision_shape.disabled = false
 	else:
 		print("Sprite ", sprite_name, " nebyl nalezen!")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=30 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://bqyg2qa3rhl1q" path="res://Scenes/Crosshair.gd" id="1_b8klh"]
@@ -23,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="17_b8klh"]
 [ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="20_quje0"]
 [ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="21_l1ysi"]
+[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="24_8a7xu"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="24_ib6ds"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="25_t426a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
 vertices = PackedVector2Array(230.039, 16, 562.492, 12.1328, 324.039, 118.18, 258.438, 79.3672, 323.813, 169, 500.281, 459.07, 409.578, 356.289, 325.758, 205.781, 262.047, 207.219, 261.063, 404.438, 13.0234, 347.047, 13.9688, 15.0391, 218, 169, 403.594, 459.898, 329.258, 354.047, 218, 72.0234, 266.188, 117.141)
@@ -156,3 +159,14 @@ weapon_texture = ExtResource("21_l1ysi")
 texture_scale = Vector2(1, 1)
 
 [node name="Crosshair" parent="." instance=ExtResource("17_b8klh")]
+
+[node name="Porsche" parent="." instance=ExtResource("24_8a7xu")]
+position = Vector2(60, 313)
+scale = Vector2(0.125, 0.125)
+level_controller_path = NodePath("../Node2D2")
+
+[node name="Node2D2" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+script = ExtResource("24_ib6ds")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D2" instance=ExtResource("25_t426a")]

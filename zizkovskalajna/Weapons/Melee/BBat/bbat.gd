@@ -5,7 +5,7 @@ extends MeleeWeapon
 var can_swing: bool = true
 
 func _ready() -> void:
-	range = 35
+	range = 50
 
 
 func swing(): 

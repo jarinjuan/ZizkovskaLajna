@@ -14,11 +14,11 @@
 size = Vector2(13.6482, 22.9722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmr1a"]
-size = Vector2(62.2952, 35.4042)
+size = Vector2(56.89, 35.4042)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 22
+collision_mask = 23
 wall_min_slide_angle = 0.881391
 script = ExtResource("1_px1sc")
 
@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_efk13")
 one_way_collision_margin = 0.0
 
 [node name="KnockedShape" type="CollisionShape2D" parent="."]
-position = Vector2(1.75666, 1.15221)
+position = Vector2(2.02692, 1.15221)
 shape = SubResource("RectangleShape2D_nmr1a")
 
 [node name="Enemy_Dead" type="Sprite2D" parent="."]
