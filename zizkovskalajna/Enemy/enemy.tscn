@@ -48,7 +48,8 @@ texture = ExtResource("4_eqilm")
 collision_mask = 17
 
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
-target_desired_distance = 4.0
+path_desired_distance = 49.53
+target_desired_distance = 9.9
 path_max_distance = 1000.0
 navigation_layers = 16
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://c73qnrritjlwb"]
+[gd_scene load_steps=70 format=4 uid="uid://c73qnrritjlwb"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_3078y"]
 [ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_vb1u5"]
@@ -57,6 +57,16 @@
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="55_wdrce"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="56_h5pn7"]
 [ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="57_vb1u5"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="58_a6oxl"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="59_mj3ph"]
+[ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="60_alga1"]
+[ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="61_868mf"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="62_8ftg7"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="63_s0mgc"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="64_lerby"]
+[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="65_vakpl"]
+[ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="66_eb8yh"]
+[ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="67_8mgc2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
 resource_local_to_scene = true
@@ -361,7 +371,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dn3vg"]
+vertices = PackedVector2Array(460.133, 229, 342.273, 112, 527, 112, 527, 221, 521, 229, 562, 221, 562, 110.039, 787, 110.953, 787, 230, 530.039, 230, 521, 264, 529.039, 484, 895, 484, 643, 484, 643, 296, 817, 266, 611, 296, 611, 341, 592, 341, 592, 373, 611, 373, 611, 485, 561, 485, 582, 374, 561, 374, 582, 341, 562, 341, 562, 266, 459, -53, 783, -53, 783, 78, 288, 78, 277, 484, 277, 416, 517, 416, 517, 383.961, 444.844, 264, 276, 384.953, 288, 106.117, 276, -165.008, 459, -86, 895, -165.977, 817, -86)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(3, 5, 8, 9, 4), PackedInt32Array(10, 4, 9, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18), PackedInt32Array(19, 20, 21, 22, 23), PackedInt32Array(22, 24, 23), PackedInt32Array(19, 23, 25, 18), PackedInt32Array(25, 26, 27, 16), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(11, 32, 33, 34), PackedInt32Array(10, 11, 34, 35), PackedInt32Array(36, 10, 35, 37), PackedInt32Array(38, 36, 37), PackedInt32Array(38, 37, 39, 31), PackedInt32Array(28, 31, 39, 40), PackedInt32Array(40, 39, 41, 42), PackedInt32Array(42, 41, 12, 15), PackedInt32Array(27, 15, 14, 16), PackedInt32Array(25, 16, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(601, 495, 621, 495, 621, 363, 602, 363, 602, 351, 621, 351, 621, 306, 633, 306, 633, 494, 905, 494, 905, -176, 266, -175, 266, 395, 507, 394, 507, 406, 267, 406, 267, 494, 539, 494, 540, 240, 797, 240, 797, 101, 552, 100, 552, 211, 537, 211, 537, 102, 318, 102, 456, 239, 511, 239, 511, 254, 449, 254, 298, 102, 298, 88, 793, 88, 793, -63, 469, -63, 469, -76, 807, -76, 807, 256, 552, 256, 552, 351, 572, 351, 572, 364, 551, 364, 551, 495)])
+
+[node name="Level3" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -2
@@ -385,6 +400,7 @@ tile_set = ExtResource("54_qd208")
 position = Vector2(572, 582)
 rotation = 1.5708
 scale = Vector2(0.09, 0.09)
+level_controller_path = NodePath("../Node2D")
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("56_h5pn7")]
 position = Vector2(413, 501)
@@ -485,3 +501,44 @@ z_index = -1
 position = Vector2(306, 399)
 rotation = 1.5708
 scale = Vector2(1.5, 1.4)
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+script = ExtResource("58_a6oxl")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D" instance=ExtResource("59_mj3ph")]
+visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_dn3vg")
+navigation_layers = 16
+
+[node name="Enemy5" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(668, 347)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy4" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(751, 195)
+weapon_scene = ExtResource("62_8ftg7")
+
+[node name="Enemy3" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(492, 132)
+weapon_scene = ExtResource("63_s0mgc")
+
+[node name="Enemy7" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(753, -24)
+weapon_scene = ExtResource("64_lerby")
+
+[node name="Enemy2" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(847, 139)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(323, 196)
+weapon_scene = ExtResource("64_lerby")
+
+[node name="WeaponPickup" parent="." instance=ExtResource("65_vakpl")]
+position = Vector2(624, 533)
+weapon_scene = ExtResource("66_eb8yh")
+weapon_texture = ExtResource("67_8mgc2")
+texture_scale = Vector2(0.5, 0.5)

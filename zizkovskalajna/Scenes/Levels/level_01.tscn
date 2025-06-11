@@ -477,6 +477,7 @@ level_controller_path = NodePath("../Node2D")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_yi4xm")
+navigation_layers = 16
 
 [node name="Enemy" parent="." instance=ExtResource("57_c4ee1")]
 position = Vector2(313, 129)

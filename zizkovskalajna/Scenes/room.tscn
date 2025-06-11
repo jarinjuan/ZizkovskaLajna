@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d1yrsh4myo4xd"]
+[gd_scene load_steps=29 format=3 uid="uid://d1yrsh4myo4xd"]
 
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_4gp0m"]
 [ext_resource type="Script" uid="uid://bqyg2qa3rhl1q" path="res://Scenes/Crosshair.gd" id="1_b8klh"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://wj2hlpasw8v7" path="res://Scenes/Objects/shorts.tscn" id="8_phao3"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="9_jghof"]
 [ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="9_ojh4s"]
-[ext_resource type="PackedScene" uid="uid://dex4x7nybcljd" path="res://Scenes/DeadScreen/DeathScreen.tscn" id="10_ilpkg"]
 [ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="11_b8klh"]
 [ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="11_jc8dp"]
 [ext_resource type="Texture2D" uid="uid://dgrvju3w8uu4o" path="res://Assets/Sprites/Weapons/m4/sprite_ar_fl.png" id="11_wph6n"]
@@ -51,8 +50,6 @@ scale = Vector2(5, 5)
 position = Vector2(78, 53)
 script = ExtResource("2_phao3")
 weapon_pickup_scene = ExtResource("7_4gp0m")
-
-[node name="DeathScreen" parent="Player" instance=ExtResource("10_ilpkg")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_nfrpb")]
 position = Vector2(431, 368)

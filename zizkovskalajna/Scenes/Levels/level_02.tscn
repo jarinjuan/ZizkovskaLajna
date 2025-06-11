@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://d4k8vkobimo5n"]
+[gd_scene load_steps=65 format=4 uid="uid://d4k8vkobimo5n"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_ei2s5"]
 [ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_heam3"]
@@ -55,7 +55,13 @@
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="54_4sjh2"]
 [ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="55_l34d3"]
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="56_t3vvr"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="57_0hoou"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="57_heam3"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="58_6krhw"]
+[ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="59_ovt2b"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="64_di5wi"]
+[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="64_ybyw4"]
+[ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="65_x62h1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
 resource_local_to_scene = true
@@ -360,18 +366,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0hoou"]
+vertices = PackedVector2Array(596, 166, 265.32, 166, 265.703, 154, 596, 154, 566, -166, 566, 82, 408, 82, 408, -106, 276, -166, 377, -106, 276, 124, 377, 113, 596, 124, 597, 113, 597, -166, 895, -166, 895, 485, 596, 196, 596, 485, 596, 208, 277, 196, 378, 208, 366, 207, 378, 238, 566, 238, 566, 485, 366, 485, 335, 207, 277, 310, 300, 310, 335, 311, 310, 311, 300, 341, 310, 342, 335, 342, 335, 486, 276, 486, 276, 341)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(12, 13, 16, 3), PackedInt32Array(0, 3, 16), PackedInt32Array(17, 0, 16), PackedInt32Array(16, 18, 19), PackedInt32Array(17, 16, 19), PackedInt32Array(20, 17, 19, 21, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(23, 26, 22, 21), PackedInt32Array(20, 22, 27), PackedInt32Array(28, 20, 27, 29), PackedInt32Array(29, 27, 30, 31), PackedInt32Array(32, 29, 31, 33), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(33, 36, 37, 32)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(256, 144, 586, 144, 586, 134, 266, 134, 266, -176, 576, -176, 576, 92, 398, 92, 398, -96, 387, -96, 387, 103, 587, 103, 587, -176, 905, -176, 905, 495, 586, 495, 586, 218, 388, 218, 388, 228, 576, 228, 576, 495, 356, 495, 356, 217, 345, 217, 345, 321, 320, 321, 320, 332, 345, 332, 345, 496, 266, 496, 266, 331, 290, 331, 290, 320, 267, 320, 267, 186, 586, 186, 586, 176, 255, 176)])
+
+[node name="Level2" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -2
-position = Vector2(10647, 7549)
+position = Vector2(10497, 7485)
 scale = Vector2(27.8472, 26.5863)
 sprite_frames = SubResource("SpriteFrames_dnbum")
 speed_scale = 0.5
 script = ExtResource("51_8p8gs")
 
 [node name="Player" parent="." instance=ExtResource("53_j5m7m")]
-position = Vector2(198, 162)
+position = Vector2(229, 160)
 script = ExtResource("54_4sjh2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -381,8 +392,9 @@ tile_map_data = PackedByteArray("AAASAAYAAQAAAAAAAAASAAcAAQAAAAEAAAATAAYAAQABAAA
 tile_set = ExtResource("55_l34d3")
 
 [node name="Porsche" parent="." instance=ExtResource("56_t3vvr")]
-position = Vector2(150, 162)
-scale = Vector2(0.09, 0.09)
+position = Vector2(140, 152)
+scale = Vector2(0.1, 0.1)
+level_controller_path = NodePath("../Node2D")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("57_heam3")]
 position = Vector2(261, -21)
@@ -456,3 +468,26 @@ scale = Vector2(1, 0.45)
 position = Vector2(337, 327)
 rotation = 1.5708
 scale = Vector2(1, 0.495)
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+position = Vector2(-290, -207)
+script = ExtResource("57_0hoou")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D" instance=ExtResource("58_6krhw")]
+visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_0hoou")
+navigation_layers = 16
+
+[node name="Enemy" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(611, 208)
+weapon_scene = ExtResource("64_di5wi")
+
+[node name="WeaponPickup" parent="." instance=ExtResource("64_ybyw4")]
+position = Vector2(212, 126)
+weapon_scene = ExtResource("64_di5wi")
+weapon_texture = ExtResource("65_x62h1")
+texture_scale = Vector2(0.5, 0.5)
+ammo_count = 15
