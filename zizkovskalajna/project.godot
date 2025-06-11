@@ -20,7 +20,6 @@ config/icon="res://Assets/icon.svg"
 GameManager="*res://Mechanics/game_manager.gd"
 Ui="*res://Scenes/UI/ui.gd"
 Audio="*res://Scenes/Audio/audio.tscn"
-SignalBus="*res://Mechanics/signal_bus.gd"
 
 [display]
 

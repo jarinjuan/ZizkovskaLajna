@@ -62,7 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="59_0u7ta"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="60_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="61_0u7ta"]
-[ext_resource type="Script" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="63_2dgai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ee1"]
@@ -511,3 +511,9 @@ porsche_node = NodePath("../Porsche")
 
 [node name="Label" parent="Node2D" instance=ExtResource("63_2dgai")]
 visible = false
+
+[connection signal="enemy_died" from="Enemy" to="." method="_on_enemy_enemy_died"]
+[connection signal="enemy_died" from="Enemy2" to="." method="_on_enemy_enemy_died"]
+[connection signal="enemy_died" from="Enemy3" to="." method="_on_enemy_enemy_died"]
+[connection signal="enemy_died" from="Enemy4" to="." method="_on_enemy_enemy_died"]
+[connection signal="enemy_died" from="Enemy5" to="." method="_on_enemy_enemy_died"]

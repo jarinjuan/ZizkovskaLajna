@@ -10,11 +10,13 @@ func _ready():
 	#------------BULLET--------------------------
 	add_child(ammo)
 	ammo.visible = false
+	ammo.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	bullet_current = ammo.get_node("bullet/current") as Label
 	bullet_original = ammo.get_node("bullet/original") as Label
 	#------------DIALOG--------------------------
 	add_child(dialog)
+	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	scroll_bar = dialog.get_node("cont/text").get_v_scroll_bar() as VScrollBar
 	dialog_text = dialog.get_node("cont/text") as RichTextLabel
@@ -25,6 +27,7 @@ func _ready():
 	
 	#------------OTHER--------------------------
 	random.randomize()
+	get_node("/root/Ui").process_mode = Node.PROCESS_MODE_ALWAYS
 	
 
 	
@@ -62,6 +65,7 @@ func close_dialog():
 	
 	
 func start_dialog(message, character_name):
+	
 	var size = character_texture.size
 	character_texture.texture = resize_get_texture(load(dialog_image_path + character_name + ".png") as Texture2D, size)
 	dialog.visible = true
@@ -69,6 +73,7 @@ func start_dialog(message, character_name):
 	dialog_text.text = message
 	dialog_text.visible_characters = 0
 	
+	get_tree().paused = true
 	while true:
 		if dialog_text.visible_characters == dialog_text.text.length():
 			break
@@ -83,10 +88,10 @@ func start_dialog(message, character_name):
 		blop_player.play(0)
 		scroll_bar.visible = false
 		await blop_player.finished
-
-
+		
 	await wait_for_any_input()
 	dialog_playing = false
+	get_tree().paused = false
 	close_dialog()
 
 
@@ -106,12 +111,6 @@ func wait_for_any_input() -> void:
 		await get_tree().process_frame
 		if Input.is_anything_pressed():
 			return
-
-func _unhandled_input(event):
-	if dialog_playing:
-		return
-	if event.is_action_pressed("confirm"):
-		start_dialog(lorem, "demo")
 	
 var lorem = "Noc byla chladná a mlha se valila údolím jako přízrak. Každý krok na vlhké trávě zněl hlasitěji, než by měl. Ve vzduchu bylo něco těžkého – neklid, který se nedal vysvětlit. A pak, najednou, ticho prořízl výkřik. Krátký. Ostrý. A pak zase nic"
 
