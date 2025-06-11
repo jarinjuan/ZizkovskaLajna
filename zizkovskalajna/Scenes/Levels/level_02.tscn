@@ -55,7 +55,7 @@
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="54_4sjh2"]
 [ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="55_l34d3"]
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="56_t3vvr"]
-[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="57_0hoou"]
+[ext_resource type="Script" path="res://Mechanics/levelControl.gd" id="57_0hoou"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="57_heam3"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="58_6krhw"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="59_ovt2b"]

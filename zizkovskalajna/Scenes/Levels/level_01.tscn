@@ -1,7 +1,8 @@
-[gd_scene load_steps=66 format=4 uid="uid://by4xij6k0r2ij"]
+[gd_scene load_steps=67 format=4 uid="uid://by4xij6k0r2ij"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_38jjh"]
 [ext_resource type="PackedScene" uid="uid://butgtqtckmnye" path="res://gradient_background.tscn" id="1_dg7am"]
+[ext_resource type="Script" uid="uid://c5o0peqnwhneh" path="res://Scenes/Levels/level_01.gd" id="1_w0345"]
 [ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_nqohf"]
 [ext_resource type="Texture2D" uid="uid://dadlljrfythqw" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient3.png" id="3_757t1"]
 [ext_resource type="Texture2D" uid="uid://oho0eajdcipx" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient4.png" id="4_wjupe"]
@@ -61,7 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="59_0u7ta"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="60_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="61_0u7ta"]
-[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
+[ext_resource type="Script" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="63_2dgai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ee1"]
@@ -373,6 +374,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(858, 368, 858, 407, 593, 407, 593, 360, 622, 360, 622, 338, 592, 338, 592, 162, 689, 162, 689, 338, 660, 338, 660, 361, 710, 361, 710, 140, 336, 140, 336, 362, 387, 362, 387, 339, 356, 339, 356, 162, 449, 162, 449, 340, 421, 340, 421, 361, 500, 361, 500, 339, 470, 339, 470, 261, 500, 261, 500, 241, 470, 241, 470, 162, 572, 162, 572, 239, 543, 239, 543, 261, 573, 261, 573, 340, 542, 340, 542, 361, 573, 361, 573, 408, 294, 408, 294, 106, 854, 106, 853, 369)])
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_w0345")
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("1_dg7am")]
 position = Vector2(10738, 7548)
