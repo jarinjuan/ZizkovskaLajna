@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bxcvwl7ib88k7"]
+
+[ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="1_y85f6"]
+
+[resource]
+default_font = ExtResource("1_y85f6")
+default_font_size = 16

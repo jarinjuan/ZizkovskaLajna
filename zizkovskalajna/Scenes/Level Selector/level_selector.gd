@@ -9,7 +9,7 @@ var SMALL_BUTTON_SIZE
 var level_scene_paths = []
 var level_image = []
 var level_image_locked = []
-var current_level = 0
+var current_level = GameManager.max_unlocked_level
 
 func _ready():
 	var dir = DirAccess.open(LEVEL_SCENE_PATH)
@@ -44,12 +44,13 @@ func _ready():
 		file_name = dir.get_next()
 		
 	dir.list_dir_end()
-
 	
 	$center.texture = resize_get_texture(level_image[0].get_image(), BIG_BUTTON_SIZE)
 	$right.texture = resize_get_texture(level_image[1].get_image(), SMALL_BUTTON_SIZE)
 	if !can_access_level(current_level + 1):
 		$right.texture = resize_get_texture(level_image_locked[current_level + 1].get_image(), SMALL_BUTTON_SIZE)
+	if current_level > 0:
+		$left.texture = resize_get_texture(level_image_locked[current_level - 1].get_image(), SMALL_BUTTON_SIZE)
 
 
 	#for sprite in get_tree().get_nodes_in_group("button_animations"):
@@ -64,6 +65,8 @@ func resize_get_texture(old_image, new_size):
 	old_image.resize(new_size.x, new_size.y, Image.INTERPOLATE_NEAREST)
 	new_texture = ImageTexture.create_from_image(old_image)
 	return new_texture
+	
+
 
 
 func right_button_pressed():
@@ -117,6 +120,7 @@ func left_button_pressed():
 func play_pressed():
 	if !can_access_level(current_level):
 		return
+	GameManager.last_level_played = current_level
 	get_tree().change_scene_to_file(level_scene_paths[current_level])
 
 
@@ -136,6 +140,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("move_left"):
 		left_button_pressed()
 		return
+	if event.is_action_pressed("confirm"):
+		play_pressed()
 
 
 func _on_back_pressed() -> void:

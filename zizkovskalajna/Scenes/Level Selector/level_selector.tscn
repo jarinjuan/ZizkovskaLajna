@@ -1,7 +1,6 @@
 [gd_scene load_steps=69 format=3 uid="uid://fgxikbg4on0t"]
 
 [ext_resource type="Script" uid="uid://cf38x52vchdvh" path="res://Scenes/Level Selector/level_selector.gd" id="1_5xm0l"]
-[ext_resource type="FontFile" uid="uid://c5t5cxhn1257c" path="res://Assets/Fonts/r-classic_8.ttf" id="1_eyl4p"]
 [ext_resource type="Texture2D" uid="uid://cc8ch6camkmfc" path="res://Assets/Sprites/UI/animated_button.png" id="2_2tg2f"]
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="2_qu4hp"]
 [ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="3_8q5fa"]
@@ -54,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://dx0w4nvw28l1n" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient49.png" id="50_e5rvq"]
 [ext_resource type="Texture2D" uid="uid://dxoqqswgrrhui" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient50.png" id="51_um58t"]
 [ext_resource type="Texture2D" uid="uid://bb0bhg3ndhi56" path="res://Assets/Sprites/Backgrounds/menu.png" id="52_xh3u5"]
+[ext_resource type="Theme" uid="uid://bxcvwl7ib88k7" path="res://Assets/Themes/menu.tres" id="53_qu4hp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_abllq"]
 animations = [{
@@ -579,14 +579,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = 45.0
-offset_right = 31.0
-offset_bottom = 76.0
+offset_left = -33.0
+offset_top = 44.0
+offset_right = 32.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_eyl4p")
-theme_override_font_sizes/font_size = 16
+theme = ExtResource("53_qu4hp")
+theme_override_font_sizes/font_size = 25
 text = "PLAY"
 
 [node name="back" type="Button" parent="."]
@@ -596,14 +596,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -87.0
-offset_right = -111.0
-offset_bottom = -63.0
+offset_left = -152.0
+offset_top = -84.0
+offset_right = -86.0
+offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_eyl4p")
-theme_override_font_sizes/font_size = 11
+theme = ExtResource("53_qu4hp")
+theme_override_font_sizes/font_size = 25
 text = "BACK"
 
 [node name="left_button_sprite" type="AnimatedSprite2D" parent="." groups=["button_animations"]]

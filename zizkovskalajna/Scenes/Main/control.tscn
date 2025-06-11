@@ -487,16 +487,15 @@ offset_bottom = 180.0
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 z_index = 1
 texture_filter = 1
-position = Vector2(161.5, 85)
-scale = Vector2(1.00312, 1.05556)
+position = Vector2(160, 90.0002)
 texture = ExtResource("4_78kju")
 script = SubResource("GDScript_b6gc8")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(160, 89)
-scale = Vector2(0.39875, 0.295)
+position = Vector2(160, 90.25)
+scale = Vector2(0.4, 0.299167)
 sprite_frames = SubResource("SpriteFrames_qtu10")
 frame_progress = 0.393301
 speed_scale = 1.96

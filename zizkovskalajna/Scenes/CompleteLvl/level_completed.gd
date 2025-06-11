@@ -4,6 +4,7 @@ extends CanvasLayer
 
 func _ready():
 		var elapsed_time = GameManager.get_last_level_time()
+		GameManager.max_unlocked_level = GameManager.last_level_played + 1
 		display_formatted_time(elapsed_time)
 
 
