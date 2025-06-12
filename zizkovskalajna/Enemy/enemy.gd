@@ -61,9 +61,9 @@ func _ready():
 	$KnockedShape.disabled = true
 	if walking_enemy and patrol_points.is_empty():
 		patrol_points = []
-		for node in get_tree().get_nodes_in_group("enemy_patrol_point"):
-			if node is Node2D:
-				patrol_points.append(node)
+		for child in get_children():
+			if child.is_in_group("enemy_patrol_point") and child is Node2D:
+				patrol_points.append(child)
 	
 
 	if weapon_scene:
