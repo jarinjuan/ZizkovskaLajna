@@ -157,6 +157,7 @@ func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, ne
 		GameManager.original_ammo_count = current_weapon.original_ammo
 		Ui.pick_up_bullet_ui()
 
+
 	
 	weapon_socket.add_child(current_weapon)
 	weapon_equipped = true

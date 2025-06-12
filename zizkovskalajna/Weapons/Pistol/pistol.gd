@@ -24,7 +24,6 @@ func shoot(target_pos: Vector2) -> void:
 	bullet.shooter = weapon_owner
 	get_tree().current_scene.add_child(bullet)
 
-
 	ammo -= 1
 	can_fire = false
 	await get_tree().create_timer(fire_rate).timeout

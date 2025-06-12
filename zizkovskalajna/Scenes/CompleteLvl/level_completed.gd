@@ -8,9 +8,6 @@ func _ready():
 		display_formatted_time(elapsed_time)
 
 
-
-
-
 func display_formatted_time(time_in_seconds: float):
 	var minutes = int(time_in_seconds / 60)
 	var seconds = fmod(time_in_seconds, 60)
