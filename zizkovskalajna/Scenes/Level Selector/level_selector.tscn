@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://fgxikbg4on0t"]
+[gd_scene load_steps=71 format=3 uid="uid://fgxikbg4on0t"]
 
 [ext_resource type="Script" uid="uid://cf38x52vchdvh" path="res://Scenes/Level Selector/level_selector.gd" id="1_5xm0l"]
 [ext_resource type="Texture2D" uid="uid://cc8ch6camkmfc" path="res://Assets/Sprites/UI/animated_button.png" id="2_2tg2f"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://dx0w4nvw28l1n" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient49.png" id="50_e5rvq"]
 [ext_resource type="Texture2D" uid="uid://dxoqqswgrrhui" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient50.png" id="51_um58t"]
 [ext_resource type="Texture2D" uid="uid://bb0bhg3ndhi56" path="res://Assets/Sprites/Backgrounds/menu.png" id="52_xh3u5"]
+[ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://Scenes/Main/control.gdshader" id="53_8q5fa"]
 [ext_resource type="Theme" uid="uid://bxcvwl7ib88k7" path="res://Assets/Themes/menu.tres" id="53_qu4hp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_abllq"]
@@ -357,6 +358,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_og5xj"]
+shader = ExtResource("53_8q5fa")
+shader_parameter/time_speed = 0.1
+shader_parameter/noise_intensity = 0.0
+shader_parameter/line_thickness = 0.0
+shader_parameter/glitch_strength = 0.02
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vwwo"]
 atlas = ExtResource("2_2tg2f")
 region = Rect2(0, 0, 32, 32)
@@ -493,11 +501,27 @@ offset_bottom = 180.0
 texture = ExtResource("52_xh3u5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_og5xj")
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0, 0, 0, 0.352941)
 metadata/_edit_lock_ = true
+
+[node name="levelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme = ExtResource("53_qu4hp")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="left" type="TextureRect" parent="."]
 layout_mode = 1
