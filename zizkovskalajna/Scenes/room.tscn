@@ -60,6 +60,15 @@ position = Vector2(306, 105)
 weapon_scene = ExtResource("9_ojh4s")
 walking_enemy = true
 
+[node name="Node2D3" type="Node2D" parent="Enemy2" groups=["enemy_patrol_point"]]
+position = Vector2(47, 41)
+
+[node name="Node2D4" type="Node2D" parent="Enemy2" groups=["enemy_patrol_point"]]
+position = Vector2(67, -22)
+
+[node name="Node2D5" type="Node2D" parent="Enemy2" groups=["enemy_patrol_point"]]
+position = Vector2(-7, -23)
+
 [node name="WoodWall" parent="." instance=ExtResource("7_03u2k")]
 position = Vector2(243, 114)
 
@@ -168,12 +177,3 @@ script = ExtResource("24_ib6ds")
 porsche_node = NodePath("../Porsche")
 
 [node name="Label" parent="Node2D2" instance=ExtResource("25_t426a")]
-
-[node name="Node2D3" type="Node2D" parent="." groups=["enemy_patrol_point"]]
-position = Vector2(353, 146)
-
-[node name="Node2D4" type="Node2D" parent="." groups=["enemy_patrol_point"]]
-position = Vector2(373, 83)
-
-[node name="Node2D5" type="Node2D" parent="." groups=["enemy_patrol_point"]]
-position = Vector2(299, 82)
