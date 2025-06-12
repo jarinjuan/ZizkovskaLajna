@@ -9,7 +9,7 @@ const SAVE_FILE = SAVE_PATH + "save.json"
 #If you want to get or store some data you can acces it with |Save_Load.data["key"]|
 #But if you want to get it you have to load it firts or when store it save after with functions
 const data_deafult = {
-	"max_unlocked_level": 0
+	"max_unlocked_level": 1
 }
 
 static var data = {}

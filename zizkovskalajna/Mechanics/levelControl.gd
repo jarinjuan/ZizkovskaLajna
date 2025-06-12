@@ -7,9 +7,11 @@ extends Node
 var all_enemies_dead: bool = false
 var final_level_time: float = 0.0 
 var current_level_time: float = 0.0
-
+var max_unlocked = GameManager.max_unlocked_level
 var pause_menu_scene: PackedScene = preload("res://Scenes/PauseScreen/pause.tscn")
 var pause_menu_instance: CanvasLayer = null # To hold the instantiated pause menu
+
+
 
 func _ready():
 	Audio.stop_music()
@@ -18,6 +20,9 @@ func _ready():
 	for enemy in enemies:
 		enemy.enemy_died.connect(_on_enemy_died)
 		
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	GameManager.set_current_level_path(current_scene_path)	
+	
 	if porsche_node:
 		porsche_node.level_finished.connect(_on_porsche_level_finished)
 	else:
@@ -41,6 +46,8 @@ func show_go_to_car_hint():
 func _on_porsche_level_finished():
 	final_level_time = current_level_time
 	GameManager.set_last_level_time(final_level_time)
+	GameManager.set_max_unlocked_level()
+	print(GameManager.max_unlocked_level)
 	Ui.close_ammo()
 	var level_completed_scene = load("res://Scenes/CompleteLvl/levelCompleted.tscn")
 	get_tree().change_scene_to_packed(level_completed_scene)
