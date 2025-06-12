@@ -9,6 +9,3 @@ var tutorial_message = "Dog."
 func _ready():
 	await Ui.dialog_setup()
 	Ui.start_dialog(tutorial_message, "demo")
-
-func _on_enemy_enemy_died() -> void:
-	Ui.start_dialog(tutorial_message, "demo")

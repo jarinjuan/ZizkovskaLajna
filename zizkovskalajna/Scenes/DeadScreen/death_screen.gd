@@ -12,18 +12,10 @@ func show_wasted():
 	is_active = true
 	get_tree().paused = true
 
-func _input(event):
+func _input(event: InputEvent):
 	if is_active:
-		if event is InputEventMouseButton:
-			if event.pressed:
-				get_tree().paused = false
-				is_active = false
-				visible = false
-				get_tree().reload_current_scene()
-
-		if event is InputEventKey:
-			if event.pressed:
-				get_tree().paused = false
-				is_active = false
-				visible = false
-				get_tree().reload_current_scene()
+		if event.is_action_pressed("reset"):
+			get_tree().paused = false
+			is_active = false
+			visible = false
+			get_tree().reload_current_scene()

@@ -1,10 +1,11 @@
 extends CanvasLayer
 
 @onready var time_display_label: Label = $LabelTime
+var max_unlocked = GameManager.max_unlocked_level
 
 func _ready():
 		var elapsed_time = GameManager.get_last_level_time()
-		GameManager.max_unlocked_level = GameManager.last_level_played + 1
+		GameManager.max_unlocked_level = max_unlocked + 1
 		display_formatted_time(elapsed_time)
 
 
