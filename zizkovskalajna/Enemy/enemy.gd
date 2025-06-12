@@ -26,6 +26,17 @@ var is_onehit = false
 var reaction_timer := 0.0
 const REACTION_TIME := 0.5
 var player_spotted := false
+@export var walking_enemy := false
+@export var patrol_points: Array[Node2D] = []
+var patrol_index := 0
+var is_patrolling := true
+
+const SPEED_PATROL := 60
+const SPEED_RETURN := 70
+const SPEED_COMBAT := 120
+const PATROL_PAUSE_TIME := 1.0
+var patrol_pause_timer := 0.0
+var waiting_at_patrol := false
 
 var blood_textures := [
 	preload("res://Assets/Sprites/Objects/Blood/blood1.png"),
@@ -48,6 +59,11 @@ func _ready():
 	$Enemy_Bbat.visible = false
 	$AliveShape.disabled = false
 	$KnockedShape.disabled = true
+	if walking_enemy and patrol_points.is_empty():
+		patrol_points = []
+		for node in get_tree().get_nodes_in_group("enemy_patrol_point"):
+			if node is Node2D:
+				patrol_points.append(node)
 	
 
 	if weapon_scene:
@@ -171,7 +187,7 @@ func _physics_process(delta: float) -> void:
 		if closest_pickup:
 			target_pickup = closest_pickup
 			nav_agent.set_target_position(target_pickup.global_position)
-
+			
 	if not has_weapon and target_pickup:
 		if nav_agent.get_target_position() != target_pickup.global_position:
 			nav_agent.set_target_position(target_pickup.global_position)
@@ -188,7 +204,7 @@ func _physics_process(delta: float) -> void:
 				target_pickup = null
 				has_weapon = true
 			return
-
+			
 	# --- Normální AI logika ---
 	var to_player: Vector2 = player.global_position - global_position
 	var distance_to_player: float = to_player.length()
@@ -211,6 +227,10 @@ func _physics_process(delta: float) -> void:
 		last_seen_position = player.global_position
 		lost_sight_timer = 0.0
 		returning_home = false
+		
+		if distance_to_player < 20:
+			velocity = Vector2.ZERO
+			move_and_slide()
 
 		if has_weapon:
 			direction = to_player.normalized()
@@ -224,10 +244,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_spotted = false
 		reaction_timer = 0.0
-		lost_sight_timer += delta
 
-	if lost_sight_timer >= RETURN_HOME_TIME:
-		returning_home = true
+		if last_seen_position != Vector2.ZERO:
+			lost_sight_timer += delta
+			if lost_sight_timer >= RETURN_HOME_TIME:
+				returning_home = true
+		else:
+			lost_sight_timer = 0.0  # reset když nikdy neviděl hráčee
 
 	if returning_home:
 		if nav_agent.get_target_position() != home_position:
@@ -248,8 +271,49 @@ func _physics_process(delta: float) -> void:
 				direction = Vector2.ZERO
 				returning_home = false
 				last_seen_position = Vector2.ZERO
+				
+	if not player_visible and walking_enemy and is_patrolling and not returning_home and last_seen_position == Vector2.ZERO and has_weapon:
+		if patrol_points.size() > 0:
+			var patrol_target = patrol_points[patrol_index].global_position
 
-	velocity = direction * SPEED
+			if global_position.distance_to(patrol_target) < 10.0 or nav_agent.is_navigation_finished():
+				if not waiting_at_patrol:
+					waiting_at_patrol = true
+					patrol_pause_timer = PATROL_PAUSE_TIME
+				else:
+					patrol_pause_timer -= delta
+					if patrol_pause_timer <= 0:
+						patrol_index = (patrol_index + 1) % patrol_points.size()
+						patrol_target = patrol_points[patrol_index].global_position
+						nav_agent.set_target_position(patrol_target)
+						waiting_at_patrol = false
+						
+			if not waiting_at_patrol:			
+				if nav_agent.get_target_position() != patrol_target:
+					nav_agent.set_target_position(patrol_target)
+				look_at(patrol_target)
+			# Ujisti se, že nav_agent má správný cíl
+				
+				
+
+	var current_speed = SPEED
+
+	if not has_weapon and target_pickup:
+		current_speed = SPEED_COMBAT
+	elif player_visible or last_seen_position != Vector2.ZERO:
+		current_speed = SPEED_COMBAT
+	elif returning_home:
+		current_speed = SPEED_RETURN
+	elif walking_enemy and is_patrolling:
+		current_speed = SPEED_PATROL
+				
+	if not nav_agent.is_navigation_finished():
+		var next_path_pos = nav_agent.get_next_path_position()
+		direction = (next_path_pos - global_position).normalized()
+	else:
+		direction = Vector2.ZERO
+
+	velocity = direction * current_speed
 	move_and_slide()
 	
 
