@@ -1,6 +1,6 @@
 extends Node
 
-var max_unlocked_level
+var max_unlocked_level = 1
 var ammo: int
 var original_ammo_count
 var last_level_time: float = 0.0
@@ -11,7 +11,6 @@ var current_level
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		quit_game()
-
 
 func _ready():
 	Save_Load.load_data()
@@ -39,7 +38,7 @@ func get_current_level_number(path: String) -> int:
 	if parts.size() > 1:
 		return int(parts[1])
 	return -1
-
+	
 func quit_game():
 	Save_Load.data["max_unlocked_level"] = max_unlocked_level
 	Save_Load.save_data()

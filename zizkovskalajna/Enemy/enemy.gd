@@ -61,9 +61,9 @@ func _ready():
 	$KnockedShape.disabled = true
 	if walking_enemy and patrol_points.is_empty():
 		patrol_points = []
-		for child in get_children():
-			if child.is_in_group("enemy_patrol_point") and child is Node2D:
-				patrol_points.append(child)
+		for node in get_tree().get_nodes_in_group("enemy_patrol_point"):
+			if node is Node2D:
+				patrol_points.append(node)
 	
 
 	if weapon_scene:
@@ -175,7 +175,7 @@ func _physics_process(delta: float) -> void:
 	_aim()
 	update_visibility()
 
-#weaponpickup init - find path
+
 	if not has_weapon and target_pickup == null:
 		var closest_pickup = null
 		var closest_dist = INF
@@ -188,7 +188,6 @@ func _physics_process(delta: float) -> void:
 			target_pickup = closest_pickup
 			nav_agent.set_target_position(target_pickup.global_position)
 			
-#weaponpickup	
 	if not has_weapon and target_pickup:
 		if nav_agent.get_target_position() != target_pickup.global_position:
 			nav_agent.set_target_position(target_pickup.global_position)
