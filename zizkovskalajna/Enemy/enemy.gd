@@ -175,7 +175,7 @@ func _physics_process(delta: float) -> void:
 	_aim()
 	update_visibility()
 
-
+#weaponpickup init - find path
 	if not has_weapon and target_pickup == null:
 		var closest_pickup = null
 		var closest_dist = INF
@@ -188,6 +188,7 @@ func _physics_process(delta: float) -> void:
 			target_pickup = closest_pickup
 			nav_agent.set_target_position(target_pickup.global_position)
 			
+#weaponpickup	
 	if not has_weapon and target_pickup:
 		if nav_agent.get_target_position() != target_pickup.global_position:
 			nav_agent.set_target_position(target_pickup.global_position)
