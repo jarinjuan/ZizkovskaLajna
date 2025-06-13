@@ -27,9 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="25_t426a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
-vertices = PackedVector2Array(230.039, 16, 562.492, 12.1328, 324.039, 118.18, 258.438, 79.3672, 323.813, 169, 500.281, 459.07, 409.578, 356.289, 325.758, 205.781, 262.047, 207.219, 261.063, 404.438, 13.0234, 347.047, 13.9688, 15.0391, 218, 169, 403.594, 459.898, 329.258, 354.047, 218, 72.0234, 266.188, 117.141)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(5, 13, 6), PackedInt32Array(6, 14, 7), PackedInt32Array(4, 7, 8, 12), PackedInt32Array(15, 12, 11), PackedInt32Array(15, 11, 0, 3), PackedInt32Array(3, 2, 16)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(228, 84, 230, 6, 4, 5, 3, 355, 271, 417, 272, 217, 316, 216, 319.495, 363.792, 399, 366, 393, 470, 509, 469, 574, 2, 230, 6, 228, 84, 250, 88, 258, 127, 314, 128, 313.858, 159, 228, 159)])
+vertices = PackedVector2Array(308, 153.852, 308, 123, 562.492, 12.1328, 500.281, 459.07, 409.578, 356.289, 325.758, 205.781, 230.039, 16, 252.461, 61.5625, 262.047, 207.219, 261.063, 404.438, 13.0234, 347.047, 13.9688, 15.0391, 223, 155.156, 403.594, 459.898, 254.648, 123, 223, 75.2891, 329.258, 354.047)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 2, 1, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(3, 13, 4), PackedInt32Array(1, 14, 7), PackedInt32Array(6, 7, 15, 11), PackedInt32Array(4, 16, 5), PackedInt32Array(0, 5, 8, 12), PackedInt32Array(12, 11, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(233, 78, 230, 6, 4, 5, 3, 355, 271, 417, 272, 217, 316, 216, 319.495, 363.792, 399, 366, 393, 470, 509, 469, 574, 2, 230, 6, 228, 84, 243, 77, 245, 133, 298, 133, 298, 144, 233, 145)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojh4s"]
 size = Vector2(8, 30)
@@ -55,9 +55,19 @@ weapon_pickup_scene = ExtResource("7_4gp0m")
 position = Vector2(431, 368)
 weapon_scene = ExtResource("7_wph6n")
 
+[node name="Node2D3" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(353, 146)
+
+[node name="Node2D4" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(373, 83)
+
+[node name="Node2D5" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(299, 82)
+
 [node name="Enemy2" parent="." instance=ExtResource("3_nfrpb")]
-position = Vector2(280, 112)
+position = Vector2(306, 105)
 weapon_scene = ExtResource("9_ojh4s")
+walking_enemy = true
 
 [node name="WoodWall" parent="." instance=ExtResource("7_03u2k")]
 position = Vector2(243, 114)

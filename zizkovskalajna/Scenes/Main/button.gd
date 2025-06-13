@@ -4,7 +4,7 @@ extends Button
 
 
 func _on_button_exit_pressed() -> void:
-	get_tree().quit()
+	GameManager.quit_game()
 
 func _on_button_mute_toggled(toggled_on: bool) -> void:
 	Audio.mute_music(toggled_on)
