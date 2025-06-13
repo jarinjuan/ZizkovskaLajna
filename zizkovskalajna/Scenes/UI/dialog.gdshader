@@ -1,7 +1,9 @@
 shader_type canvas_item;
 
+
 uniform float speed = 5;
 uniform float amplitude = 0.015;
+
 
 void fragment() {
     // Calculate vertical offset (hovering)
