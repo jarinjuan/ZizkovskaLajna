@@ -177,3 +177,4 @@ script = ExtResource("24_ib6ds")
 porsche_node = NodePath("../Porsche")
 
 [node name="Label" parent="Node2D2" instance=ExtResource("25_t426a")]
+visible = false

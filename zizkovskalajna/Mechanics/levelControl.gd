@@ -10,7 +10,7 @@ var current_level_time: float = 0.0
 var max_unlocked = GameManager.max_unlocked_level
 var pause_menu_scene: PackedScene = preload("res://Scenes/PauseScreen/pause.tscn")
 var pause_menu_instance: CanvasLayer = null # To hold the instantiated pause menu
-
+var active_ammo_ui = false
 
 
 func _ready():
@@ -64,7 +64,9 @@ func _input(event: InputEvent):
 
 func _pause_game():
 	get_tree().paused = true
-	
+	if Ui.is_active_ammo() == true:
+		Ui.close_ammo()
+		active_ammo_ui = true
 	if pause_menu_instance == null:		
 		pause_menu_instance = pause_menu_scene.instantiate()
 		get_tree().get_root().add_child(pause_menu_instance)		
@@ -80,6 +82,9 @@ func _pause_game():
 
 func _unpause_game():
 	get_tree().paused = false 
+	if active_ammo_ui:
+		Ui.show_ammo()
+		active_ammo_ui = false
 	if pause_menu_instance != null:
 		pause_menu_instance.queue_free() 
 		pause_menu_instance = null

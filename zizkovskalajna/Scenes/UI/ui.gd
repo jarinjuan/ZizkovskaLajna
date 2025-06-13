@@ -47,6 +47,11 @@ func show_ammo():
 
 func close_ammo():
 	ammo.visible = false
+	
+func is_active_ammo():
+	if ammo.visible == true:
+		return true
+	else: return false
 
 #------------DIALOG--------------------------
 const dialog_image_path = "res://Assets/Sprites/Dialog/"

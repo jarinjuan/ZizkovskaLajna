@@ -18,4 +18,3 @@ func _on_enemy_enemy_died() -> void:
 	x += 1
 	if (x == 5):
 		Ui.start_dialog(player_sentence, "sprite_player_dialogue")
-
