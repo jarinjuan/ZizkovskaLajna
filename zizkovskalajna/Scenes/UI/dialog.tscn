@@ -10,8 +10,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_joe48"]
 shader = ExtResource("3_lv3fa")
-shader_parameter/speed = 1.0
-shader_parameter/amplitude = 0.05
+shader_parameter/speed = 5.0
+shader_parameter/amplitude = 0.015
 
 [node name="Dialog" type="CanvasLayer"]
 layer = 127
