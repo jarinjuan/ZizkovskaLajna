@@ -18,10 +18,8 @@ func _ready():
 	print(Save_Load.data["max_unlocked_level"])
 	return
 	
-func set_max_unlocked_level():
-	print(max_unlocked_level)
-	max_unlocked_level = max_unlocked_level + 1
-	print(max_unlocked_level)
+func set_max_unlocked_level(current_level: int):
+	max_unlocked_level = current_level + 1
 	
 func set_last_level_time(time: float):
 	last_level_time = time

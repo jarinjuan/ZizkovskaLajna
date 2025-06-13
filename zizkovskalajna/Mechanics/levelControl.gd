@@ -46,8 +46,8 @@ func show_go_to_car_hint():
 func _on_porsche_level_finished():
 	final_level_time = current_level_time
 	GameManager.set_last_level_time(final_level_time)
-	GameManager.set_max_unlocked_level()
-	print(GameManager.max_unlocked_level)
+	GameManager.set_max_unlocked_level(GameManager.current_level)
+
 	Ui.close_ammo()
 	var level_completed_scene = load("res://Scenes/CompleteLvl/levelCompleted.tscn")
 	get_tree().change_scene_to_packed(level_completed_scene)
