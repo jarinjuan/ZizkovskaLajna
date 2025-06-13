@@ -9,7 +9,7 @@ var SMALL_BUTTON_SIZE
 var level_scene_paths = []
 var level_image = []
 var level_image_locked = []
-var current_level = GameManager.max_unlocked_level
+var current_level = GameManager.max_unlocked_level - 1
 
 func _ready():
 	var dir = DirAccess.open(LEVEL_SCENE_PATH)
