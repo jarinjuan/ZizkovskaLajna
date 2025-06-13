@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var fire_rate = 0.1
+
 @export var weapon_pickup_scene: PackedScene 
+@export var weapon_scene: PackedScene
 const SPEED: int = 200
 
 @onready var weapon_socket = $WeaponSocket
@@ -33,6 +34,21 @@ func _ready():
 	$Player_Uzi_collision.disabled = true
 	$Player_Bbat_collision.disabled = true
 	Ui.close_ammo()
+	if weapon_scene:
+		fists.hide()
+		current_weapon = weapon_scene.instantiate()
+		current_weapon.weapon_owner = self
+		current_weapon_scale = Vector2(1,1)
+		if current_weapon.has_method("shoot"):
+			#current_weapon.ammo = weapon_scene.ammo
+			Ui.show_ammo()
+			GameManager.ammo = current_weapon.ammo
+			GameManager.original_ammo_count = current_weapon.original_ammo
+			Ui.pick_up_bullet_ui()
+			weapon_socket.add_child(current_weapon)
+			weapon_equipped = true
+			var weapon_name = weapon_scene.resource_path.get_file().get_basename().to_lower()
+			update_weapon_sprite(weapon_name)
 
 
 func _physics_process(delta: float) -> void:
@@ -135,6 +151,7 @@ func throw_weapon():
 	fists.show()
 	update_weapon_sprite("unarmed")
 	weapon_equipped = false
+
 
 
 

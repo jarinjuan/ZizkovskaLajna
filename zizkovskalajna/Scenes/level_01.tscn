@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c8xhjrh7qpl26"]
+[gd_scene load_steps=57 format=4 uid="uid://dxbtuab3f1ra0"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_38jjh"]
 [ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_nqohf"]

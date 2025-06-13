@@ -7,10 +7,10 @@ var player_sentence = "What have I done?"
 var x = 0
 
 func _ready():
-	await Ui.dialog_setup()
-
-	await Ui.start_dialog(tutorial_message, "transmitter")
-	await Ui.start_dialog(brain_instructions, "sprite_brain")
+	#await Ui.dialog_setup()
+	print("k")
+	#await Ui.start_dialog(tutorial_message, "transmitter")
+	#await Ui.start_dialog(brain_instructions, "sprite_brain")
 	
 func _on_enemy_enemy_died() -> void:
 	if (x == 0):

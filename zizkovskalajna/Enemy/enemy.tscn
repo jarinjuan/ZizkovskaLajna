@@ -18,7 +18,7 @@ size = Vector2(56.89, 35.4042)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 23
+collision_mask = 22
 wall_min_slide_angle = 0.881391
 script = ExtResource("1_px1sc")
 
@@ -48,10 +48,14 @@ texture = ExtResource("4_eqilm")
 collision_mask = 17
 
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
-path_desired_distance = 49.53
-target_desired_distance = 9.9
 path_max_distance = 1000.0
 navigation_layers = 16
+avoidance_enabled = true
+max_neighbors = 15
+time_horizon_obstacles = 10.0
+avoidance_layers = 2
+avoidance_mask = 19
+debug_enabled = true
 
 [node name="WeaponSocket" type="Node2D" parent="."]
 visible = false
