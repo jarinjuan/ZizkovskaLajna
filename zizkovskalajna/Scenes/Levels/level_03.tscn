@@ -1,3 +1,546 @@
-[gd_scene format=3 uid="uid://bgemyq67jywsc"]
+[gd_scene load_steps=71 format=4 uid="uid://c73qnrritjlwb"]
 
-[node name="Level03" type="Node2D"]
+[ext_resource type="Script" uid="uid://col02iffb3vyy" path="res://Scenes/Levels/level_03.gd" id="1_868mf"]
+[ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_3078y"]
+[ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_vb1u5"]
+[ext_resource type="Texture2D" uid="uid://dadlljrfythqw" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient3.png" id="3_gg788"]
+[ext_resource type="Texture2D" uid="uid://oho0eajdcipx" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient4.png" id="4_a6oxl"]
+[ext_resource type="Texture2D" uid="uid://dbl2g4v85g1w1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient5.png" id="5_mj3ph"]
+[ext_resource type="Texture2D" uid="uid://cl7v8u34lyi0i" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient6.png" id="6_fpluf"]
+[ext_resource type="Texture2D" uid="uid://dtrivnh23pvxy" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient7.png" id="7_ynvip"]
+[ext_resource type="Texture2D" uid="uid://da38nbvubus60" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient8.png" id="8_dfrm1"]
+[ext_resource type="Texture2D" uid="uid://qqse2dedte55" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient9.png" id="9_85nbg"]
+[ext_resource type="Texture2D" uid="uid://dsyqe8q8lj3d4" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient10.png" id="10_2atg1"]
+[ext_resource type="Texture2D" uid="uid://dqm23lb7e4tr1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient11.png" id="11_0phub"]
+[ext_resource type="Texture2D" uid="uid://damelm4saw6ct" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient12.png" id="12_alga1"]
+[ext_resource type="Texture2D" uid="uid://d1nu58eicfa0k" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient13.png" id="13_868mf"]
+[ext_resource type="Texture2D" uid="uid://xwhq1bxcm2f" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient14.png" id="14_8ftg7"]
+[ext_resource type="Texture2D" uid="uid://dwtdu51ol0kn7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient15.png" id="15_s0mgc"]
+[ext_resource type="Texture2D" uid="uid://c21ogvof4pvev" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient16.png" id="16_lerby"]
+[ext_resource type="Texture2D" uid="uid://cdrs7ya1peuwa" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient17.png" id="17_vakpl"]
+[ext_resource type="Texture2D" uid="uid://d2oyp21vc5480" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient18.png" id="18_eb8yh"]
+[ext_resource type="Texture2D" uid="uid://pdmamfsmyxjk" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient19.png" id="19_8mgc2"]
+[ext_resource type="Texture2D" uid="uid://dy0eebvm688xp" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient20.png" id="20_dn3vg"]
+[ext_resource type="Texture2D" uid="uid://dg2sasi56xr46" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient21.png" id="21_rxu6y"]
+[ext_resource type="Texture2D" uid="uid://byxi05fmeg2qo" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient22.png" id="22_2cshq"]
+[ext_resource type="Texture2D" uid="uid://c7ds1primvxu1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient23.png" id="23_nxq4m"]
+[ext_resource type="Texture2D" uid="uid://chgpt1abk4dvm" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient24.png" id="24_obl2y"]
+[ext_resource type="Texture2D" uid="uid://bp7uwc7jralfq" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient25.png" id="25_l3kbv"]
+[ext_resource type="Texture2D" uid="uid://qqpeyxyod7fl" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient26.png" id="26_wtyka"]
+[ext_resource type="Texture2D" uid="uid://doksm7tdtnhyb" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient27.png" id="27_fto03"]
+[ext_resource type="Texture2D" uid="uid://7qmo4dyou8mf" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient28.png" id="28_boydj"]
+[ext_resource type="Texture2D" uid="uid://b7dcms2vwmtxm" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient29.png" id="29_qxuyt"]
+[ext_resource type="Texture2D" uid="uid://cgs02unji8muy" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient30.png" id="30_m3vmk"]
+[ext_resource type="Texture2D" uid="uid://xl61by3x61jk" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient31.png" id="31_xrfci"]
+[ext_resource type="Texture2D" uid="uid://cnoo6ydg1g7c7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient32.png" id="32_bdl4c"]
+[ext_resource type="Texture2D" uid="uid://blbat3kbcplug" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient33.png" id="33_lfvdl"]
+[ext_resource type="Texture2D" uid="uid://c7udq0yiimdn2" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient34.png" id="34_8nfvd"]
+[ext_resource type="Texture2D" uid="uid://bmvr2cfuwxj3y" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient35.png" id="35_joedt"]
+[ext_resource type="Texture2D" uid="uid://dkiay21jo2i2v" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient36.png" id="36_3qbw3"]
+[ext_resource type="Texture2D" uid="uid://db5uykbjet8a6" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient37.png" id="37_i7k1k"]
+[ext_resource type="Texture2D" uid="uid://2e0qypjddgqp" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient38.png" id="38_1s6hy"]
+[ext_resource type="Texture2D" uid="uid://jlxr0nc25sg4" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient39.png" id="39_rutv2"]
+[ext_resource type="Texture2D" uid="uid://fiku1fssbmh7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient40.png" id="40_rijf8"]
+[ext_resource type="Texture2D" uid="uid://b7eylxpxh417x" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient41.png" id="41_t83h3"]
+[ext_resource type="Texture2D" uid="uid://dl5oadf5kydlh" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient42.png" id="42_1l7l8"]
+[ext_resource type="Texture2D" uid="uid://cv6tppsgurrr1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient43.png" id="43_acu0k"]
+[ext_resource type="Texture2D" uid="uid://c6bqbu4qi4euo" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient44.png" id="44_huks2"]
+[ext_resource type="Texture2D" uid="uid://cvnbug2kvrlix" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient45.png" id="45_mpwep"]
+[ext_resource type="Texture2D" uid="uid://t6vl7q7d4c5d" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient46.png" id="46_snujt"]
+[ext_resource type="Texture2D" uid="uid://43hh8li4bmwb" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient47.png" id="47_v37jx"]
+[ext_resource type="Texture2D" uid="uid://j37rtl28l017" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient48.png" id="48_bjx7s"]
+[ext_resource type="Texture2D" uid="uid://dx0w4nvw28l1n" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient49.png" id="49_e4111"]
+[ext_resource type="Texture2D" uid="uid://dxoqqswgrrhui" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient50.png" id="50_ewe57"]
+[ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://Scenes/Main/animated_sprite_2d.gd" id="51_1jg25"]
+[ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="52_uygxn"]
+[ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="53_08p4i"]
+[ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="54_qd208"]
+[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="55_wdrce"]
+[ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="56_h5pn7"]
+[ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="57_vb1u5"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="58_a6oxl"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="59_mj3ph"]
+[ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="60_alga1"]
+[ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="61_868mf"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="62_8ftg7"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="63_s0mgc"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="64_lerby"]
+[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="65_vakpl"]
+[ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="66_eb8yh"]
+[ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="67_8mgc2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3078y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vb1u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gg788")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a6oxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mj3ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fpluf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ynvip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dfrm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_85nbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2atg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0phub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_alga1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_868mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8ftg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s0mgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lerby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vakpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eb8yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8mgc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dn3vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rxu6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2cshq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nxq4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_obl2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l3kbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wtyka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fto03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_boydj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qxuyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_m3vmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xrfci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bdl4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_lfvdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8nfvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_joedt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3qbw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_i7k1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1s6hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_rutv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rijf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_t83h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1l7l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_acu0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_huks2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mpwep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_snujt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_v37jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bjx7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_e4111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ewe57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_e4111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_bjx7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_v37jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_snujt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mpwep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_huks2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_acu0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1l7l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_t83h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rijf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_rutv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1s6hy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_i7k1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3qbw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_joedt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8nfvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_lfvdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bdl4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xrfci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_m3vmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qxuyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_boydj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fto03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wtyka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_l3kbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_obl2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nxq4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2cshq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rxu6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dn3vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8mgc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eb8yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vakpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lerby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s0mgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8ftg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_868mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_alga1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0phub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2atg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_85nbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dfrm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ynvip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fpluf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mj3ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a6oxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gg788")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vb1u5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dn3vg"]
+vertices = PackedVector2Array(460.133, 229, 342.273, 112, 527, 112, 527, 221, 521, 229, 562, 221, 562, 110.039, 787, 110.953, 787, 230, 530.039, 230, 521, 264, 529.039, 484, 895, 484, 643, 484, 643, 296, 817, 266, 611, 296, 611, 341, 592, 341, 592, 373, 611, 373, 611, 485, 561, 485, 582, 374, 561, 374, 582, 341, 562, 341, 562, 266, 459, -53, 783, -53, 783, 78, 288, 78, 277, 484, 277, 416, 517, 416, 517, 383.961, 444.844, 264, 276, 384.953, 288, 106.117, 276, -165.008, 459, -86, 895, -165.977, 817, -86)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(3, 5, 8, 9, 4), PackedInt32Array(10, 4, 9, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18), PackedInt32Array(19, 20, 21, 22, 23), PackedInt32Array(22, 24, 23), PackedInt32Array(19, 23, 25, 18), PackedInt32Array(25, 26, 27, 16), PackedInt32Array(28, 29, 30, 31), PackedInt32Array(11, 32, 33, 34), PackedInt32Array(10, 11, 34, 35), PackedInt32Array(36, 10, 35, 37), PackedInt32Array(38, 36, 37), PackedInt32Array(38, 37, 39, 31), PackedInt32Array(28, 31, 39, 40), PackedInt32Array(40, 39, 41, 42), PackedInt32Array(42, 41, 12, 15), PackedInt32Array(27, 15, 14, 16), PackedInt32Array(25, 16, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(601, 495, 621, 495, 621, 363, 602, 363, 602, 351, 621, 351, 621, 306, 633, 306, 633, 494, 905, 494, 905, -176, 266, -175, 266, 395, 507, 394, 507, 406, 267, 406, 267, 494, 539, 494, 540, 240, 797, 240, 797, 101, 552, 100, 552, 211, 537, 211, 537, 102, 318, 102, 456, 239, 511, 239, 511, 254, 449, 254, 298, 102, 298, 88, 793, 88, 793, -63, 469, -63, 469, -76, 807, -76, 807, 256, 552, 256, 552, 351, 572, 351, 572, 364, 551, 364, 551, 495)])
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_868mf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(10560, 7545)
+scale = Vector2(27.8472, 26.5863)
+sprite_frames = SubResource("SpriteFrames_dnbum")
+speed_scale = 0.5
+script = ExtResource("51_1jg25")
+
+[node name="Player" parent="." instance=ExtResource("52_uygxn")]
+position = Vector2(573, 532)
+script = ExtResource("53_08p4i")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
+z_index = -1
+tile_map_data = PackedByteArray("AAASAAYAAQAAAAAAAAASAAcAAQAAAAEAAAATAAYAAQABAAAAAAATAAcAAQABAAEAAAAUAAYAAQAAAAAAAAAUAAcAAQAAAAEAAAAVAAYAAQABAAAAAAAVAAcAAQABAAEAAAAWAAYAAQAAAAAAAAAWAAcAAQAAAAEAAAAXAAYAAQABAAAAAAAXAAcAAQABAAEAAAAYAAYAAQAAAAAAAAAYAAcAAQAAAAEAAAAZAAYAAQABAAAAAAAZAAcAAQABAAEAAAAaAAYAAQAAAAAAAAAaAAcAAQAAAAEAAAAbAAYAAQABAAAAAAAbAAcAAQABAAEAAAAcAAYAAQAAAAAAAAAcAAcAAQAAAAEAAAAdAAYAAQABAAAAAAAdAAcAAQABAAEAAAAeAAYAAQAAAAAAAAAeAAcAAQAAAAEAAAAfAAYAAQABAAAAAAAfAAcAAQABAAEAAAAgAAYAAQAAAAAAAAAgAAcAAQAAAAEAAAAhAAYAAQABAAAAAAAhAAcAAQABAAEAAAAiAAYAAQAAAAAAAAAiAAcAAQAAAAEAAAAjAAYAAQABAAAAAAAjAAcAAQABAAEAAAASAAgAAQAAAAAAAAASAAkAAQAAAAEAAAATAAgAAQABAAAAAAATAAkAAQABAAEAAAAUAAgAAQAAAAAAAAAUAAkAAQAAAAEAAAAVAAgAAQABAAAAAAAVAAkAAQABAAEAAAAWAAgAAQAAAAAAAAAWAAkAAQAAAAEAAAAXAAgAAQABAAAAAAAXAAkAAQABAAEAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAEAAAAZAAgAAQABAAAAAAAZAAkAAQABAAEAAAAaAAgAAQAAAAAAAAAaAAkAAQAAAAEAAAAbAAgAAQABAAAAAAAbAAkAAQABAAEAAAAcAAgAAQAAAAAAAAAcAAkAAQAAAAEAAAAdAAgAAQABAAAAAAAdAAkAAQABAAEAAAAeAAgAAQAAAAAAAAAeAAkAAQAAAAEAAAAfAAgAAQABAAAAAAAfAAkAAQABAAEAAAAgAAgAAQAAAAAAAAAgAAkAAQAAAAEAAAAhAAgAAQABAAAAAAAhAAkAAQABAAEAAAAiAAgAAQAAAAAAAAAiAAkAAQAAAAEAAAAjAAgAAQABAAAAAAAjAAkAAQABAAEAAAASAAoAAQAAAAAAAAASAAsAAQAAAAEAAAATAAoAAQABAAAAAAATAAsAAQABAAEAAAAUAAoAAQAAAAAAAAAUAAsAAQAAAAEAAAAVAAoAAQABAAAAAAAVAAsAAQABAAEAAAAWAAoAAQAAAAAAAAAWAAsAAQAAAAEAAAAXAAoAAQABAAAAAAAXAAsAAQABAAEAAAAYAAoAAQAAAAAAAAAYAAsAAQAAAAEAAAAZAAoAAQABAAAAAAAZAAsAAQABAAEAAAAaAAoAAQAAAAAAAAAaAAsAAQAAAAEAAAAbAAoAAQABAAAAAAAbAAsAAQABAAEAAAAcAAoAAQAAAAAAAAAcAAsAAQAAAAEAAAAdAAoAAQABAAAAAAAdAAsAAQABAAEAAAAeAAoAAQAAAAAAAAAeAAsAAQAAAAEAAAAfAAoAAQABAAAAAAAfAAsAAQABAAEAAAAgAAoAAQAAAAAAAAAgAAsAAQAAAAEAAAAhAAoAAQABAAAAAAAhAAsAAQABAAEAAAAiAAoAAQAAAAAAAAAiAAsAAQAAAAEAAAAjAAoAAQABAAAAAAAjAAsAAQABAAEAAAAiAAwAAQAAAAAAAAAiAA0AAQAAAAEAAAAjAAwAAQABAAAAAAAjAA0AAQABAAEAAAAgAAwAAQAAAAAAAAAgAA0AAQAAAAEAAAAhAAwAAQABAAAAAAAhAA0AAQABAAEAAAAeAAwAAQAAAAAAAAAeAA0AAQAAAAEAAAAfAAwAAQABAAAAAAAfAA0AAQABAAEAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAEAAAAdAAwAAQABAAAAAAAdAA0AAQABAAEAAAAaAAwAAQAAAAAAAAAaAA0AAQAAAAEAAAAbAAwAAQABAAAAAAAbAA0AAQABAAEAAAAYAAwAAQAAAAAAAAAYAA0AAQAAAAEAAAAZAAwAAQABAAAAAAAZAA0AAQABAAEAAAAWAAwAAQAAAAAAAAAWAA0AAQAAAAEAAAAXAAwAAQABAAAAAAAXAA0AAQABAAEAAAAUAAwAAQAAAAAAAAAUAA0AAQAAAAEAAAAVAAwAAQABAAAAAAAVAA0AAQABAAEAAAASAAwAAQAAAAAAAAASAA0AAQAAAAEAAAATAAwAAQABAAAAAAATAA0AAQABAAEAAAASAA4AAQAAAAAAAAASAA8AAQAAAAEAAAATAA4AAQABAAAAAAATAA8AAQABAAEAAAASABAAAQAAAAAAAAASABEAAQAAAAEAAAATABAAAQABAAAAAAATABEAAQABAAEAAAASABIAAQAAAAAAAAASABMAAQAAAAEAAAATABIAAQABAAAAAAATABMAAQABAAEAAAAUABIAAQAAAAAAAAAUABMAAQAAAAEAAAAVABIAAQABAAAAAAAVABMAAQABAAEAAAAWABIAAQAAAAAAAAAWABMAAQAAAAEAAAAXABIAAQABAAAAAAAXABMAAQABAAEAAAAYABIAAQAAAAAAAAAYABMAAQAAAAEAAAAZABIAAQABAAAAAAAZABMAAQABAAEAAAAaABIAAQAAAAAAAAAaABMAAQAAAAEAAAAbABIAAQABAAAAAAAbABMAAQABAAEAAAAcABIAAQAAAAAAAAAcABMAAQAAAAEAAAAdABIAAQABAAAAAAAdABMAAQABAAEAAAAeABIAAQAAAAAAAAAeABMAAQAAAAEAAAAfABIAAQABAAAAAAAfABMAAQABAAEAAAAgABIAAQAAAAAAAAAgABMAAQAAAAEAAAAhABIAAQABAAAAAAAhABMAAQABAAEAAAAiABIAAQAAAAAAAAAiABMAAQAAAAEAAAAjABIAAQABAAAAAAAjABMAAQABAAEAAAAiABAAAQAAAAAAAAAiABEAAQAAAAEAAAAjABAAAQABAAAAAAAjABEAAQABAAEAAAAiAA4AAQAAAAAAAAAiAA8AAQAAAAEAAAAjAA4AAQABAAAAAAAjAA8AAQABAAEAAAAgAA4AAQAAAAAAAAAgAA8AAQAAAAEAAAAhAA4AAQABAAAAAAAhAA8AAQABAAEAAAAeAA4AAQAAAAAAAAAeAA8AAQAAAAEAAAAfAA4AAQABAAAAAAAfAA8AAQABAAEAAAAcAA4AAQAAAAAAAAAcAA8AAQAAAAEAAAAdAA4AAQABAAAAAAAdAA8AAQABAAEAAAAaAA4AAQAAAAAAAAAaAA8AAQAAAAEAAAAbAA4AAQABAAAAAAAbAA8AAQABAAEAAAAaABAAAQAAAAAAAAAaABEAAQAAAAEAAAAbABAAAQABAAAAAAAbABEAAQABAAEAAAAgABAAAQAAAAAAAAAgABEAAQAAAAEAAAAhABAAAQABAAAAAAAhABEAAQABAAEAAAAkABAAAQAAAAAAAAAkABEAAQAAAAEAAAAlABAAAQABAAAAAAAlABEAAQABAAEAAAAkAA4AAQAAAAAAAAAkAA8AAQAAAAEAAAAlAA4AAQABAAAAAAAlAA8AAQABAAEAAAAcABAAAQAAAAAAAAAcABEAAQAAAAEAAAAdABAAAQABAAAAAAAdABEAAQABAAEAAAAeABAAAQAAAAAAAAAeABEAAQAAAAEAAAAfABAAAQABAAAAAAAfABEAAQABAAEAAAAmAA4AAQAAAAAAAAAmAA8AAQAAAAEAAAAnAA4AAQABAAAAAAAnAA8AAQABAAEAAAAYABAAAQAAAAAAAAAYABEAAQAAAAEAAAAZABAAAQABAAAAAAAZABEAAQABAAEAAAAWABAAAQAAAAAAAAAWABEAAQAAAAEAAAAXABAAAQABAAAAAAAXABEAAQABAAEAAAAUABAAAQAAAAAAAAAUABEAAQAAAAEAAAAVABAAAQABAAAAAAAVABEAAQABAAEAAAAUAA4AAQAAAAAAAAAUAA8AAQAAAAEAAAAVAA4AAQABAAAAAAAVAA8AAQABAAEAAAAWAA4AAQAAAAAAAAAWAA8AAQAAAAEAAAAXAA4AAQABAAAAAAAXAA8AAQABAAEAAAAYAA4AAQAAAAAAAAAYAA8AAQAAAAEAAAAZAA4AAQABAAAAAAAZAA8AAQABAAEAAAAkAAYAAQAAAAAAAAAkAAcAAQAAAAEAAAAlAAYAAQABAAAAAAAlAAcAAQABAAEAAAAmAAYAAQAAAAAAAAAmAAcAAQAAAAEAAAAnAAYAAQABAAAAAAAnAAcAAQABAAEAAAAoAAYAAQAAAAAAAAAoAAcAAQAAAAEAAAApAAYAAQABAAAAAAApAAcAAQABAAEAAAAqAAYAAQAAAAAAAAAqAAcAAQAAAAEAAAArAAYAAQABAAAAAAArAAcAAQABAAEAAAAqAAgAAQAAAAAAAAAqAAkAAQAAAAEAAAArAAgAAQABAAAAAAArAAkAAQABAAEAAAAoAAoAAQAAAAAAAAAoAAsAAQAAAAEAAAApAAoAAQABAAAAAAApAAsAAQABAAEAAAAoAAwAAQAAAAAAAAAoAA0AAQAAAAEAAAApAAwAAQABAAAAAAApAA0AAQABAAEAAAAoAA4AAQAAAAAAAAAoAA8AAQAAAAEAAAApAA4AAQABAAAAAAApAA8AAQABAAEAAAAoABAAAQAAAAAAAAAoABEAAQAAAAEAAAApABAAAQABAAAAAAApABEAAQABAAEAAAAoABIAAQAAAAAAAAAoABMAAQAAAAEAAAApABIAAQABAAAAAAApABMAAQABAAEAAAAmABIAAQAAAAAAAAAmABMAAQAAAAEAAAAnABIAAQABAAAAAAAnABMAAQABAAEAAAAkABIAAQAAAAAAAAAkABMAAQAAAAEAAAAlABIAAQABAAAAAAAlABMAAQABAAEAAAAmABAAAQAAAAAAAAAmABEAAQAAAAEAAAAnABAAAQABAAAAAAAnABEAAQABAAEAAAAkAAwAAQAAAAAAAAAkAA0AAQAAAAEAAAAlAAwAAQABAAAAAAAlAA0AAQABAAEAAAAkAAoAAQAAAAAAAAAkAAsAAQAAAAEAAAAlAAoAAQABAAAAAAAlAAsAAQABAAEAAAAkAAgAAQAAAAAAAAAkAAkAAQAAAAEAAAAlAAgAAQABAAAAAAAlAAkAAQABAAEAAAAmAAgAAQAAAAAAAAAmAAkAAQAAAAEAAAAnAAgAAQABAAAAAAAnAAkAAQABAAEAAAAmAAoAAQAAAAAAAAAmAAsAAQAAAAEAAAAnAAoAAQABAAAAAAAnAAsAAQABAAEAAAAmAAwAAQAAAAAAAAAmAA0AAQAAAAEAAAAnAAwAAQABAAAAAAAnAA0AAQABAAEAAAAoAAgAAQAAAAAAAAAoAAkAAQAAAAEAAAApAAgAAQABAAAAAAApAAkAAQABAAEAAAAqAAoAAQAAAAAAAAAqAAsAAQAAAAEAAAArAAoAAQABAAAAAAArAAsAAQABAAEAAAAqAAwAAQAAAAAAAAAqAA0AAQAAAAEAAAArAAwAAQABAAAAAAArAA0AAQABAAEAAAAqAA4AAQAAAAAAAAAqAA8AAQAAAAEAAAArAA4AAQABAAAAAAArAA8AAQABAAEAAAAqABAAAQAAAAAAAAAqABEAAQAAAAEAAAArABAAAQABAAAAAAArABEAAQABAAEAAAAqABIAAQAAAAAAAAAqABMAAQAAAAEAAAArABIAAQABAAAAAAArABMAAQABAAEAAAAqABQAAQAAAAAAAAAqABUAAQAAAAEAAAArABQAAQABAAAAAAArABUAAQABAAEAAAAoABQAAQAAAAAAAAAoABUAAQAAAAEAAAApABQAAQABAAAAAAApABUAAQABAAEAAAAmABQAAQAAAAAAAAAmABUAAQAAAAEAAAAnABQAAQABAAAAAAAnABUAAQABAAEAAAAkABQAAQAAAAAAAAAkABUAAQAAAAEAAAAlABQAAQABAAAAAAAlABUAAQABAAEAAAAiABQAAQAAAAAAAAAiABUAAQAAAAEAAAAjABQAAQABAAAAAAAjABUAAQABAAEAAAAgABQAAQAAAAAAAAAgABUAAQAAAAEAAAAhABQAAQABAAAAAAAhABUAAQABAAEAAAAeABQAAQAAAAAAAAAeABUAAQAAAAEAAAAfABQAAQABAAAAAAAfABUAAQABAAEAAAAcABQAAQAAAAAAAAAcABUAAQAAAAEAAAAdABQAAQABAAAAAAAdABUAAQABAAEAAAAaABQAAQAAAAAAAAAaABUAAQAAAAEAAAAbABQAAQABAAAAAAAbABUAAQABAAEAAAAYABQAAQAAAAAAAAAYABUAAQAAAAEAAAAZABQAAQABAAAAAAAZABUAAQABAAEAAAAWABQAAQAAAAAAAAAWABUAAQAAAAEAAAAXABQAAQABAAAAAAAXABUAAQABAAEAAAAUABQAAQAAAAAAAAAUABUAAQAAAAEAAAAVABQAAQABAAAAAAAVABUAAQABAAEAAAASABQAAQAAAAAAAAASABUAAQAAAAEAAAATABQAAQABAAAAAAATABUAAQABAAEAAAASABYAAQAAAAAAAAASABcAAQAAAAEAAAATABYAAQABAAAAAAATABcAAQABAAEAAAAUABYAAQAAAAAAAAAUABcAAQAAAAEAAAAVABYAAQABAAAAAAAVABcAAQABAAEAAAAWABYAAQAAAAAAAAAWABcAAQAAAAEAAAAXABYAAQABAAAAAAAXABcAAQABAAEAAAAYABYAAQAAAAAAAAAYABcAAQAAAAEAAAAZABYAAQABAAAAAAAZABcAAQABAAEAAAAaABYAAQAAAAAAAAAaABcAAQAAAAEAAAAbABYAAQABAAAAAAAbABcAAQABAAEAAAAcABYAAQAAAAAAAAAcABcAAQAAAAEAAAAdABYAAQABAAAAAAAdABcAAQABAAEAAAAeABYAAQAAAAAAAAAeABcAAQAAAAEAAAAfABYAAQABAAAAAAAfABcAAQABAAEAAAAgABYAAQAAAAAAAAAgABcAAQAAAAEAAAAhABYAAQABAAAAAAAhABcAAQABAAEAAAAiABYAAQAAAAAAAAAiABcAAQAAAAEAAAAjABYAAQABAAAAAAAjABcAAQABAAEAAAAkABYAAQAAAAAAAAAkABcAAQAAAAEAAAAlABYAAQABAAAAAAAlABcAAQABAAEAAAAmABYAAQAAAAAAAAAmABcAAQAAAAEAAAAnABYAAQABAAAAAAAnABcAAQABAAEAAAAoABYAAQAAAAAAAAAoABcAAQAAAAEAAAApABYAAQABAAAAAAApABcAAQABAAEAAAAqABYAAQAAAAAAAAAqABcAAQAAAAEAAAArABYAAQABAAAAAAArABcAAQABAAEAAAASABgAAQAAAAAAAAASABkAAQAAAAEAAAATABgAAQABAAAAAAATABkAAQABAAEAAAAUABgAAQAAAAAAAAAUABkAAQAAAAEAAAAVABgAAQABAAAAAAAVABkAAQABAAEAAAAWABgAAQAAAAAAAAAWABkAAQAAAAEAAAAXABgAAQABAAAAAAAXABkAAQABAAEAAAAYABgAAQAAAAAAAAAYABkAAQAAAAEAAAAZABgAAQABAAAAAAAZABkAAQABAAEAAAAaABgAAQAAAAAAAAAaABkAAQAAAAEAAAAbABgAAQABAAAAAAAbABkAAQABAAEAAAAcABgAAQAAAAAAAAAcABkAAQAAAAEAAAAdABgAAQABAAAAAAAdABkAAQABAAEAAAAeABgAAQAAAAAAAAAeABkAAQAAAAEAAAAfABgAAQABAAAAAAAfABkAAQABAAEAAAAgABgAAQAAAAAAAAAgABkAAQAAAAEAAAAhABgAAQABAAAAAAAhABkAAQABAAEAAAAiABgAAQAAAAAAAAAiABkAAQAAAAEAAAAjABgAAQABAAAAAAAjABkAAQABAAEAAAAkABgAAQAAAAAAAAAkABkAAQAAAAEAAAAlABgAAQABAAAAAAAlABkAAQABAAEAAAAmABgAAQAAAAAAAAAmABkAAQAAAAEAAAAnABgAAQABAAAAAAAnABkAAQABAAEAAAAoABgAAQAAAAAAAAAoABkAAQAAAAEAAAApABgAAQABAAAAAAApABkAAQABAAEAAAAqABgAAQAAAAAAAAAqABkAAQAAAAEAAAArABgAAQABAAAAAAArABkAAQABAAEAAAAsAAYAAQAAAAAAAAAsAAcAAQAAAAEAAAAtAAYAAQABAAAAAAAtAAcAAQABAAEAAAAuAAYAAQAAAAAAAAAuAAcAAQAAAAEAAAAvAAYAAQABAAAAAAAvAAcAAQABAAEAAAAwAAYAAQAAAAAAAAAwAAcAAQAAAAEAAAAxAAYAAQABAAAAAAAxAAcAAQABAAEAAAAyAAYAAQAAAAAAAAAyAAcAAQAAAAEAAAAzAAYAAQABAAAAAAAzAAcAAQABAAEAAAA0AAYAAQAAAAAAAAA0AAcAAQAAAAEAAAA1AAYAAQABAAAAAAA1AAcAAQABAAEAAAA0AAgAAQAAAAAAAAA0AAkAAQAAAAEAAAA1AAgAAQABAAAAAAA1AAkAAQABAAEAAAA0AAoAAQAAAAAAAAA0AAsAAQAAAAEAAAA1AAoAAQABAAAAAAA1AAsAAQABAAEAAAA0AAwAAQAAAAAAAAA0AA0AAQAAAAEAAAA1AAwAAQABAAAAAAA1AA0AAQABAAEAAAA0AA4AAQAAAAAAAAA0AA8AAQAAAAEAAAA1AA4AAQABAAAAAAA1AA8AAQABAAEAAAA0ABAAAQAAAAAAAAA0ABEAAQAAAAEAAAA1ABAAAQABAAAAAAA1ABEAAQABAAEAAAA0ABIAAQAAAAAAAAA0ABMAAQAAAAEAAAA1ABIAAQABAAAAAAA1ABMAAQABAAEAAAA0ABQAAQAAAAAAAAA0ABUAAQAAAAEAAAA1ABQAAQABAAAAAAA1ABUAAQABAAEAAAAyABQAAQAAAAAAAAAyABUAAQAAAAEAAAAzABQAAQABAAAAAAAzABUAAQABAAEAAAAwABQAAQAAAAAAAAAwABUAAQAAAAEAAAAxABQAAQABAAAAAAAxABUAAQABAAEAAAAuABQAAQAAAAAAAAAuABUAAQAAAAEAAAAvABQAAQABAAAAAAAvABUAAQABAAEAAAAsABQAAQAAAAAAAAAsABUAAQAAAAEAAAAtABQAAQABAAAAAAAtABUAAQABAAEAAAAsABIAAQAAAAAAAAAsABMAAQAAAAEAAAAtABIAAQABAAAAAAAtABMAAQABAAEAAAAuABIAAQAAAAAAAAAuABMAAQAAAAEAAAAvABIAAQABAAAAAAAvABMAAQABAAEAAAAwABIAAQAAAAAAAAAwABMAAQAAAAEAAAAxABIAAQABAAAAAAAxABMAAQABAAEAAAAyABIAAQAAAAAAAAAyABMAAQAAAAEAAAAzABIAAQABAAAAAAAzABMAAQABAAEAAAAyABAAAQAAAAAAAAAyABEAAQAAAAEAAAAzABAAAQABAAAAAAAzABEAAQABAAEAAAAwABAAAQAAAAAAAAAwABEAAQAAAAEAAAAxABAAAQABAAAAAAAxABEAAQABAAEAAAAuABAAAQAAAAAAAAAuABEAAQAAAAEAAAAvABAAAQABAAAAAAAvABEAAQABAAEAAAAsABAAAQAAAAAAAAAsABEAAQAAAAEAAAAtABAAAQABAAAAAAAtABEAAQABAAEAAAAsAA4AAQAAAAAAAAAsAA8AAQAAAAEAAAAtAA4AAQABAAAAAAAtAA8AAQABAAEAAAAuAA4AAQAAAAAAAAAuAA8AAQAAAAEAAAAvAA4AAQABAAAAAAAvAA8AAQABAAEAAAAwAA4AAQAAAAAAAAAwAA8AAQAAAAEAAAAxAA4AAQABAAAAAAAxAA8AAQABAAEAAAAwAAwAAQAAAAAAAAAwAA0AAQAAAAEAAAAxAAwAAQABAAAAAAAxAA0AAQABAAEAAAAyAAwAAQAAAAAAAAAyAA0AAQAAAAEAAAAzAAwAAQABAAAAAAAzAA0AAQABAAEAAAAuAAwAAQAAAAAAAAAuAA0AAQAAAAEAAAAvAAwAAQABAAAAAAAvAA0AAQABAAEAAAAsAAwAAQAAAAAAAAAsAA0AAQAAAAEAAAAtAAwAAQABAAAAAAAtAA0AAQABAAEAAAAsAAoAAQAAAAAAAAAsAAsAAQAAAAEAAAAtAAoAAQABAAAAAAAtAAsAAQABAAEAAAAsAAgAAQAAAAAAAAAsAAkAAQAAAAEAAAAtAAgAAQABAAAAAAAtAAkAAQABAAEAAAAuAAgAAQAAAAAAAAAuAAkAAQAAAAEAAAAvAAgAAQABAAAAAAAvAAkAAQABAAEAAAAwAAgAAQAAAAAAAAAwAAkAAQAAAAEAAAAxAAgAAQABAAAAAAAxAAkAAQABAAEAAAAyAAgAAQAAAAAAAAAyAAkAAQAAAAEAAAAzAAgAAQABAAAAAAAzAAkAAQABAAEAAAAyAAoAAQAAAAAAAAAyAAsAAQAAAAEAAAAzAAoAAQABAAAAAAAzAAsAAQABAAEAAAAwAAoAAQAAAAAAAAAwAAsAAQAAAAEAAAAxAAoAAQABAAAAAAAxAAsAAQABAAEAAAAuAAoAAQAAAAAAAAAuAAsAAQAAAAEAAAAvAAoAAQABAAAAAAAvAAsAAQABAAEAAAAyAA4AAQAAAAAAAAAyAA8AAQAAAAEAAAAzAA4AAQABAAAAAAAzAA8AAQABAAEAAAAyABYAAQAAAAAAAAAyABcAAQAAAAEAAAAzABYAAQABAAAAAAAzABcAAQABAAEAAAAwABYAAQAAAAAAAAAwABcAAQAAAAEAAAAxABYAAQABAAAAAAAxABcAAQABAAEAAAAuABYAAQAAAAAAAAAuABcAAQAAAAEAAAAvABYAAQABAAAAAAAvABcAAQABAAEAAAAsABYAAQAAAAAAAAAsABcAAQAAAAEAAAAtABYAAQABAAAAAAAtABcAAQABAAEAAAAsABgAAQAAAAAAAAAsABkAAQAAAAEAAAAtABgAAQABAAAAAAAtABkAAQABAAEAAAAuABgAAQAAAAAAAAAuABkAAQAAAAEAAAAvABgAAQABAAAAAAAvABkAAQABAAEAAAAwABgAAQAAAAAAAAAwABkAAQAAAAEAAAAxABgAAQABAAAAAAAxABkAAQABAAEAAAAyABgAAQAAAAAAAAAyABkAAQAAAAEAAAAzABgAAQABAAAAAAAzABkAAQABAAEAAAA0ABgAAQAAAAAAAAA0ABkAAQAAAAEAAAA1ABgAAQABAAAAAAA1ABkAAQABAAEAAAA0ABYAAQAAAAAAAAA0ABcAAQAAAAEAAAA1ABYAAQABAAAAAAA1ABcAAQABAAEAAAA=")
+tile_set = ExtResource("54_qd208")
+
+[node name="Porsche" parent="." instance=ExtResource("55_wdrce")]
+position = Vector2(572, 582)
+rotation = 1.5708
+scale = Vector2(0.09, 0.09)
+level_controller_path = NodePath("../Node2D")
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(413, 501)
+rotation = 1.5708
+scale = Vector2(1, 4.75)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(586, -181)
+rotation = 1.5708
+scale = Vector2(1, 10)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(911, 161)
+scale = Vector2(1, 10.45)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(673, 247)
+rotation = 1.5708
+scale = Vector2(1, 4)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(627, 407)
+rotation = 3.14159
+scale = Vector2(1, 3)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(556, 358)
+rotation = 1.5708
+scale = Vector2(1, 0.45)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(618, 358)
+rotation = 1.5708
+scale = Vector2(1, 0.42)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(261, 159)
+scale = Vector2(1, 10.45)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(759, 501)
+rotation = 1.5708
+scale = Vector2(1, 4.75)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(546, 374)
+rotation = 3.14159
+scale = Vector2(1, 4)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(800, 45)
+rotation = 3.14159
+scale = Vector2(1, 3.5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("57_vb1u5")]
+z_index = -1
+position = Vector2(800, 200)
+scale = Vector2(1.5, 1.4)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(548, 96)
+rotation = 1.5708
+scale = Vector2(1, 7.55)
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(546, 151)
+rotation = 3.14159
+scale = Vector2(1, 1.75)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("57_vb1u5")]
+z_index = -1
+position = Vector2(758, -66)
+rotation = 1.5708
+scale = Vector2(1.5, 1.4)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(600, -66)
+rotation = 1.5708
+scale = Vector2(1, 4)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(378, 173)
+rotation = 2.35619
+scale = Vector2(1, 3.23)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(479.5, 247)
+rotation = 1.5708
+scale = Vector2(1, 0.9)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("56_h5pn7")]
+position = Vector2(424, 399)
+rotation = 1.5708
+scale = Vector2(1, 2.5)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("57_vb1u5")]
+z_index = -1
+position = Vector2(306, 399)
+rotation = 1.5708
+scale = Vector2(1.5, 1.4)
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+script = ExtResource("58_a6oxl")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D" instance=ExtResource("59_mj3ph")]
+visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_dn3vg")
+navigation_layers = 16
+
+[node name="Enemy5" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(668, 347)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy4" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(751, 195)
+weapon_scene = ExtResource("62_8ftg7")
+
+[node name="Enemy3" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(492, 132)
+weapon_scene = ExtResource("63_s0mgc")
+
+[node name="Enemy7" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(753, -24)
+weapon_scene = ExtResource("64_lerby")
+
+[node name="Enemy2" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(847, 139)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(323, 196)
+weapon_scene = ExtResource("64_lerby")
+
+[node name="WeaponPickup" parent="." instance=ExtResource("65_vakpl")]
+position = Vector2(624, 533)
+weapon_scene = ExtResource("66_eb8yh")
+weapon_texture = ExtResource("67_8mgc2")
+texture_scale = Vector2(0.5, 0.5)

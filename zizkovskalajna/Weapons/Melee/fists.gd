@@ -2,7 +2,7 @@ extends Node2D
 class_name MeleeWeapon 
 
 @export var cooldown_time: float = 0.5
-@export var range: float = 50
+@export var range: float = 40
 var weapon_owner: Node = null
 var can_punch: bool = true
 

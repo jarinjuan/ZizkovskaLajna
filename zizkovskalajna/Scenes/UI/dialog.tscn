@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://mcrgladtar3q"]
+
+[ext_resource type="Texture2D" uid="uid://bhe7d5qoxnkqg" path="res://Assets/Sprites/Tilesets/sprite_darkbluewall.png" id="2_lv3fa"]
+[ext_resource type="FontFile" uid="uid://c5t5cxhn1257c" path="res://Assets/Fonts/r-classic_8.ttf" id="3_joe48"]
+[ext_resource type="Shader" uid="uid://dd4n44e745fop" path="res://Scenes/UI/dialog.gdshader" id="3_lv3fa"]
+[ext_resource type="Texture2D" uid="uid://bd6gvsxqiadvk" path="res://Assets/Sprites/Characters/Character1/character1Face.png" id="4_gur6o"]
+[ext_resource type="AudioStream" uid="uid://bh8sqhcm5hui7" path="res://Assets/Audio/SFX/blop.wav" id="5_lv3fa"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_p4jgp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_joe48"]
+shader = ExtResource("3_lv3fa")
+shader_parameter/speed = 1.0
+shader_parameter/amplitude = 0.05
+
+[node name="Dialog" type="CanvasLayer"]
+layer = 127
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = 114.0
+offset_right = 337.0
+offset_bottom = 186.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.658824)
+
+[node name="textBackground" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.592157)
+offset_left = -1.0
+offset_top = 115.0
+offset_right = 256.0
+offset_bottom = 180.0
+texture = SubResource("ImageTexture_p4jgp")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="characterBackground" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.156863)
+offset_left = 256.0
+offset_top = 116.0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_lv3fa")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="cont" type="HBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 116.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="text" type="RichTextLabel" parent="cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_joe48")
+theme_override_font_sizes/normal_font_size = 8
+text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce consectetuer risus a nunc. Duis risus. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Donec quis nibh at felis congue commodo. Aliquam erat volutpat. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nulla pulvinar eleifend sem. Praesent in mauris eu tortor porttitor accumsan.
+
+Vivamus porttitor turpis ac leo. Maecenas sollicitudin. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Etiam bibendum elit eget erat. In convallis. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Nunc dapibus tortor vel mi dapibus sollicitudin. Integer malesuada. Quisque tincidunt scelerisque libero. Mauris tincidunt sem sed arcu. Aliquam erat volutpat. Curabitur bibendum justo non orci. In dapibus augue non sapien. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim."
+scroll_following = true
+
+[node name="character" type="TextureRect" parent="cont"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_joe48")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_gur6o")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="blop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lv3fa")
+bus = &"Speaking"

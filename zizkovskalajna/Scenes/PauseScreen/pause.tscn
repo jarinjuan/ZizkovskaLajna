@@ -1,0 +1,162 @@
+[gd_scene load_steps=36 format=3 uid="uid://bq5ga8s5pql7y"]
+
+[ext_resource type="Script" uid="uid://ly5mf7y1p8so" path="res://Scenes/PauseScreen/pause.gd" id="1_u0mc4"]
+[ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="2_va7ja"]
+[ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://Scenes/Main/control.gdshader" id="4_aac60"]
+[ext_resource type="Script" uid="uid://yriwsvyb45k7" path="res://Scenes/Main/rich_text_label.gd" id="5_qx4j6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0mc4"]
+shader = ExtResource("4_aac60")
+shader_parameter/time_speed = 0.1
+shader_parameter/noise_intensity = 0.0
+shader_parameter/line_thickness = 0.0
+shader_parameter/glitch_strength = 0.02
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bwu7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vje01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udmpc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aac60"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qx4j6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4pn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fs65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v05s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3uip1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_282a5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtxol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jvte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltd80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpc5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_836to"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkawb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mmhx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odg4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e4o3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtecy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnomy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_52505"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6rxu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rf1x6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpf08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s23r1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj7pb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rcxd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5o8dt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2f42"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_u0mc4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_u0mc4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.243137)
+
+[node name="ButtonContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.565002
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="ButtonContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_va7ja")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bwu7o")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vje01")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_udmpc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_aac60")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qx4j6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_h4pn7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1fs65")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5v05s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3uip1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_282a5")
+text = "RESUME"
+
+[node name="RestartButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_va7ja")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtxol")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7jvte")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ltd80")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gpc5q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_836to")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wkawb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3mmhx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_odg4m")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4e4o3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wtecy")
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="ButtonContainer/ButtonsVBox"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_va7ja")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dnomy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_52505")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p6rxu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rf1x6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cpf08")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_s23r1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_lj7pb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rcxd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5o8dt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n2f42")
+text = "QUIT"
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_va7ja")
+theme_override_font_sizes/normal_font_size = 25
+text = "Zizkovska lajna"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_qx4j6")

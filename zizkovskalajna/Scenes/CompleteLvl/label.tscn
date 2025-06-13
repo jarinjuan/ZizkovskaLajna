@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqg4vy71yi4ky"]
+
+[node name="Label" type="CanvasLayer"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 323.0
+offset_bottom = 181.0
+text = "Go to porsche!"
+horizontal_alignment = 1

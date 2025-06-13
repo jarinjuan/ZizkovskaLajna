@@ -11,15 +11,20 @@ func shoot(target_pos: Vector2) -> void:
 		return
 
 	var bullet = bullet_scene.instantiate()
-	bullet.global_position = muzzle.global_position
-	
-	var angle = (target_pos - weapon_owner.global_position).angle()
-	var direction = Vector2.RIGHT.rotated(angle)
-	bullet.rotation = angle
+
+	# Muzzle získaný z hráče
+	var muzzle_pos = weapon_owner.get_muzzle_position()
+	bullet.global_position = muzzle_pos
+
+	# Směr podle rotace hráče (čili celé zbraně)
+	var direction = Vector2.RIGHT.rotated(weapon_owner.rotation)
 	bullet.direction = direction
+	bullet.rotation = direction.angle()
 
 	bullet.shooter = weapon_owner
-	get_tree().root.add_child(bullet)
+	get_tree().current_scene.add_child(bullet)
+
+	$ShootSound.play()
 
 	ammo -= 1
 	can_fire = false

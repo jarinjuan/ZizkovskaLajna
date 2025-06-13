@@ -1,15 +1,18 @@
 extends Button
 
-@onready var music_player = $"../AudioStreamPlayer2D"
-var playbackPosition = 0
+
 
 
 func _on_button_exit_pressed() -> void:
-	get_tree().quit()
+	GameManager.quit_game()
 
 func _on_button_mute_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-			playbackPosition = music_player.get_playback_position()
-			music_player.stop()			
-	else:
-			music_player.play(playbackPosition)
+	Audio.mute_music(toggled_on)
+
+
+func _on_button_options_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_start_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Level Selector/level_selector.tscn")

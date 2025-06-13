@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkgt36at7nmr4"]
+
+[ext_resource type="Texture2D" uid="uid://cswk10cxp65w" path="res://Assets/Sprites/Objects/porsche911.png" id="1_kdbvw"]
+[ext_resource type="Script" uid="uid://b7yhqnensjt1k" path="res://Scenes/Objects/Porsche/porsche.gd" id="1_lwkbc"]
+[ext_resource type="Texture2D" uid="uid://ir6x5b85rvab" path="res://Assets/Animations/Porsche_door/porsche911.png" id="3_4pani"]
+[ext_resource type="Texture2D" uid="uid://ndjmkowx6myw" path="res://Assets/Animations/Porsche_door/porsche911-6.png" id="4_7t750"]
+[ext_resource type="Texture2D" uid="uid://ntmpf8db5182" path="res://Assets/Animations/Porsche_door/porsche911-5.png" id="5_qq25d"]
+[ext_resource type="Texture2D" uid="uid://dgnr6iwxonnfm" path="res://Assets/Animations/Porsche_door/porsche911-4.png" id="6_y61ho"]
+[ext_resource type="Texture2D" uid="uid://svtgk2l3xwee" path="res://Assets/Animations/Porsche_door/porsche911-3.png" id="7_456ly"]
+[ext_resource type="Texture2D" uid="uid://bkqvynm71wvmt" path="res://Assets/Animations/Porsche_door/porsche911-2.png" id="8_1r87u"]
+[ext_resource type="Texture2D" uid="uid://bjew20dms7fum" path="res://Assets/Animations/Porsche_door/porsche911-1.png" id="9_3cwwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1usqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4pani")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7t750")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qq25d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y61ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_456ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1r87u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3cwwi")
+}],
+"loop": false,
+"name": &"openDoor",
+"speed": 12.0
+}]
+
+[node name="Porsche" type="Area2D"]
+collision_layer = 16
+collision_mask = 15
+script = ExtResource("1_lwkbc")
+
+[node name="Porsche" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kdbvw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(291, 0, 336, -1, 338, 31, 322, 33, 323, 47, 290, 48, 288, 143, 306, 142, 303, 334, 288, 335, 288, 399, 271, 401, 272, 432, 256, 433, 255, 448, 226, 450, 224, 465, 179, 466, 180, 480, -143, 480, -143, 465, -194, 465, -194, 447, -226, 446, -226, 432, -242, 432, -243, 400, -259, 399, -256, 336, -274, 338, -270, 145, -256, 144, -257, 47, -290, 47, -290, 33, -307, 32, -304, -1, -258, -2, -256, -162, -275, -162, -271, -354, -256, -354, -257, -386, -241, -386, -242, -420, -224, -417, -223, -433, -208, -433, -208, -450, -193, -449, -193, -465, -175, -465, -177, -498, -145, -497, -144, -514, 178, -513, 179, -497, 209, -498, 211, -463, 225, -465, 227, -446, 244, -449, 244, -430, 258, -432, 257, -416, 273, -416, 271, -385, 288, -384, 289, -353, 306, -351, 306, -160, 290, -160)
+
+[node name="PorscheDoor" type="AnimatedSprite2D" parent="."]
+scale = Vector2(16.115, 16.115)
+sprite_frames = SubResource("SpriteFrames_1usqd")
+animation = &"openDoor"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
