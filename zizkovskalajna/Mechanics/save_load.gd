@@ -36,8 +36,7 @@ static func load_data():
 	if !FileAccess.file_exists(SAVE_FILE):
 		Log.write_log("Youre trying to load when thers no save", Log.MessageLevel.WARNING)
 		data = data_deafult
-		print(0)
-		return
+		save_data()
 		
 	var file = FileAccess.open(SAVE_FILE,FileAccess.READ)
 	if file == null:

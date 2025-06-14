@@ -12,6 +12,7 @@ var level_image = []
 var current_level = int(GameManager.max_unlocked_level - 1)
 
 func _ready():
+	
 	var dir = DirAccess.open(LEVEL_SCENE_PATH)
 	BIG_BUTTON_SIZE = $center.size
 	SMALL_BUTTON_SIZE = $left.size
@@ -40,6 +41,8 @@ func _ready():
 		file_name = dir.get_next()
 		
 	dir.list_dir_end()
+	if current_level + 1 > level_scene_paths.size():
+		current_level = level_scene_paths.size() - 1
 	$levelLabel.text = str(current_level+1)
 	$center.texture = resize_get_texture(level_image[current_level].get_image(), BIG_BUTTON_SIZE)
 	if current_level + 1 < level_scene_paths.size():
