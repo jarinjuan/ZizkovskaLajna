@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://scu5wudpsmj3"]
+[gd_scene load_steps=10 format=3 uid="uid://scu5wudpsmj3"]
 
 [ext_resource type="Script" uid="uid://dhpj3jxvrqjeo" path="res://Enemy/enemy.gd" id="1_px1sc"]
 [ext_resource type="Texture2D" uid="uid://b1si6t0reful3" path="res://Assets/Sprites/Characters/Enemies/sprite_enemy_dead.png" id="2_am0pq"]
@@ -10,34 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://cwevp4ymqeaej" path="res://Assets/Sprites/Characters/Enemies/EnemyShotgun.png" id="8_47ove"]
 [ext_resource type="Texture2D" uid="uid://chw2egj0jdpvn" path="res://Assets/Sprites/Characters/Player/Player_BBat.png" id="9_efk13"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efk13"]
-size = Vector2(13.6482, 22.9722)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmr1a"]
-size = Vector2(56.89, 35.4042)
-
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 22
 wall_min_slide_angle = 0.881391
 script = ExtResource("1_px1sc")
 
-[node name="aa" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.40535, -0.0639644)
-shape = SubResource("RectangleShape2D_efk13")
-one_way_collision_margin = 0.0
-
 [node name="AliveShape" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-6, -9, -6, 8, -2, 12, 2, 12, 7, 9, 7, -8, 2, -12, -3, -12)
 
 [node name="KnockedShape" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-30, -15, -30, 17, -25, 17, -10, 17, 6, 17, 33, 17, 33, -15, -2, -15)
-
-[node name="kk" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(2.02692, 1.15221)
-shape = SubResource("RectangleShape2D_nmr1a")
 
 [node name="Enemy_Dead" type="Sprite2D" parent="."]
 visible = false

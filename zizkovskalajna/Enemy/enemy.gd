@@ -46,7 +46,6 @@ var blood_textures := [
 
 func _ready():
 	home_position = global_position
-	add_to_group("enemies")
 	add_to_group("characters")
 	add_to_group("enemy")
 	$Enemy_M4.visible = false
@@ -414,6 +413,8 @@ func die():
 		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
+	$AliveShape.disabled = true
+	$KnockedShape.disabled = true
 	$AliveShape.queue_free()
 	$KnockedShape.queue_free()
 	enemy_died.emit()

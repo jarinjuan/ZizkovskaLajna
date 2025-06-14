@@ -12,6 +12,7 @@ func _ready():
 	else: $tempText.visible = false
 		
 	display_formatted_time(elapsed_time)
+	Audio.play_lvlc_music()
 
 
 func display_formatted_time(time_in_seconds: float):
@@ -36,5 +37,6 @@ func _on_next_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	Ui.close_ammo()
-	Audio.play_music() 
+	Audio.play_bg_music() 
+	Audio.stop_lvlc_music()
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

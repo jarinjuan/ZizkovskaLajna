@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhmvk35f6itpo"]
+
+[ext_resource type="Script" uid="uid://cgg2umty1toy1" path="res://Scenes/Objects/Door/door.gd" id="1_umirr"]
+[ext_resource type="Texture2D" uid="uid://chgk4sg2sbky3" path="res://Assets/Animations/Doors/Door5.png" id="2_iixy7"]
+[ext_resource type="Texture2D" uid="uid://csqqft3sha14" path="res://Assets/Animations/Doors/Door4.png" id="3_euy11"]
+[ext_resource type="Texture2D" uid="uid://t1sk7rtex54a" path="res://Assets/Animations/Doors/Door3.png" id="4_4bjyk"]
+[ext_resource type="Texture2D" uid="uid://b7ps0vfvciab7" path="res://Assets/Animations/Doors/Door2.png" id="5_vfpc4"]
+[ext_resource type="Texture2D" uid="uid://cd2cencj6m1tv" path="res://Assets/Animations/Doors/Door1.png" id="6_g7gyo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h8jl"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_iixy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_euy11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4bjyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vfpc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g7gyo")
+}],
+"loop": false,
+"name": &"close",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_g7gyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vfpc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4bjyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_euy11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iixy7")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}]
+
+[node name="Door" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("1_umirr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4h8jl")
+animation = &"open"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, -8, -2, -8, -2, 7, -3, 7)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-4, -8, -4, 7, -1, 7, -1, -8)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

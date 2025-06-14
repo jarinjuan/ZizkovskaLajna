@@ -14,7 +14,8 @@ var active_ammo_ui = false
 
 
 func _ready():
-	Audio.stop_music()
+	Audio.stop_bg_music()
+	Audio.stop_lvlc_music()
 	current_level_time = 0.0
 	enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
@@ -99,5 +100,5 @@ func _restart_game():
 func _quit_game():
 	_unpause_game()
 	Ui.close_ammo()
-	Audio.play_music() 
+	Audio.play_bg_music() 
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

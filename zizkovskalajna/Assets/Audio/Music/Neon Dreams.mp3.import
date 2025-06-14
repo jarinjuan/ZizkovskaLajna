@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv6mfhk1hv50v"
+path="res://.godot/imported/Neon Dreams.mp3-f7ba8b62155faf549eb78618b3fba0df.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Neon Dreams.mp3"
+dest_files=["res://.godot/imported/Neon Dreams.mp3-f7ba8b62155faf549eb78618b3fba0df.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
