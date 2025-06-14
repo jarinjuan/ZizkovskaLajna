@@ -22,25 +22,35 @@ collision_mask = 22
 wall_min_slide_angle = 0.881391
 script = ExtResource("1_px1sc")
 
-[node name="AliveShape" type="CollisionShape2D" parent="."]
+[node name="aa" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.40535, -0.0639644)
 shape = SubResource("RectangleShape2D_efk13")
 one_way_collision_margin = 0.0
 
-[node name="KnockedShape" type="CollisionShape2D" parent="."]
+[node name="AliveShape" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, -9, -6, 8, -2, 12, 2, 12, 7, 9, 7, -8, 2, -12, -3, -12)
+
+[node name="KnockedShape" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, -15, -30, 17, -25, 17, -10, 17, 6, 17, 33, 17, 33, -15, -2, -15)
+
+[node name="kk" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2.02692, 1.15221)
 shape = SubResource("RectangleShape2D_nmr1a")
 
 [node name="Enemy_Dead" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_am0pq")
 
 [node name="Enemy_Unarmed" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.91738e-07)
+position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("3_eqilm")
 
 [node name="Enemy_Knocked" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("4_eqilm")
 
@@ -62,31 +72,37 @@ visible = false
 position = Vector2(0.2738, 11.7364)
 
 [node name="Enemy_M4" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.91738e-07)
+visible = false
+position = Vector2(3, -4.91738e-07)
 texture = ExtResource("5_0rspp")
 
 [node name="Muzzle" type="Marker2D" parent="Enemy_M4"]
-position = Vector2(22, -6)
+position = Vector2(0, -7)
 
 [node name="Enemy_Pistol" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(9, 0)
 texture = ExtResource("6_efk13")
 
 [node name="Muzzle" type="Marker2D" parent="Enemy_Pistol"]
-position = Vector2(22, -6)
+position = Vector2(-4, -6)
 
 [node name="Enemy_Uzi" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.91738e-07)
+visible = false
+position = Vector2(8, -4.91738e-07)
 texture = ExtResource("7_nmr1a")
 
 [node name="Muzzle" type="Marker2D" parent="Enemy_Uzi"]
-position = Vector2(22, -6)
+position = Vector2(-3, -9)
 
 [node name="Enemy_Shotgun" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, -4.91738e-07)
+visible = false
+position = Vector2(4, -4.91738e-07)
 texture = ExtResource("8_47ove")
 
 [node name="Muzzle" type="Marker2D" parent="Enemy_Shotgun"]
-position = Vector2(22, -6)
+position = Vector2(0, -6)
 
 [node name="Enemy_Bbat" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("9_efk13")

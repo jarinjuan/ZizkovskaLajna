@@ -1,17 +1,25 @@
 extends Area2D
 class_name Bullet
 
+@export var appear_after_distance: float = 20.0
 @export var speed: float = 600.0
 var direction: Vector2 = Vector2.ZERO
 var shooter: Node = null  # např. hráč nebo enemy
-
-
+@onready var sprite: Sprite2D = $Sprite2D
+var distance_traveled := 0.0
 
 func _ready():
 	direction = Vector2.RIGHT.rotated(rotation)
+	sprite.visible = false
 
 func _physics_process(delta):
+	var move = direction * speed * delta
 	position += direction * speed * delta
+	distance_traveled += move.length()
+	
+	if not sprite.visible and distance_traveled >= appear_after_distance:
+		sprite.visible = true
+
 
 func _on_body_entered(body: Node) -> void:
 	if not shooter:
