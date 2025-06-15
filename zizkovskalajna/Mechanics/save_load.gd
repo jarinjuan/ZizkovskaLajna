@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 
 class_name Save_Load
 
@@ -9,7 +9,16 @@ const SAVE_FILE = SAVE_PATH + "save.json"
 #If you want to get or store some data you can acces it with |Save_Load.data["key"]|
 #But if you want to get it you have to load it firts or when store it save after with functions
 const data_deafult = {
-	"max_unlocked_level": 1
+	"max_unlocked_level": 1,
+	"master_value": 0.5,
+	"master_mute": false,
+	"music_value": 0.5,
+	"music_mute": false,
+	"sfx_value": 0.5,
+	"sfx_mute": false,
+	"dialog_value": 0.5,
+	"dialog_mute": false,
+	"input_map": deafult_map
 }
 
 static var data = {}
@@ -33,6 +42,8 @@ static func save_data():
 	return
 
 static func load_data():
+	InputMap.load_from_project_settings()
+	print(InputMap.get_actions())
 	if !FileAccess.file_exists(SAVE_FILE):
 		Log.write_log("Youre trying to load when thers no save", Log.MessageLevel.WARNING)
 		data = data_deafult
@@ -62,5 +73,14 @@ static func load_data():
 		data = data_deafult.duplicate(true)
 		print(3)
 		return
-
 	data = parsed_data
+
+const deafult_map = {
+	"move_up": KEY_W,
+	"move_down": KEY_S,
+	"move_right": KEY_D,
+	"move_left": KEY_A,
+	"mouse_right": -2,
+	"fire": -1,
+	"reset": KEY_R
+}

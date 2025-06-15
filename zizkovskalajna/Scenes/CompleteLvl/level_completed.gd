@@ -28,6 +28,8 @@ func _on_next_button_pressed() -> void:
 		var next_level_path = "res://Scenes/Levels/level_%02d.tscn" % next_level
 		var file = FileAccess.open(next_level_path, FileAccess.READ)
 		if file:
+			Audio.stop_audio_stream(Audio.lvlc_music)
+			Audio.play_audio_stream(Audio.background_music)
 			get_tree().change_scene_to_file(next_level_path)
 		else:
 			print("Next level not found: ", next_level_path)
