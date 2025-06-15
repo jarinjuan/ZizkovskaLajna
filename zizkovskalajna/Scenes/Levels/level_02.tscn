@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://d4k8vkobimo5n"]
+[gd_scene load_steps=67 format=4 uid="uid://d4k8vkobimo5n"]
 
 [ext_resource type="Script" uid="uid://b0a4rwjj6co2l" path="res://Scenes/Levels/level_02.gd" id="1_3kfsg"]
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_ei2s5"]
@@ -61,6 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="58_6krhw"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="59_ovt2b"]
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="64_di5wi"]
+[ext_resource type="PackedScene" uid="uid://bhmvk35f6itpo" path="res://Scenes/Objects/Door/door.tscn" id="64_ovt2b"]
 [ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="64_ybyw4"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="65_x62h1"]
 
@@ -384,7 +385,7 @@ speed_scale = 0.5
 script = ExtResource("51_8p8gs")
 
 [node name="Player" parent="." instance=ExtResource("53_j5m7m")]
-position = Vector2(229, 160)
+position = Vector2(190, 159)
 script = ExtResource("54_4sjh2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -484,7 +485,7 @@ navigation_polygon = SubResource("NavigationPolygon_0hoou")
 navigation_layers = 16
 
 [node name="Enemy" parent="." instance=ExtResource("59_ovt2b")]
-position = Vector2(611, 208)
+position = Vector2(625, 257)
 weapon_scene = ExtResource("64_di5wi")
 
 [node name="WeaponPickup" parent="." instance=ExtResource("64_ybyw4")]
@@ -493,3 +494,11 @@ weapon_scene = ExtResource("64_di5wi")
 weapon_texture = ExtResource("65_x62h1")
 texture_scale = Vector2(0.5, 0.5)
 ammo_count = 15
+
+[node name="Door" parent="." instance=ExtResource("64_ovt2b")]
+position = Vector2(262, 161)
+scale = Vector2(2.1, 2.1)
+
+[node name="Door2" parent="." instance=ExtResource("64_ovt2b")]
+position = Vector2(590, 161)
+scale = Vector2(2.1, 2.1)

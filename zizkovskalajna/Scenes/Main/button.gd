@@ -7,7 +7,7 @@ func _on_button_exit_pressed() -> void:
 	GameManager.quit_game()
 
 func _on_button_mute_toggled(toggled_on: bool) -> void:
-	Audio.mute_music(toggled_on)
+	Audio.mute_bg_music(toggled_on)
 
 
 func _on_button_options_pressed() -> void:

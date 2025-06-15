@@ -10,11 +10,12 @@ var current_level_time: float = 0.0
 var max_unlocked = GameManager.max_unlocked_level
 var pause_menu_scene: PackedScene = preload("res://Scenes/PauseScreen/pause.tscn")
 var pause_menu_instance: CanvasLayer = null # To hold the instantiated pause menu
-
+var active_ammo_ui = false
 
 
 func _ready():
-	Audio.stop_music()
+	Audio.stop_bg_music()
+	Audio.stop_lvlc_music()
 	current_level_time = 0.0
 	enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
@@ -46,8 +47,8 @@ func show_go_to_car_hint():
 func _on_porsche_level_finished():
 	final_level_time = current_level_time
 	GameManager.set_last_level_time(final_level_time)
-	GameManager.set_max_unlocked_level()
-	print(GameManager.max_unlocked_level)
+	GameManager.set_max_unlocked_level(GameManager.current_level)
+
 	Ui.close_ammo()
 	var level_completed_scene = load("res://Scenes/CompleteLvl/levelCompleted.tscn")
 	get_tree().change_scene_to_packed(level_completed_scene)
@@ -64,7 +65,9 @@ func _input(event: InputEvent):
 
 func _pause_game():
 	get_tree().paused = true
-	
+	if Ui.is_active_ammo() == true:
+		Ui.close_ammo()
+		active_ammo_ui = true
 	if pause_menu_instance == null:		
 		pause_menu_instance = pause_menu_scene.instantiate()
 		get_tree().get_root().add_child(pause_menu_instance)		
@@ -80,6 +83,9 @@ func _pause_game():
 
 func _unpause_game():
 	get_tree().paused = false 
+	if active_ammo_ui:
+		Ui.show_ammo()
+		active_ammo_ui = false
 	if pause_menu_instance != null:
 		pause_menu_instance.queue_free() 
 		pause_menu_instance = null
@@ -94,5 +100,5 @@ func _restart_game():
 func _quit_game():
 	_unpause_game()
 	Ui.close_ammo()
-	Audio.play_music() 
+	Audio.play_bg_music() 
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

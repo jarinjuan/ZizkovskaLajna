@@ -420,5 +420,20 @@ sprite_frames = SubResource("SpriteFrames_8m8wq")
 speed_scale = 1.96
 script = ExtResource("54_alp8l")
 
+[node name="tempText" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.9952
+offset_bottom = -13.9952
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_avack")
+text = "Thanks for playing our demo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="nextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="exitButton" to="." method="_on_exit_button_pressed"]

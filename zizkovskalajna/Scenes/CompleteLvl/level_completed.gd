@@ -5,9 +5,14 @@ extends CanvasLayer
 var next_level = GameManager.current_level + 1
 
 func _ready():
-		var elapsed_time = GameManager.get_last_level_time()
-
-		display_formatted_time(elapsed_time)
+	var elapsed_time = GameManager.get_last_level_time()
+	if next_level == 4:
+		$nextButton.disabled = true
+		$tempText.visible = true
+	else: $tempText.visible = false
+		
+	display_formatted_time(elapsed_time)
+	Audio.play_lvlc_music()
 
 
 func display_formatted_time(time_in_seconds: float):
@@ -20,7 +25,6 @@ func display_formatted_time(time_in_seconds: float):
 func _on_next_button_pressed() -> void:
 	if GameManager.max_unlocked_level >= next_level:
 		var next_level_path = "res://Scenes/Levels/level_%02d.tscn" % next_level
-		print(next_level_path)
 		var file = FileAccess.open(next_level_path, FileAccess.READ)
 		if file:
 			get_tree().change_scene_to_file(next_level_path)
@@ -33,5 +37,6 @@ func _on_next_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	Ui.close_ammo()
-	Audio.play_music() 
+	Audio.play_bg_music() 
+	Audio.stop_lvlc_music()
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

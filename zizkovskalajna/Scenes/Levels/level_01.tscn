@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://by4xij6k0r2ij"]
+[gd_scene load_steps=65 format=4 uid="uid://by4xij6k0r2ij"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_38jjh"]
 [ext_resource type="PackedScene" uid="uid://butgtqtckmnye" path="res://gradient_background.tscn" id="1_dg7am"]
@@ -58,11 +58,9 @@
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="56_dg7am"]
 [ext_resource type="TileSet" uid="uid://cjtd4q6kik0vl" path="res://Assets/Sprites/Tilesets/woodenFloor.tres" id="56_e1pa7"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="57_c4ee1"]
-[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="58_lb6wy"]
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="59_0u7ta"]
-[ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="60_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="61_0u7ta"]
-[ext_resource type="Script" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="63_2dgai"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ee1"]
@@ -369,9 +367,10 @@ animations = [{
 }]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_yi4xm"]
-vertices = PackedVector2Array(842.953, 381.211, 848, 380.203, 848, 397, 603, 397, 603, 370, 650, 371, 632, 328, 602, 328, 602, 172, 679, 172, 679, 328, 650, 328, 632, 370, 397, 329, 366, 329, 366, 172, 439, 172, 439, 330, 411, 330, 397, 372, 411, 371, 510, 329, 480, 329, 480, 271, 510, 271, 510, 231, 480, 231, 480, 172, 562, 172, 533, 229, 562, 229, 533, 271, 563, 330, 532, 330, 563, 271, 510, 371, 532, 371, 563, 371, 563, 398, 304, 398, 326, 372, 304, 116, 326, 130, 843.961, 116, 720, 130, 720, 371)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 10, 11), PackedInt32Array(6, 9, 11, 12), PackedInt32Array(12, 11, 5), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(13, 16, 17, 18), PackedInt32Array(19, 13, 18, 20), PackedInt32Array(21, 22, 23, 24), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(28, 30, 29), PackedInt32Array(25, 29, 31, 24), PackedInt32Array(21, 24, 31, 32, 33), PackedInt32Array(31, 34, 32), PackedInt32Array(35, 21, 33, 36), PackedInt32Array(36, 37, 38, 39), PackedInt32Array(35, 36, 39), PackedInt32Array(20, 35, 39, 19), PackedInt32Array(40, 19, 39), PackedInt32Array(40, 39, 41, 42), PackedInt32Array(42, 41, 43, 44), PackedInt32Array(44, 43, 0, 45), PackedInt32Array(5, 45, 0), PackedInt32Array(5, 4, 12)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(858, 368, 858, 407, 593, 407, 593, 360, 622, 360, 622, 338, 592, 338, 592, 162, 689, 162, 689, 338, 660, 338, 660, 361, 710, 361, 710, 140, 336, 140, 336, 362, 387, 362, 387, 339, 356, 339, 356, 162, 449, 162, 449, 340, 421, 340, 421, 361, 500, 361, 500, 339, 470, 339, 470, 261, 500, 261, 500, 241, 470, 241, 470, 162, 572, 162, 572, 239, 543, 239, 543, 261, 573, 261, 573, 340, 542, 340, 542, 361, 573, 361, 573, 408, 294, 408, 294, 106, 854, 106, 853, 369)])
+vertices = PackedVector2Array(854, 368, 859, 368, 859, 408, 593, 408, 593, 362, 623, 362, 623, 340, 593, 340, 593, 161, 690, 161, 690, 340, 660, 340, 660, 362, 710, 362, 854, 106, 710, 140, 293, 106.992, 338, 140, 293, 408, 338, 362, 573, 408, 388, 362, 388, 340, 358, 340, 358, 162, 451, 162, 451, 340, 421, 340, 421, 362, 500, 362, 500, 341, 471, 341, 471, 262, 501, 262, 543, 340, 501, 240, 471, 240, 471, 161, 573, 161, 573, 240, 543, 240, 543, 261, 573, 261, 573, 340, 543, 362, 573, 362)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 10, 11), PackedInt32Array(6, 9, 11, 5), PackedInt32Array(5, 11, 12), PackedInt32Array(0, 5, 12), PackedInt32Array(0, 12, 13), PackedInt32Array(14, 0, 13, 15), PackedInt32Array(16, 14, 15, 17), PackedInt32Array(18, 16, 17, 19), PackedInt32Array(20, 18, 19, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(25, 26, 27), PackedInt32Array(22, 25, 27, 21), PackedInt32Array(21, 27, 28), PackedInt32Array(20, 21, 28), PackedInt32Array(20, 28, 29), PackedInt32Array(30, 31, 32, 33, 34), PackedInt32Array(35, 36, 37, 38), PackedInt32Array(38, 39, 40), PackedInt32Array(35, 38, 40, 33), PackedInt32Array(33, 40, 41), PackedInt32Array(41, 42, 43, 34, 33), PackedInt32Array(30, 34, 44, 29), PackedInt32Array(20, 29, 44), PackedInt32Array(20, 44, 45)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(864, 363, 864, 413, 588, 413, 588, 357, 618, 357, 618, 345, 588, 345, 588, 156, 695, 156, 695, 345, 665, 345, 665, 357, 705, 357, 705, 145, 343, 145, 343, 357, 383, 357, 383, 345, 353, 345, 353, 157, 456, 157, 456, 345, 426, 345, 426, 357, 495, 357, 495, 346, 466, 346, 466, 257, 496, 257, 496, 245, 466, 245, 466, 156, 578, 156, 578, 245, 548, 245, 548, 256, 578, 256, 578, 345, 548, 345, 548, 357, 578, 357, 578, 413, 288, 413, 288, 102, 859, 101, 859, 363)])
+agent_radius = 5.0
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_w0345")
@@ -466,6 +465,7 @@ scale = Vector2(1, 9)
 [node name="Player" parent="." instance=ExtResource("53_757t1")]
 position = Vector2(524, 226)
 script = ExtResource("54_wjupe")
+weapon_scene = ExtResource("59_0u7ta")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -495,13 +495,6 @@ position = Vector2(457, 382)
 
 [node name="Enemy5" parent="." instance=ExtResource("57_c4ee1")]
 position = Vector2(659, 263)
-
-[node name="WeaponPickup" parent="." instance=ExtResource("58_lb6wy")]
-position = Vector2(505, 301)
-weapon_scene = ExtResource("59_0u7ta")
-weapon_texture = ExtResource("60_kho0l")
-texture_scale = Vector2(0.5, 0.5)
-ammo_count = 15
 
 [node name="Crosshair" parent="." instance=ExtResource("61_0u7ta")]
 

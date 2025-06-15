@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var fire_rate = 0.1
+
 @export var weapon_pickup_scene: PackedScene 
+@export var weapon_scene: PackedScene
 const SPEED: int = 200
 
 @onready var weapon_socket = $WeaponSocket
@@ -27,12 +28,22 @@ func _ready():
 	$Player_Shotgun.visible = false
 	$Player_Uzi.visible = false
 	$Player_Bbat.visible = false
-	$Player_Pistol_collision.disabled = true
-	$Player_M4_collision.disabled = true
-	$Player_Shotgun_collision.disabled = true
-	$Player_Uzi_collision.disabled = true
-	$Player_Bbat_collision.disabled = true
 	Ui.close_ammo()
+	if weapon_scene:
+		fists.hide()
+		current_weapon = weapon_scene.instantiate()
+		current_weapon.weapon_owner = self
+		current_weapon_scale = Vector2(1,1)
+		if current_weapon.has_method("shoot"):
+			#current_weapon.ammo = weapon_scene.ammo
+			Ui.show_ammo()
+			GameManager.ammo = current_weapon.ammo
+			GameManager.original_ammo_count = current_weapon.original_ammo
+			Ui.pick_up_bullet_ui()
+			weapon_socket.add_child(current_weapon)
+			weapon_equipped = true
+			var weapon_name = weapon_scene.resource_path.get_file().get_basename().to_lower()
+			update_weapon_sprite(weapon_name)
 
 
 func _physics_process(delta: float) -> void:
@@ -138,6 +149,7 @@ func throw_weapon():
 
 
 
+
 func pick_up_weapon(new_weapon_scene: PackedScene, new_weapon_scale: Vector2, new_weapon_ammo: int) -> void:
 	if current_weapon and current_weapon != fists:
 		drop_weapon()
@@ -169,16 +181,11 @@ func update_weapon_sprite(weapon_name: String) -> void:
 	for child in get_children():
 		if child is Sprite2D or child is AnimatedSprite2D:
 			child.visible = false
-		elif child is CollisionPolygon2D:
-			child.disabled = true
 
 	var sprite_name = "Player_" + capitalize_first(weapon_name)
 	var sprite = get_node_or_null(sprite_name)
-	var collision_shape = get_node_or_null(sprite_name + "_collision")
-
-	if sprite and collision_shape:
+	if sprite:
 		sprite.visible = true
-		collision_shape.disabled = false
 	else:
 		print("Sprite ", sprite_name, " nebyl nalezen!")
 
