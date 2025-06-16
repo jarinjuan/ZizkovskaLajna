@@ -26,8 +26,7 @@ func display_formatted_time(time_in_seconds: float):
 func _on_next_button_pressed() -> void:
 	if GameManager.max_unlocked_level >= next_level:
 		var next_level_path = "res://Scenes/Levels/level_%02d.tscn" % next_level
-		var file = FileAccess.open(next_level_path, FileAccess.READ)
-		if file:
+		if next_level_path:
 			Audio.stop_audio_stream(Audio.lvlc_music)
 			Audio.play_audio_stream(Audio.background_music)
 			get_tree().change_scene_to_file(next_level_path)
