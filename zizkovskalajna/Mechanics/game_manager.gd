@@ -37,7 +37,8 @@ func _ready():
 	input_map = Save_Load.data["input_map"]
 	apply_keybinds(input_map)
 	Audio.audio_setup()
-	print(Save_Load.data["max_unlocked_level"])
+	#print(Save_Load.data["max_unlocked_level"])
+	print("ok")
 	return
 	
 func set_max_unlocked_level(current_level: int):

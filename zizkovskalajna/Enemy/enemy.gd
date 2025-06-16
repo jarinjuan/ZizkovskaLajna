@@ -413,8 +413,8 @@ func die():
 		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
-	$AliveShape.disabled = true
-	$KnockedShape.disabled = true
+	$AliveShape.call_deferred("set_disabled", true)
+	$KnockedShape.call_deferred("set_disabled", true)
 	$AliveShape.queue_free()
 	$KnockedShape.queue_free()
 	enemy_died.emit()
