@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bfsektxmc7cxi" path="res://Assets/Themes/bullet_ui.tres" id="2_1x5q6"]
 
 [node name="ammo" type="CanvasLayer"]
-layer = 126
+layer = 80
 
 [node name="bullet" type="HBoxContainer" parent="."]
 anchors_preset = 15

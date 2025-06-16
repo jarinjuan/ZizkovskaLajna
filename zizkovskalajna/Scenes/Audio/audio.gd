@@ -2,6 +2,7 @@
 extends Node
 
 @onready var background_music: AudioStreamPlayer = $BackgroundMusic
+@onready var lvlc_music: AudioStreamPlayer = $LevelCompletedMusic
 var playbackPosition = 0
 
 func _ready():
@@ -9,16 +10,24 @@ func _ready():
 	if not background_music.playing:
 		background_music.play()
 
-func stop_music():
+func stop_bg_music():
 	background_music.stop()
 
-func play_music():
+func play_bg_music():
 	if not background_music.playing:
 		background_music.play()
 		
-func mute_music(toggled_on: bool) -> void:
+func mute_bg_music(toggled_on: bool) -> void:
 	if toggled_on:
 		playbackPosition = background_music.get_playback_position()
 		background_music.stop()			
 	else:
 		background_music.play(playbackPosition)
+		
+
+func stop_lvlc_music():
+	lvlc_music.stop()
+
+func play_lvlc_music():
+	if not lvlc_music.playing:
+		lvlc_music.play()

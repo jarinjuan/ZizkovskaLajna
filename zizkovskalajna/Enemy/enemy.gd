@@ -46,7 +46,6 @@ var blood_textures := [
 
 func _ready():
 	home_position = global_position
-	add_to_group("enemies")
 	add_to_group("characters")
 	add_to_group("enemy")
 	$Enemy_M4.visible = false
@@ -236,11 +235,20 @@ func _physics_process(delta: float) -> void:
 			direction = to_player.normalized()
 			if reaction_timer >= REACTION_TIME:
 				shoot_at_player()
+
 		else:
 			if distance_to_player < RUN_AWAY_DISTANCE - DISTANCE_MARGIN:
+				var run_away_vector = (global_position - player.global_position).normalized()
+				var flee_target = global_position + run_away_vector * 300
+				if nav_agent.get_target_position() != flee_target:
+					nav_agent.set_target_position(flee_target)
+
+				if not nav_agent.is_navigation_finished():
+					var flee_direction = (nav_agent.get_next_path_position() - global_position).normalized()
+					direction = flee_direction
+			else:
 				direction = (-to_player).normalized()
-			elif distance_to_player > RUN_AWAY_DISTANCE + DISTANCE_MARGIN:
-				direction = to_player.normalized()
+
 	else:
 		player_spotted = false
 		reaction_timer = 0.0
@@ -309,9 +317,25 @@ func _physics_process(delta: float) -> void:
 				
 	if not nav_agent.is_navigation_finished():
 		var next_path_pos = nav_agent.get_next_path_position()
-		direction = (next_path_pos - global_position).normalized()
-	else:
-		direction = Vector2.ZERO
+		if not has_weapon and target_pickup == null and player_visible:
+			var run_away_vector = (global_position - player.global_position).normalized()
+			var random_offset = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * randf_range(50, 150) 
+			var flee_target = global_position + run_away_vector * 300 + random_offset
+			if nav_agent.get_target_position() != flee_target:
+				nav_agent.set_target_position(flee_target)
+
+
+		if not nav_agent.is_navigation_finished():
+			if global_position.distance_to(player.global_position) <= 50.0:
+				velocity = Vector2.ZERO
+			else:
+				var to_flee = nav_agent.get_next_path_position() - global_position
+				direction = to_flee.normalized()
+				velocity = direction * current_speed
+			
+			move_and_slide()
+			return
+
 
 	velocity = direction * current_speed
 	move_and_slide()
@@ -389,6 +413,8 @@ func die():
 		drop_weapon()
 	set_process(false)
 	set_physics_process(false)
+	$AliveShape.disabled = true
+	$KnockedShape.disabled = true
 	$AliveShape.queue_free()
 	$KnockedShape.queue_free()
 	enemy_died.emit()
