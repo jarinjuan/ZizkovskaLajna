@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="ZizkovskaLajna"
-run/main_scene="uid://c73qnrritjlwb"
+run/main_scene="uid://f83bnxna7dq0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
+SaveLoad="*res://Mechanics/save_load.gd"
 GameManager="*res://Mechanics/game_manager.gd"
 Ui="*res://Scenes/UI/ui.gd"
 Audio="*res://Scenes/Audio/audio.tscn"

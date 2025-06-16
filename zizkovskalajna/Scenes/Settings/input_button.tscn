@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dirxdc1ursga6"]
+
+[node name="inputButton" type="Button"]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="action" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "ACITON_NAME"
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="key" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 1
+text = "ACTION_KEY"

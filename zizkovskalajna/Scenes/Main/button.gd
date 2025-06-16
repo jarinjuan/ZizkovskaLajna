@@ -7,11 +7,12 @@ func _on_button_exit_pressed() -> void:
 	GameManager.quit_game()
 
 func _on_button_mute_toggled(toggled_on: bool) -> void:
-	Audio.mute_bg_music(toggled_on)
+	Audio.bus_toggle_mute("Music")
 
 
 func _on_button_options_pressed() -> void:
-	pass # Replace with function body.
+	GameManager.last_scene = "res://Scenes/Main/control.tscn"
+	get_tree().change_scene_to_file("res://Scenes/Settings/settings.tscn")
 
 
 func _on_button_start_pressed() -> void:
