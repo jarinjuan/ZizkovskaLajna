@@ -1,0 +1,553 @@
+[gd_scene load_steps=58 format=3 uid="uid://6djtermrwr4l"]
+
+[ext_resource type="Script" uid="uid://u5jhq0j82ido" path="res://Scenes/Settings/settings.gd" id="1_28npb"]
+[ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_uy7vc"]
+[ext_resource type="Texture2D" uid="uid://by201t7i44oyd" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient2.png" id="2_28npb"]
+[ext_resource type="Texture2D" uid="uid://dadlljrfythqw" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient3.png" id="3_16tcs"]
+[ext_resource type="Texture2D" uid="uid://oho0eajdcipx" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient4.png" id="4_wmrd8"]
+[ext_resource type="Texture2D" uid="uid://dbl2g4v85g1w1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient5.png" id="5_c1sst"]
+[ext_resource type="Texture2D" uid="uid://cl7v8u34lyi0i" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient6.png" id="6_vxovs"]
+[ext_resource type="Texture2D" uid="uid://dtrivnh23pvxy" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient7.png" id="7_8t5yb"]
+[ext_resource type="Texture2D" uid="uid://da38nbvubus60" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient8.png" id="8_3kp0m"]
+[ext_resource type="Texture2D" uid="uid://qqse2dedte55" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient9.png" id="9_51e7w"]
+[ext_resource type="Texture2D" uid="uid://dsyqe8q8lj3d4" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient10.png" id="10_x3ihw"]
+[ext_resource type="Texture2D" uid="uid://dqm23lb7e4tr1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient11.png" id="11_pgh15"]
+[ext_resource type="Texture2D" uid="uid://damelm4saw6ct" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient12.png" id="12_2bx5i"]
+[ext_resource type="Texture2D" uid="uid://d1nu58eicfa0k" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient13.png" id="13_mfecg"]
+[ext_resource type="Texture2D" uid="uid://xwhq1bxcm2f" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient14.png" id="14_d7egm"]
+[ext_resource type="Texture2D" uid="uid://dwtdu51ol0kn7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient15.png" id="15_qqhlr"]
+[ext_resource type="Texture2D" uid="uid://c21ogvof4pvev" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient16.png" id="16_4jry1"]
+[ext_resource type="Texture2D" uid="uid://cdrs7ya1peuwa" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient17.png" id="17_ntrhp"]
+[ext_resource type="Texture2D" uid="uid://d2oyp21vc5480" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient18.png" id="18_dm4wq"]
+[ext_resource type="Texture2D" uid="uid://pdmamfsmyxjk" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient19.png" id="19_j28sb"]
+[ext_resource type="Texture2D" uid="uid://dy0eebvm688xp" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient20.png" id="20_xfmqc"]
+[ext_resource type="Texture2D" uid="uid://dg2sasi56xr46" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient21.png" id="21_dh0pe"]
+[ext_resource type="Texture2D" uid="uid://byxi05fmeg2qo" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient22.png" id="22_ariqt"]
+[ext_resource type="Texture2D" uid="uid://c7ds1primvxu1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient23.png" id="23_k0ujc"]
+[ext_resource type="Texture2D" uid="uid://chgpt1abk4dvm" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient24.png" id="24_t4xjo"]
+[ext_resource type="Texture2D" uid="uid://bp7uwc7jralfq" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient25.png" id="25_sv7vf"]
+[ext_resource type="Texture2D" uid="uid://qqpeyxyod7fl" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient26.png" id="26_4q55i"]
+[ext_resource type="Texture2D" uid="uid://doksm7tdtnhyb" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient27.png" id="27_b27yb"]
+[ext_resource type="Texture2D" uid="uid://7qmo4dyou8mf" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient28.png" id="28_mic48"]
+[ext_resource type="Texture2D" uid="uid://b7dcms2vwmtxm" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient29.png" id="29_ybn0k"]
+[ext_resource type="Texture2D" uid="uid://cgs02unji8muy" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient30.png" id="30_i678m"]
+[ext_resource type="Texture2D" uid="uid://xl61by3x61jk" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient31.png" id="31_lb1j0"]
+[ext_resource type="Texture2D" uid="uid://cnoo6ydg1g7c7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient32.png" id="32_jryu0"]
+[ext_resource type="Texture2D" uid="uid://blbat3kbcplug" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient33.png" id="33_xx5dm"]
+[ext_resource type="Texture2D" uid="uid://c7udq0yiimdn2" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient34.png" id="34_gxweu"]
+[ext_resource type="Texture2D" uid="uid://bmvr2cfuwxj3y" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient35.png" id="35_hmk4f"]
+[ext_resource type="Texture2D" uid="uid://dkiay21jo2i2v" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient36.png" id="36_esdmi"]
+[ext_resource type="Texture2D" uid="uid://db5uykbjet8a6" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient37.png" id="37_niv8w"]
+[ext_resource type="Texture2D" uid="uid://2e0qypjddgqp" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient38.png" id="38_rfu4e"]
+[ext_resource type="Texture2D" uid="uid://jlxr0nc25sg4" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient39.png" id="39_pha22"]
+[ext_resource type="Texture2D" uid="uid://fiku1fssbmh7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient40.png" id="40_74bax"]
+[ext_resource type="Texture2D" uid="uid://b7eylxpxh417x" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient41.png" id="41_n7bbl"]
+[ext_resource type="Texture2D" uid="uid://dl5oadf5kydlh" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient42.png" id="42_yd7v3"]
+[ext_resource type="Texture2D" uid="uid://cv6tppsgurrr1" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient43.png" id="43_j1naj"]
+[ext_resource type="Texture2D" uid="uid://c6bqbu4qi4euo" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient44.png" id="44_5adai"]
+[ext_resource type="Texture2D" uid="uid://cvnbug2kvrlix" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient45.png" id="45_e5x5s"]
+[ext_resource type="Texture2D" uid="uid://t6vl7q7d4c5d" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient46.png" id="46_hica3"]
+[ext_resource type="Texture2D" uid="uid://43hh8li4bmwb" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient47.png" id="47_o7abk"]
+[ext_resource type="Texture2D" uid="uid://j37rtl28l017" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient48.png" id="48_qp17q"]
+[ext_resource type="Texture2D" uid="uid://dx0w4nvw28l1n" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient49.png" id="49_45r3w"]
+[ext_resource type="Texture2D" uid="uid://dxoqqswgrrhui" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient50.png" id="50_inls6"]
+[ext_resource type="Texture2D" uid="uid://bb0bhg3ndhi56" path="res://Assets/Sprites/Backgrounds/menu.png" id="51_rxma2"]
+[ext_resource type="Shader" uid="uid://c76w46644uloe" path="res://Scenes/Main/control.gdshader" id="52_qjcys"]
+[ext_resource type="FontFile" uid="uid://bwv10v3tqbal7" path="res://Assets/Fonts/KarmaFuture.otf" id="53_j7ysi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srvv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uy7vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_28npb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_16tcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wmrd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c1sst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vxovs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8t5yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3kp0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_51e7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x3ihw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pgh15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2bx5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mfecg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d7egm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qqhlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4jry1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ntrhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dm4wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j28sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xfmqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dh0pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ariqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_k0ujc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t4xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sv7vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4q55i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_b27yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mic48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ybn0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_i678m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lb1j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jryu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xx5dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gxweu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hmk4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_esdmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_niv8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rfu4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_pha22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_74bax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n7bbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yd7v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_j1naj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_5adai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e5x5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hica3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o7abk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_qp17q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_45r3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_inls6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_45r3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_qp17q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o7abk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_hica3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e5x5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_5adai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_j1naj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yd7v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n7bbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_74bax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_pha22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rfu4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_niv8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_esdmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hmk4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gxweu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xx5dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jryu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lb1j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_i678m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ybn0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mic48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_b27yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4q55i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sv7vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t4xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_k0ujc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ariqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dh0pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xfmqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j28sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dm4wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ntrhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4jry1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qqhlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d7egm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mfecg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2bx5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pgh15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x3ihw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_51e7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3kp0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8t5yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vxovs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c1sst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wmrd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_16tcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_28npb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5faxf"]
+shader = ExtResource("52_qjcys")
+shader_parameter/time_speed = 0.1
+shader_parameter/noise_intensity = 0.0
+shader_parameter/line_thickness = 0.0
+shader_parameter/glitch_strength = 0.02
+
+[sub_resource type="Theme" id="Theme_16tcs"]
+CheckBox/styles/focus = null
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28npb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 90)
+scale = Vector2(0.4, 0.3)
+sprite_frames = SubResource("SpriteFrames_srvv6")
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("51_rxma2")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5faxf")
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.352941)
+metadata/_edit_lock_ = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("53_j7ysi")
+theme_override_font_sizes/font_size = 16
+current_tab = 1
+
+[node name="Volume" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Volume"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 154.0
+
+[node name="Labels" type="HBoxContainer" parent="TabContainer/Volume/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Volume/VBoxContainer/Labels"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Master" type="HBoxContainer" parent="TabContainer/Volume/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Volume/VBoxContainer/Master"]
+layout_mode = 2
+theme = SubResource("Theme_16tcs")
+
+[node name="Name" type="Label" parent="TabContainer/Volume/VBoxContainer/Master"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Volume/VBoxContainer/Master"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="TabContainer/Volume/VBoxContainer/Master"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Music" type="HBoxContainer" parent="TabContainer/Volume/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Volume/VBoxContainer/Music"]
+layout_mode = 2
+theme = SubResource("Theme_16tcs")
+
+[node name="Name" type="Label" parent="TabContainer/Volume/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Volume/VBoxContainer/Music"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="TabContainer/Volume/VBoxContainer/Music"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="SFX" type="HBoxContainer" parent="TabContainer/Volume/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Volume/VBoxContainer/SFX"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="TabContainer/Volume/VBoxContainer/SFX"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Volume/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="TabContainer/Volume/VBoxContainer/SFX"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Dialog" type="HBoxContainer" parent="TabContainer/Volume/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Volume/VBoxContainer/Dialog"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="TabContainer/Volume/VBoxContainer/Dialog"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dialog"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Volume/VBoxContainer/Dialog"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Value" type="Label" parent="TabContainer/Volume/VBoxContainer/Dialog"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="Control" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Control"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 152.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = -3.0
+offset_right = 320.0
+offset_bottom = 28.0
+text = "BACK"
+
+[connection signal="toggled" from="TabContainer/Volume/VBoxContainer/Master/CheckBox" to="." method="master_toggle"]
+[connection signal="value_changed" from="TabContainer/Volume/VBoxContainer/Master/HSlider" to="." method="volume_master_changed"]
+[connection signal="toggled" from="TabContainer/Volume/VBoxContainer/Music/CheckBox" to="." method="music_toggle"]
+[connection signal="value_changed" from="TabContainer/Volume/VBoxContainer/Music/HSlider" to="." method="volume_music_changed"]
+[connection signal="toggled" from="TabContainer/Volume/VBoxContainer/SFX/CheckBox" to="." method="sfx_toggle"]
+[connection signal="value_changed" from="TabContainer/Volume/VBoxContainer/SFX/HSlider" to="." method="volume_sfx_changed"]
+[connection signal="toggled" from="TabContainer/Volume/VBoxContainer/Dialog/CheckBox" to="." method="dialog_toggle"]
+[connection signal="value_changed" from="TabContainer/Volume/VBoxContainer/Dialog/HSlider" to="." method="volume_dialog_changed"]
+[connection signal="pressed" from="Button" to="." method="back"]
