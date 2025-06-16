@@ -203,8 +203,6 @@ func get_muzzle_position() -> Vector2:
 				return muzzle.global_position
 	return global_position
 
-
-
 func die():
 	death_screen.show_wasted()
 	Ui.close_ammo()

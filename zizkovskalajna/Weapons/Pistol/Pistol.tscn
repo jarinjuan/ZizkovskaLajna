@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuifw4nyhafpy"]
+[gd_scene load_steps=6 format=3 uid="uid://cuifw4nyhafpy"]
 
 [ext_resource type="Script" uid="uid://uwq3pdpd3kii" path="res://Weapons/Pistol/pistol.gd" id="1_c0qr3"]
 [ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="2_jb0rd"]
 [ext_resource type="PackedScene" uid="uid://nl21i3juy0m4" path="res://Weapons/Bullets/Pistol/bullet.tscn" id="2_wbbrg"]
 [ext_resource type="AudioStream" uid="uid://bloir8t7vwd8" path="res://Assets/Audio/SFX/sound_pistol_shoot.mp3" id="4_wbbrg"]
+[ext_resource type="AudioStream" uid="uid://cw2csq10rcpis" path="res://Assets/Audio/SFX/sound_pistol_load.mp3" id="5_q3kbv"]
 
 [node name="Pistol" type="Node2D"]
 script = ExtResource("1_c0qr3")
@@ -22,3 +23,9 @@ position = Vector2(6.64772, -5.8574)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_wbbrg")
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_q3kbv")
+volume_db = 2.971
+bus = &"SFX"
+area_mask = 2

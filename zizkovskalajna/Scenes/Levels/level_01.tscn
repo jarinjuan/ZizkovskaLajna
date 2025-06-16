@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://by4xij6k0r2ij"]
+[gd_scene load_steps=70 format=4 uid="uid://by4xij6k0r2ij"]
 
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_38jjh"]
 [ext_resource type="PackedScene" uid="uid://butgtqtckmnye" path="res://gradient_background.tscn" id="1_dg7am"]
@@ -62,7 +62,11 @@
 [ext_resource type="PackedScene" uid="uid://dtv8igv3dd0kq" path="res://Scenes/crosshair.tscn" id="61_0u7ta"]
 [ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="62_kho0l"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="63_2dgai"]
-[ext_resource type="PackedScene" uid="uid://d08js7qf7n43l" path="res://Scenes/Materials/Wood/MetalTable.tscn" id="63_w0345"]
+[ext_resource type="PackedScene" uid="uid://d31xjnrmreq2g" path="res://Scenes/Materials/MetalTable.tscn" id="63_w0345"]
+[ext_resource type="PackedScene" uid="uid://bd31ldbmf853n" path="res://Scenes/Materials/Bed.tscn" id="64_w0345"]
+[ext_resource type="PackedScene" uid="uid://cfjpqy8q5owr6" path="res://Scenes/Materials/paperpiece.tscn" id="65_maouj"]
+[ext_resource type="PackedScene" uid="uid://q7d70r7jin7l" path="res://Scenes/Materials/Chair.tscn" id="66_0m2nw"]
+[ext_resource type="PackedScene" uid="uid://budw4n05o4gpx" path="res://Scenes/Materials/RedShorts.tscn" id="67_xn12r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4ee1"]
 resource_local_to_scene = true
@@ -508,6 +512,50 @@ visible = false
 
 [node name="StaticBody2D19" parent="." instance=ExtResource("63_w0345")]
 position = Vector2(491, 211)
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("63_w0345")]
+position = Vector2(816, 201)
+rotation = 1.5708
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("63_w0345")]
+position = Vector2(612, 229)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("64_w0345")]
+position = Vector2(608, 310)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("64_w0345")]
+position = Vector2(486, 308)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("64_w0345")]
+position = Vector2(372, 193)
+
+[node name="Node2D2" parent="." instance=ExtResource("65_maouj")]
+position = Vector2(499, 194)
+
+[node name="Node2D3" parent="." instance=ExtResource("65_maouj")]
+position = Vector2(828, 244)
+rotation = -3.35103
+
+[node name="Node2D4" parent="." instance=ExtResource("65_maouj")]
+position = Vector2(827, 210)
+rotation = 0.436332
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("66_0m2nw")]
+position = Vector2(797, 210)
+rotation = 1.5708
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("66_0m2nw")]
+position = Vector2(797, 248)
+rotation = 1.5708
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("66_0m2nw")]
+position = Vector2(640, 177)
+
+[node name="Node2D5" parent="." instance=ExtResource("67_xn12r")]
+z_index = -1
+position = Vector2(311, 389)
+rotation = 0.598648
+skew = 0.132645
 
 [connection signal="enemy_died" from="Enemy" to="." method="_on_enemy_enemy_died"]
 [connection signal="enemy_died" from="Enemy2" to="." method="_on_enemy_enemy_died"]
