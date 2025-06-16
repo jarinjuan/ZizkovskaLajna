@@ -7,54 +7,53 @@ var SMALL_BUTTON_SIZE
 var darken_material := ShaderMaterial.new()
 
 
-var level_scene_paths = []
+var level_scene_paths = [
+	"res://Scenes/Levels/level_01.tscn",
+	"res://Scenes/Levels/level_02.tscn",
+	"res://Scenes/Levels/level_03.tscn",
+	# Přidej sem další levely, co máš
+]
 var level_image = []
 var current_level = int(GameManager.max_unlocked_level - 1)
 
 func _ready():
-	
-	var dir = DirAccess.open(LEVEL_SCENE_PATH)
 	BIG_BUTTON_SIZE = $center.size
 	SMALL_BUTTON_SIZE = $left.size
 	
-	if !dir:
-		Log.write_log("Level scenes dirrectory cant be accessed", Log.MessageLevel.ERROR)
-		return
+	darken_material.shader = preload("res://Scenes/Level Selector/darken_shader.gdshader")
 	
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
+	# Vyčistit pole obrázků (pokud třeba reloaduješ)
+	level_image.clear()
 	
-	while file_name != "":
-		if !file_name.ends_with(".tscn") || dir.current_is_dir():
-			file_name = dir.get_next()
-			continue
-			
+	# Načti obrázky podle pevného seznamu levelů
+	for full_scene_path in level_scene_paths:
+		var file_name = full_scene_path.get_file() # např. "level1.tscn"
 		var image_path = LEVEL_IMAGE_PATH + file_name.get_basename() + ".png"
-		
-		if !ResourceLoader.exists(image_path):
+		print(image_path)
+		if not ResourceLoader.exists(image_path):
 			image_path = "res://Assets/Sprites/Tilesets/error.png"
 		
-		
-		level_image.push_back(load(image_path) as Texture2D)
-		level_scene_paths.push_back(LEVEL_SCENE_PATH + file_name)
-		
-		file_name = dir.get_next()
-		
-	dir.list_dir_end()
+		level_image.append(load(image_path) as Texture2D)
+	
 	if current_level + 1 > level_scene_paths.size():
 		current_level = level_scene_paths.size() - 1
-	$levelLabel.text = str(current_level+1)
+		
+	# Nastav UI podle current_level
+	$levelLabel.text = str(current_level + 1)
 	$center.texture = resize_get_texture(level_image[current_level].get_image(), BIG_BUTTON_SIZE)
+	
 	if current_level + 1 < level_scene_paths.size():
 		$right.texture = resize_get_texture(level_image[current_level + 1].get_image(), SMALL_BUTTON_SIZE)
 		$right.material = null if can_access_level(current_level + 1) else darken_material
+	else:
+		$right.texture = null
+	
 	if current_level > 0:
-		$left.texture = resize_get_texture(level_image[current_level + -1].get_image(), SMALL_BUTTON_SIZE)
+		$left.texture = resize_get_texture(level_image[current_level - 1].get_image(), SMALL_BUTTON_SIZE)
 		$left.material = null if can_access_level(current_level - 1) else darken_material
-	#for sprite in get_tree().get_nodes_in_group("button_animations"):
-		#sprite.play("default")
-	darken_material.shader = preload("res://Scenes/Level Selector/darken_shader.gdshader")
-	return
+	else:
+		$left.texture = null
+
 
 
 func resize_get_texture(old_image, new_size):
@@ -92,8 +91,8 @@ func left_button_pressed():
 	if current_level - 1 < 0:
 		return
 	
-	current_level = current_level - 1
-	$levelLabel.text = str(current_level+1)
+	current_level -= 1
+	$levelLabel.text = str(current_level + 1)
 	
 	$right.texture = resize_get_texture(level_image[current_level + 1].get_image(), SMALL_BUTTON_SIZE)
 	$right.material = null if can_access_level(current_level + 1) else darken_material
@@ -103,17 +102,17 @@ func left_button_pressed():
 	if current_level == 0:
 		$left.texture = null
 		return
-
+	
 	$left.texture = resize_get_texture(level_image[current_level - 1].get_image(), SMALL_BUTTON_SIZE)
 	$left.material = null if can_access_level(current_level - 1) else darken_material
-	
-	return
+
 
 
 func play_pressed():
 	if !can_access_level(current_level):
 		return
 	GameManager.last_level_played = current_level
+	print(level_scene_paths[current_level])
 	get_tree().change_scene_to_file(level_scene_paths[current_level])
 
 
