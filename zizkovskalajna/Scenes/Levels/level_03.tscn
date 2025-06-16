@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://c73qnrritjlwb"]
+[gd_scene load_steps=75 format=4 uid="uid://c73qnrritjlwb"]
 
 [ext_resource type="Script" uid="uid://col02iffb3vyy" path="res://Scenes/Levels/level_03.gd" id="1_868mf"]
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_3078y"]
@@ -63,8 +63,15 @@
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="60_alga1"]
 [ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="61_868mf"]
 [ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="65_vakpl"]
+[ext_resource type="PackedScene" uid="uid://c7jfifhglnjbp" path="res://Scenes/Materials/PileOfClothes.tscn" id="66_alga1"]
 [ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="66_eb8yh"]
 [ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="67_8mgc2"]
+[ext_resource type="PackedScene" uid="uid://bd31ldbmf853n" path="res://Scenes/Materials/Bed.tscn" id="67_868mf"]
+[ext_resource type="PackedScene" uid="uid://d31xjnrmreq2g" path="res://Scenes/Materials/MetalTable.tscn" id="68_vakpl"]
+[ext_resource type="PackedScene" uid="uid://emxdyb5e2arf" path="res://Scenes/Materials/CommunicationDevice.tscn" id="69_eb8yh"]
+[ext_resource type="PackedScene" uid="uid://cfjpqy8q5owr6" path="res://Scenes/Materials/paperpiece.tscn" id="70_8mgc2"]
+[ext_resource type="PackedScene" uid="uid://budw4n05o4gpx" path="res://Scenes/Materials/RedShorts.tscn" id="71_dn3vg"]
+[ext_resource type="PackedScene" uid="uid://q7d70r7jin7l" path="res://Scenes/Materials/Chair.tscn" id="72_rxu6y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
 resource_local_to_scene = true
@@ -521,3 +528,66 @@ position = Vector2(624, 533)
 weapon_scene = ExtResource("66_eb8yh")
 weapon_texture = ExtResource("67_8mgc2")
 texture_scale = Vector2(0.5, 0.5)
+
+[node name="Node2D2" parent="." instance=ExtResource("66_alga1")]
+position = Vector2(651, 480)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("67_868mf")]
+position = Vector2(523, 134)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(837, 493)
+
+[node name="Node2D3" parent="." instance=ExtResource("69_eb8yh")]
+position = Vector2(848, 477)
+
+[node name="Node2D4" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(752, 118)
+skew = 0.244346
+
+[node name="Node2D5" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(759, 114)
+skew = 0.0890118
+
+[node name="Node2D6" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(758, 121)
+skew = -0.118682
+
+[node name="Node2D7" parent="." instance=ExtResource("71_dn3vg")]
+position = Vector2(358, 75)
+skew = -0.427606
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(477, -42)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(603, 89)
+
+[node name="Node2D8" parent="." instance=ExtResource("69_eb8yh")]
+position = Vector2(633, 73)
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(322, 171)
+rotation = 0.785398
+
+[node name="Node2D9" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(359, 192)
+rotation = 0.785398
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(405, 378)
+rotation = 3.14159
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(386, 494)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(890, 335)
+rotation = 1.5708
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(890, 364)
+rotation = 1.5708
+
+[node name="Node2D10" parent="." instance=ExtResource("66_alga1")]
+position = Vector2(299, -122)

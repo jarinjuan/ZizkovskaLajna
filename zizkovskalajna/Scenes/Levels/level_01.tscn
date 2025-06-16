@@ -512,6 +512,8 @@ visible = false
 
 [node name="StaticBody2D19" parent="." instance=ExtResource("63_w0345")]
 position = Vector2(491, 211)
+collision_layer = 32
+collision_mask = 3
 
 [node name="StaticBody2D20" parent="." instance=ExtResource("63_w0345")]
 position = Vector2(816, 201)
