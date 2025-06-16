@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wsihd7op68yt"
-path="res://.godot/imported/biker2-5.png.png-46b5a6a81515e277afe57855f0de69ea.ctex"
+path="res://.godot/imported/biker2-5.png.png-0eca86e5aa53dce060a7f47891748300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player_walk/biker2-5.png.png"
-dest_files=["res://.godot/imported/biker2-5.png.png-46b5a6a81515e277afe57855f0de69ea.ctex"]
+source_file="res://Assets/Animations/Player_disguised_walk/biker2-5.png.png"
+dest_files=["res://.godot/imported/biker2-5.png.png-0eca86e5aa53dce060a7f47891748300.ctex"]
 
 [params]
 

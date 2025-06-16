@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0d0qdl3856uf"
-path="res://.godot/imported/biker2-3.png.png-b20765caf0f04193e6b28492df9a9021.ctex"
+uid="uid://cal6d5jqk8f5s"
+path="res://.godot/imported/Player_walk-6.png-03f584004283a33b728571114a675005.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animations/Player_disguised_walk/biker2-3.png.png"
-dest_files=["res://.godot/imported/biker2-3.png.png-b20765caf0f04193e6b28492df9a9021.ctex"]
+source_file="res://Assets/Animations/Player_walk/Player_walk-6.png"
+dest_files=["res://.godot/imported/Player_walk-6.png-03f584004283a33b728571114a675005.ctex"]
 
 [params]
 
@@ -25,10 +25,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
