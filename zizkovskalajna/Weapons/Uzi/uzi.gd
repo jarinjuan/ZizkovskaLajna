@@ -6,10 +6,15 @@ extends Weapon
 @export var ammo: int
 @export var original_ammo = 35
 
+func _ready():
+	if weapon_owner.is_in_group("player"):
+		$ReloadSound.play()
+
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:
 		return
 
+	$ShootSound.play()
 	var bullet = bullet_scene.instantiate()
 
 	# Muzzle získaný z hráče

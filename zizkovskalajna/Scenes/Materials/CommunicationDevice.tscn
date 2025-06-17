@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://emxdyb5e2arf"]
+
+[ext_resource type="Texture2D" uid="uid://g3jd7y6hl3mk" path="res://Assets/Sprites/Objects/sprite_communicationdevice.png" id="1_1ar07"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ar07")

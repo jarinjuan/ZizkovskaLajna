@@ -7,10 +7,14 @@ extends Weapon
 @export var spread_angle_deg: float = 10.0 # degrees
 @export var original_ammo = 6
 
+func _ready():
+	if weapon_owner.is_in_group("player"):
+		$ReloadSound.play()
+
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:
 		return
-
+	$ShootSound.play()
 	var base_angle = weapon_owner.rotation  # místo cílové pozice použijeme rotaci hráče
 
 	for i in pellets_per_shot:

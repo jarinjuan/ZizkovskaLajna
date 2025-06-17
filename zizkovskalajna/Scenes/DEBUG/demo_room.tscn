@@ -1,0 +1,187 @@
+[gd_scene load_steps=28 format=3 uid="uid://d1yrsh4myo4xd"]
+
+[ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="1_011ax"]
+[ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="2_lprfo"]
+[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="3_0hb2o"]
+[ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="4_wka11"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="5_60pw1"]
+[ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="6_xgasy"]
+[ext_resource type="PackedScene" uid="uid://bahjxjda5wgf6" path="res://Scenes/Materials/Wood/WoodWall.tscn" id="7_gwchm"]
+[ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="8_kluvo"]
+[ext_resource type="Texture2D" uid="uid://dgrvju3w8uu4o" path="res://Assets/Sprites/Weapons/m4/sprite_ar_fl.png" id="9_1crkl"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="10_vfdtc"]
+[ext_resource type="Texture2D" uid="uid://dwhx24ryps1t0" path="res://Assets/Sprites/Weapons/Shotgun/shotgun.png" id="11_mgjbk"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="12_4ybqh"]
+[ext_resource type="Texture2D" uid="uid://dj5wvw003fgmv" path="res://Assets/Sprites/Weapons/uzi/uzi.png" id="13_ngcxa"]
+[ext_resource type="PackedScene" uid="uid://cnvyc1d3jambv" path="res://Scenes/Objects/drink_can.tscn" id="14_slwyv"]
+[ext_resource type="PackedScene" uid="uid://wj2hlpasw8v7" path="res://Scenes/Objects/shorts.tscn" id="15_t5i7m"]
+[ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="16_3syph"]
+[ext_resource type="Texture2D" uid="uid://b0g5cje5s1swh" path="res://Assets/Sprites/Tilesets/sprite_window.png" id="17_mxswa"]
+[ext_resource type="Texture2D" uid="uid://brdxf0rqrejo5" path="res://Assets/Sprites/Tilesets/sprite_windowbroken.png" id="18_q6neh"]
+[ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="19_fbgpt"]
+[ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="20_aqkm6"]
+[ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="21_gj00d"]
+[ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="22_sg6oc"]
+[ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="23_jdm2l"]
+
+[sub_resource type="GDScript" id="GDScript_vgfox"]
+script/source = "extends Node2D 
+
+#func _ready():
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+#func _process(delta):
+	#$Crosshair.position = get_global_mouse_position()
+	
+"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nfrpb"]
+vertices = PackedVector2Array(308, 153.852, 308, 123, 562.492, 12.1328, 500.281, 459.07, 409.578, 356.289, 325.758, 205.781, 230.039, 16, 252.461, 61.5625, 262.047, 207.219, 261.063, 404.438, 13.0234, 347.047, 13.9688, 15.0391, 223, 155.156, 403.594, 459.898, 254.648, 123, 223, 75.2891, 329.258, 354.047)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 2, 1, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(3, 13, 4), PackedInt32Array(1, 14, 7), PackedInt32Array(6, 7, 15, 11), PackedInt32Array(4, 16, 5), PackedInt32Array(0, 5, 8, 12), PackedInt32Array(12, 11, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(233, 78, 230, 6, 4, 5, 3, 355, 271, 417, 272, 217, 316, 216, 319.495, 363.792, 399, 366, 393, 470, 509, 469, 574, 2, 230, 6, 228, 84, 243, 77, 245, 133, 298, 133, 298, 144, 233, 145)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojh4s"]
+size = Vector2(8, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phao3"]
+radius = 4.0
+
+[node name="Room" type="Node2D"]
+script = SubResource("GDScript_vgfox")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(5, 5)
+
+[node name="Player" parent="." instance=ExtResource("1_011ax")]
+position = Vector2(78, 53)
+script = ExtResource("2_lprfo")
+weapon_pickup_scene = ExtResource("3_0hb2o")
+
+[node name="Enemy" parent="." instance=ExtResource("4_wka11")]
+position = Vector2(431, 368)
+weapon_scene = ExtResource("5_60pw1")
+
+[node name="Node2D3" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(353, 146)
+
+[node name="Node2D4" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(373, 83)
+
+[node name="Node2D5" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(299, 82)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_wka11")]
+position = Vector2(306, 105)
+weapon_scene = ExtResource("6_xgasy")
+walking_enemy = true
+
+[node name="WoodWall" parent="." instance=ExtResource("7_gwchm")]
+position = Vector2(243, 114)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("7_gwchm")]
+position = Vector2(270, 142)
+rotation = -1.5708
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("7_gwchm")]
+position = Vector2(295, 385)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("7_gwchm")]
+position = Vector2(295, 320)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("7_gwchm")]
+position = Vector2(295, 257)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(5, 3)
+navigation_polygon = SubResource("NavigationPolygon_nfrpb")
+navigation_layers = 16
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(375, 33)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+position = Vector2(1, 14)
+mass = 0.024
+gravity_scale = 0.0
+linear_damp = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-1, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-7, -12)
+shape = SubResource("RectangleShape2D_ojh4s")
+one_way_collision_margin = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_phao3")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Node2D"]
+position = Vector2(0, 12)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")
+
+[node name="WeaponPickup2" parent="." instance=ExtResource("3_0hb2o")]
+position = Vector2(75, 102)
+weapon_scene = ExtResource("5_60pw1")
+weapon_texture = ExtResource("8_kluvo")
+texture_scale = Vector2(0.5, 0.5)
+ammo_count = 15
+
+[node name="WeaponPickup" parent="." instance=ExtResource("3_0hb2o")]
+position = Vector2(130, 112)
+scale = Vector2(0.05, 0.05)
+weapon_scene = ExtResource("6_xgasy")
+weapon_texture = ExtResource("9_1crkl")
+texture_scale = Vector2(1, 1)
+ammo_count = 30
+
+[node name="WeaponPickup4" parent="." instance=ExtResource("3_0hb2o")]
+position = Vector2(52, 82)
+weapon_scene = ExtResource("10_vfdtc")
+weapon_texture = ExtResource("11_mgjbk")
+texture_scale = Vector2(0.8, 0.8)
+ammo_count = 6
+
+[node name="WeaponPickup3" parent="." instance=ExtResource("3_0hb2o")]
+position = Vector2(36, 52)
+weapon_scene = ExtResource("12_4ybqh")
+weapon_texture = ExtResource("13_ngcxa")
+texture_scale = Vector2(0.8, 0.8)
+ammo_count = 35
+
+[node name="DrinkCan" parent="." instance=ExtResource("14_slwyv")]
+position = Vector2(111, 72)
+
+[node name="Shorts" parent="." instance=ExtResource("15_t5i7m")]
+position = Vector2(126, 71)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("16_3syph")]
+position = Vector2(168, 40)
+intact_texture = ExtResource("17_mxswa")
+broken_texture = ExtResource("18_q6neh")
+
+[node name="WeaponPickup5" parent="." instance=ExtResource("3_0hb2o")]
+position = Vector2(51, 31)
+weapon_scene = ExtResource("19_fbgpt")
+weapon_texture = ExtResource("20_aqkm6")
+texture_scale = Vector2(1, 1)
+
+[node name="Porsche" parent="." instance=ExtResource("21_gj00d")]
+position = Vector2(60, 313)
+scale = Vector2(0.125, 0.125)
+level_controller_path = NodePath("../Node2D2")
+
+[node name="Node2D2" type="Node2D" parent="." node_paths=PackedStringArray("porsche_node")]
+script = ExtResource("22_sg6oc")
+porsche_node = NodePath("../Porsche")
+
+[node name="Label" parent="Node2D2" instance=ExtResource("23_jdm2l")]
+visible = false

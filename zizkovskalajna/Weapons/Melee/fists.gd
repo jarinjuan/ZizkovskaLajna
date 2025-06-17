@@ -23,6 +23,9 @@ func punch():
 
 	var target_pos = weapon_owner.global_position
 
+
+	
+	$HitSound.play()
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
 		if target_pos.distance_to(enemy.global_position) <= range:

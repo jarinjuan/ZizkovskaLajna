@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://c73qnrritjlwb"]
+[gd_scene load_steps=75 format=4 uid="uid://c73qnrritjlwb"]
 
 [ext_resource type="Script" uid="uid://col02iffb3vyy" path="res://Scenes/Levels/level_03.gd" id="1_868mf"]
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_3078y"]
@@ -55,16 +55,23 @@
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="52_uygxn"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="53_08p4i"]
 [ext_resource type="TileSet" uid="uid://xlbmcoois1ya" path="res://Assets/Sprites/Tilesets/chessFloor.tres" id="55_2atg1"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="55_vakpl"]
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="55_wdrce"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="56_h5pn7"]
 [ext_resource type="PackedScene" uid="uid://dfbxopo1dl1pu" path="res://Scenes/Materials/Glass/GlassWall.tscn" id="57_vb1u5"]
 [ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="58_a6oxl"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="58_eb8yh"]
+[ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="59_8mgc2"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="59_mj3ph"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="60_alga1"]
 [ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="61_868mf"]
-[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="65_vakpl"]
-[ext_resource type="PackedScene" uid="uid://l6l3ft8oyc5x" path="res://Weapons/Melee/BBat/bbat.tscn" id="66_eb8yh"]
-[ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="67_8mgc2"]
+[ext_resource type="PackedScene" uid="uid://c7jfifhglnjbp" path="res://Scenes/Materials/PileOfClothes.tscn" id="66_alga1"]
+[ext_resource type="PackedScene" uid="uid://bd31ldbmf853n" path="res://Scenes/Materials/Bed.tscn" id="67_868mf"]
+[ext_resource type="PackedScene" uid="uid://d31xjnrmreq2g" path="res://Scenes/Materials/MetalTable.tscn" id="68_vakpl"]
+[ext_resource type="PackedScene" uid="uid://emxdyb5e2arf" path="res://Scenes/Materials/CommunicationDevice.tscn" id="69_eb8yh"]
+[ext_resource type="PackedScene" uid="uid://cfjpqy8q5owr6" path="res://Scenes/Materials/paperpiece.tscn" id="70_8mgc2"]
+[ext_resource type="PackedScene" uid="uid://budw4n05o4gpx" path="res://Scenes/Materials/RedShorts.tscn" id="71_dn3vg"]
+[ext_resource type="PackedScene" uid="uid://q7d70r7jin7l" path="res://Scenes/Materials/Chair.tscn" id="72_rxu6y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
 resource_local_to_scene = true
@@ -388,6 +395,70 @@ script = ExtResource("51_1jg25")
 [node name="Player" parent="." instance=ExtResource("52_uygxn")]
 position = Vector2(573, 532)
 script = ExtResource("53_08p4i")
+weapon_scene = ExtResource("55_vakpl")
+
+[node name="Enemy2" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(497, 155)
+
+[node name="Enemy3" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(778, 227)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy4" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(501, -145)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy5" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(762, -47)
+rotation = -1.5708
+weapon_scene = ExtResource("58_eb8yh")
+
+[node name="Enemy6" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(632, 36)
+rotation = 1.46608
+
+[node name="Enemy7" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(581, 71)
+weapon_scene = ExtResource("55_vakpl")
+
+[node name="Enemy8" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(340, 209)
+rotation = -0.827286
+weapon_scene = ExtResource("59_8mgc2")
+
+[node name="Enemy9" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(378, 373)
+weapon_scene = ExtResource("59_8mgc2")
+
+[node name="Enemy10" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(853, 202)
+weapon_scene = ExtResource("61_868mf")
+walking_enemy = true
+
+[node name="Enemy11" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(779, 200)
+weapon_scene = ExtResource("61_868mf")
+
+[node name="Enemy12" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(410, 449)
+rotation = 1.5708
+weapon_scene = ExtResource("58_eb8yh")
+
+[node name="Enemy13" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(675, 397)
+rotation = -3.14159
+weapon_scene = ExtResource("55_vakpl")
+
+[node name="Enemy14" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(646, 395)
+weapon_scene = ExtResource("59_8mgc2")
+
+[node name="Enemy15" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(849, 450)
+rotation = 1.5708
+
+[node name="Enemy16" parent="." instance=ExtResource("60_alga1")]
+position = Vector2(497, 128)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -512,12 +583,89 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_dn3vg")
 navigation_layers = 16
 
-[node name="Enemy5" parent="." instance=ExtResource("60_alga1")]
-position = Vector2(668, 347)
-weapon_scene = ExtResource("61_868mf")
+[node name="Node2D2" parent="." instance=ExtResource("66_alga1")]
+position = Vector2(651, 480)
 
-[node name="WeaponPickup" parent="." instance=ExtResource("65_vakpl")]
-position = Vector2(624, 533)
-weapon_scene = ExtResource("66_eb8yh")
-weapon_texture = ExtResource("67_8mgc2")
-texture_scale = Vector2(0.5, 0.5)
+[node name="StaticBody2D" parent="." instance=ExtResource("67_868mf")]
+position = Vector2(523, 134)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(837, 493)
+
+[node name="Node2D3" parent="." instance=ExtResource("69_eb8yh")]
+position = Vector2(848, 477)
+
+[node name="Node2D4" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(752, 118)
+skew = 0.244346
+
+[node name="Node2D5" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(759, 114)
+skew = 0.0890118
+
+[node name="Node2D6" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(758, 121)
+skew = -0.118682
+
+[node name="Node2D7" parent="." instance=ExtResource("71_dn3vg")]
+position = Vector2(358, 75)
+skew = -0.427606
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(477, -42)
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(603, 89)
+
+[node name="Node2D8" parent="." instance=ExtResource("69_eb8yh")]
+position = Vector2(633, 73)
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(322, 171)
+rotation = 0.785398
+
+[node name="Node2D9" parent="." instance=ExtResource("70_8mgc2")]
+position = Vector2(359, 192)
+rotation = 0.785398
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(405, 378)
+rotation = 3.14159
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("68_vakpl")]
+position = Vector2(386, 494)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(890, 335)
+rotation = 1.5708
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("72_rxu6y")]
+position = Vector2(890, 364)
+rotation = 1.5708
+
+[node name="Node2D10" parent="." instance=ExtResource("66_alga1")]
+position = Vector2(299, -122)
+
+[node name="Node2D11" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(878, 142)
+
+[node name="Node2D12" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(883, -53)
+
+[node name="Node2D13" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(807, -147)
+
+[node name="Node2D14" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(349, -126)
+
+[node name="Node2D15" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(358, -10)
+
+[node name="Node2D16" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(447, -82)
+
+[node name="Node2D17" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(823, -85)
+
+[node name="Node2D18" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(824, 148)

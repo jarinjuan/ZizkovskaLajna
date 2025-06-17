@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://hywhiqj1d044"]
+[gd_scene load_steps=12 format=3 uid="uid://hywhiqj1d044"]
 
 [ext_resource type="Script" uid="uid://qub0mk4bob3u" path="res://Scenes/Audio/audio.gd" id="1_x2qts"]
-[ext_resource type="AudioStream" uid="uid://bmx1n7ivjdom2" path="res://Assets/Audio/Music/main.mp3" id="2_2sqqp"]
 [ext_resource type="AudioStream" uid="uid://wrecsj8827sg" path="res://Assets/Audio/Music/menu2.mp3" id="3_hd87f"]
 [ext_resource type="AudioStream" uid="uid://duptd0o2uo0ok" path="res://Assets/Audio/Music/menu3.mp3" id="4_8uorq"]
 [ext_resource type="AudioStream" uid="uid://edir8inahco4" path="res://Assets/Audio/Music/menu4.mp3" id="5_xrsso"]
@@ -15,16 +14,15 @@
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0d5jp"]
 shuffle = true
 fade_time = 0.5
-stream_count = 9
-stream_0 = ExtResource("3_hd87f")
-stream_1 = ExtResource("4_8uorq")
-stream_2 = ExtResource("5_xrsso")
-stream_3 = ExtResource("6_5me8a")
-stream_4 = ExtResource("7_o5tc1")
-stream_5 = ExtResource("8_mhm6t")
-stream_6 = ExtResource("9_ejmqc")
-stream_7 = ExtResource("10_xivua")
-stream_8 = ExtResource("11_66wc1")
+stream_count = 8
+stream_0 = ExtResource("4_8uorq")
+stream_1 = ExtResource("5_xrsso")
+stream_2 = ExtResource("6_5me8a")
+stream_3 = ExtResource("7_o5tc1")
+stream_4 = ExtResource("8_mhm6t")
+stream_5 = ExtResource("9_ejmqc")
+stream_6 = ExtResource("10_xivua")
+stream_7 = ExtResource("11_66wc1")
 
 [node name="AudioPlayer" type="Node"]
 process_mode = 3
@@ -37,5 +35,5 @@ autoplay = true
 bus = &"Music"
 
 [node name="LevelCompletedMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_2sqqp")
+stream = ExtResource("3_hd87f")
 bus = &"Music"

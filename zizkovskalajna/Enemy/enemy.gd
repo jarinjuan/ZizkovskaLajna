@@ -175,7 +175,7 @@ func _physics_process(delta: float) -> void:
 	update_visibility()
 
 
-	if not has_weapon and target_pickup == null:
+	if not has_weapon and target_pickup == null and player_spotted:
 		var closest_pickup = null
 		var closest_dist = INF
 		for pickup in get_tree().get_nodes_in_group("weapon_pickup"):			
@@ -187,7 +187,7 @@ func _physics_process(delta: float) -> void:
 			target_pickup = closest_pickup
 			nav_agent.set_target_position(target_pickup.global_position)
 			
-	if not has_weapon and target_pickup:
+	if not has_weapon and target_pickup and player_spotted:
 		if nav_agent.get_target_position() != target_pickup.global_position:
 			nav_agent.set_target_position(target_pickup.global_position)
 
@@ -406,7 +406,7 @@ func die():
 		return
 	removeSprites()
 	$Enemy_Dead.visible = true
-	$Enemy_Dead.z_index = -1
+	$Enemy_Dead.z_index = 0
 	spawn_blood_splatter(global_position, 3, 8)
 	is_dead = true
 	if has_weapon:

@@ -14,6 +14,7 @@ func swing():
 
 	can_swing = false
 
+	$AttackSound.play()
 	var target_pos = weapon_owner.global_position
 	var hit_something = false
 

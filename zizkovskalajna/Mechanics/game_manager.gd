@@ -16,8 +16,18 @@ var sfx_value
 var sfx_mute
 var dialog_value
 var dialog_mute
+var skip_dialog = false
 
 var input_map
+
+func _input(event):
+	if event.is_action_pressed("ui_fullscreen_toggle"):
+		var mode = DisplayServer.window_get_mode()
+		if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -41,9 +51,9 @@ func _ready():
 	print("ok")
 	return
 	
-func set_max_unlocked_level(current_level: int):
-	if max_unlocked_level < current_level + 1:
-		max_unlocked_level = current_level + 1
+func set_max_unlocked_level(cur_level: int):
+	if max_unlocked_level < cur_level + 1:
+		max_unlocked_level = cur_level + 1
 	
 func set_last_level_time(time: float):
 	last_level_time = time

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://d4k8vkobimo5n"]
+[gd_scene load_steps=74 format=4 uid="uid://d4k8vkobimo5n"]
 
 [ext_resource type="Script" uid="uid://b0a4rwjj6co2l" path="res://Scenes/Levels/level_02.gd" id="1_3kfsg"]
 [ext_resource type="Texture2D" uid="uid://dth7xw6m6xvd7" path="res://Assets/Sprites/Backgrounds/GradientBackground/gradient1.png" id="1_ei2s5"]
@@ -54,17 +54,23 @@
 [ext_resource type="Script" uid="uid://bw70ts8po8ofh" path="res://Scenes/Main/animated_sprite_2d.gd" id="51_8p8gs"]
 [ext_resource type="PackedScene" uid="uid://c2xfro0t7ilr6" path="res://Player/player.tscn" id="53_j5m7m"]
 [ext_resource type="Script" uid="uid://kdbuin1158us" path="res://Player/player.gd" id="54_4sjh2"]
+[ext_resource type="PackedScene" uid="uid://bf84kup2hf1ek" path="res://Weapons/M4/m4.tscn" id="55_di5wi"]
 [ext_resource type="TileSet" uid="uid://51goyyualhbu" path="res://Assets/Sprites/Tilesets/lightwoodenFloor.tres" id="55_ovt2b"]
 [ext_resource type="PackedScene" uid="uid://dkgt36at7nmr4" path="res://Scenes/Objects/Porsche/porsche.tscn" id="56_t3vvr"]
 [ext_resource type="Script" uid="uid://dhh5bdpcufjyg" path="res://Mechanics/levelControl.gd" id="57_0hoou"]
 [ext_resource type="PackedScene" uid="uid://pb58ae6iwnvh" path="res://Scenes/Materials/Wood/StoneWall.tscn" id="57_heam3"]
+[ext_resource type="PackedScene" uid="uid://bsosllodth0mn" path="res://Weapons/Uzi/uzi.tscn" id="58_5jy1m"]
 [ext_resource type="PackedScene" uid="uid://dqg4vy71yi4ky" path="res://Scenes/CompleteLvl/label.tscn" id="58_6krhw"]
+[ext_resource type="PackedScene" uid="uid://d074lm7abq6tp" path="res://Weapons/Shotgun/shotgun.tscn" id="59_ji0av"]
 [ext_resource type="PackedScene" uid="uid://scu5wudpsmj3" path="res://Enemy/enemy.tscn" id="59_ovt2b"]
 [ext_resource type="PackedScene" uid="uid://cuifw4nyhafpy" path="res://Weapons/Pistol/Pistol.tscn" id="64_di5wi"]
 [ext_resource type="PackedScene" uid="uid://bhmvk35f6itpo" path="res://Scenes/Objects/Door/door.tscn" id="64_ovt2b"]
-[ext_resource type="PackedScene" uid="uid://dk47wbug2mjse" path="res://Weapons/Pickup/WeaponPickup.tscn" id="64_ybyw4"]
-[ext_resource type="Texture2D" uid="uid://c6kdrgf4wv2x0" path="res://Assets/Sprites/Weapons/pistol/spite_pistol_fl.png" id="65_x62h1"]
 [ext_resource type="Texture2D" uid="uid://chwa220xl05w0" path="res://Assets/Sprites/Tilesets/sprite_lightwoodwall.png" id="65_ybyw4"]
+[ext_resource type="PackedScene" uid="uid://d31xjnrmreq2g" path="res://Scenes/Materials/MetalTable.tscn" id="66_wfo7p"]
+[ext_resource type="PackedScene" uid="uid://emxdyb5e2arf" path="res://Scenes/Materials/CommunicationDevice.tscn" id="67_r7gqi"]
+[ext_resource type="PackedScene" uid="uid://cfjpqy8q5owr6" path="res://Scenes/Materials/paperpiece.tscn" id="68_f82ej"]
+[ext_resource type="PackedScene" uid="uid://q7d70r7jin7l" path="res://Scenes/Materials/Chair.tscn" id="69_5jy1m"]
+[ext_resource type="PackedScene" uid="uid://c7jfifhglnjbp" path="res://Scenes/Materials/PileOfClothes.tscn" id="70_ji0av"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dnbum"]
 resource_local_to_scene = true
@@ -388,6 +394,67 @@ script = ExtResource("51_8p8gs")
 [node name="Player" parent="." instance=ExtResource("53_j5m7m")]
 position = Vector2(190, 159)
 script = ExtResource("54_4sjh2")
+weapon_scene = ExtResource("55_di5wi")
+
+[node name="Enemy" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(628, -109)
+weapon_scene = ExtResource("64_di5wi")
+walking_enemy = true
+
+[node name="Enemy2" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(833, 194)
+rotation = -3.14159
+weapon_scene = ExtResource("64_di5wi")
+
+[node name="Enemy3" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(325, 48)
+rotation = -3.14159
+weapon_scene = ExtResource("64_di5wi")
+
+[node name="Enemy4" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(306, 48)
+weapon_scene = ExtResource("58_5jy1m")
+
+[node name="Enemy5" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(428, 20)
+rotation = 1.5708
+
+[node name="Enemy6" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(732, 186)
+rotation = -3.14159
+
+[node name="Enemy7" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(672, 430)
+rotation = -0.558505
+weapon_scene = ExtResource("58_5jy1m")
+
+[node name="Enemy8" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(670, 372)
+rotation = 0.771436
+weapon_scene = ExtResource("64_di5wi")
+
+[node name="Enemy9" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(532, 75)
+rotation = -3.14159
+weapon_scene = ExtResource("59_ji0av")
+
+[node name="Enemy10" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(551, 316)
+rotation = -1.5708
+weapon_scene = ExtResource("58_5jy1m")
+
+[node name="Enemy11" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(527, 252)
+weapon_scene = ExtResource("59_ji0av")
+
+[node name="Enemy12" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(305, 452)
+rotation = 1.5708
+weapon_scene = ExtResource("64_di5wi")
+
+[node name="Enemy13" parent="." instance=ExtResource("59_ovt2b")]
+position = Vector2(458, 452)
+rotation = 1.5708
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -482,20 +549,8 @@ porsche_node = NodePath("../Porsche")
 visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_0hoou")
 navigation_layers = 16
-
-[node name="Enemy" parent="." instance=ExtResource("59_ovt2b")]
-position = Vector2(625, 257)
-weapon_scene = ExtResource("64_di5wi")
-
-[node name="WeaponPickup" parent="." instance=ExtResource("64_ybyw4")]
-position = Vector2(212, 126)
-weapon_scene = ExtResource("64_di5wi")
-weapon_texture = ExtResource("65_x62h1")
-texture_scale = Vector2(0.5, 0.5)
-ammo_count = 15
 
 [node name="Door" parent="." instance=ExtResource("64_ovt2b")]
 position = Vector2(262, 161)
@@ -509,3 +564,83 @@ scale = Vector2(2.1, 2.1)
 z_index = -2
 position = Vector2(274, 160)
 texture = ExtResource("65_ybyw4")
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(413, 86)
+scale = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D30" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(770, 147)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="Node2D2" parent="." instance=ExtResource("67_r7gqi")]
+position = Vector2(431, 62)
+rotation = 3.14159
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(541, 236)
+rotation = 1.5708
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(425, 498)
+
+[node name="Node2D3" parent="." instance=ExtResource("68_f82ej")]
+position = Vector2(457, 49)
+
+[node name="Node2D4" parent="." instance=ExtResource("68_f82ej")]
+position = Vector2(554, 253)
+rotation = 1.5708
+
+[node name="StaticBody2D25" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(740, 159)
+rotation = 1.5708
+
+[node name="StaticBody2D20" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(687, 129)
+rotation = 1.5708
+
+[node name="Node2D5" parent="." instance=ExtResource("70_ji0av")]
+position = Vector2(609, -150)
+scale = Vector2(1.3, 1.3)
+
+[node name="StaticBody2D21" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(686, 412)
+scale = Vector2(0.5, 1)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(700, 360)
+
+[node name="StaticBody2D23" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(663, 399)
+rotation = 4.71239
+
+[node name="StaticBody2D24" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(739, 395)
+rotation = 1.5708
+
+[node name="StaticBody2D26" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(703, 431)
+rotation = 3.14159
+
+[node name="StaticBody2D27" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(561, -160)
+
+[node name="StaticBody2D28" parent="." instance=ExtResource("69_5jy1m")]
+position = Vector2(558, 77)
+rotation = 1.5708
+
+[node name="StaticBody2D29" parent="." instance=ExtResource("66_wfo7p")]
+position = Vector2(274, 498)
+
+[node name="Node2D6" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(606, -80)
+
+[node name="Node2D7" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(609, 64)
+
+[node name="Node2D8" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(729, 84)
+
+[node name="Node2D9" type="Node2D" parent="." groups=["enemy_patrol_point"]]
+position = Vector2(732, -106)

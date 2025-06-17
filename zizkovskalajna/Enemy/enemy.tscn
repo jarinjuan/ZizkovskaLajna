@@ -12,7 +12,7 @@
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
-collision_mask = 22
+collision_mask = 54
 wall_min_slide_angle = 0.881391
 script = ExtResource("1_px1sc")
 

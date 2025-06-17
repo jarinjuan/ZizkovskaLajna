@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsosllodth0mn"]
+[gd_scene load_steps=6 format=3 uid="uid://bsosllodth0mn"]
 
 [ext_resource type="Script" uid="uid://cqf0xksx76bby" path="res://Weapons/Uzi/uzi.gd" id="1_x33ya"]
 [ext_resource type="PackedScene" uid="uid://dooadb61hapec" path="res://Weapons/Bullets/Uzi/bullet.tscn" id="2_f4o6n"]
 [ext_resource type="Texture2D" uid="uid://dj5wvw003fgmv" path="res://Assets/Sprites/Weapons/uzi/uzi.png" id="3_x33ya"]
+[ext_resource type="AudioStream" uid="uid://bmug13kevgwn3" path="res://Assets/Audio/SFX/sound_uzi_shoot.mp3" id="4_ys1xf"]
+[ext_resource type="AudioStream" uid="uid://57vy32tp7ibo" path="res://Assets/Audio/SFX/sound_uzi_reload.mp3" id="5_tjss8"]
 
 [node name="Uzi" type="Node2D"]
 script = ExtResource("1_x33ya")
@@ -20,3 +22,10 @@ position = Vector2(22, -1)
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(19, -10)
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_ys1xf")
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tjss8")
