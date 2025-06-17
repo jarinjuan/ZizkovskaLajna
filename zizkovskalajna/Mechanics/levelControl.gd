@@ -63,32 +63,34 @@ func _input(event: InputEvent):
 			_pause_game()
 
 func _pause_game():
-	get_tree().paused = true
-	if Ui.is_active_ammo() == true:
-		Ui.close_ammo()
-		active_ammo_ui = true
-	if pause_menu_instance == null:		
-		pause_menu_instance = pause_menu_scene.instantiate()
-		get_tree().get_root().add_child(pause_menu_instance)		
-		pause_menu_instance.resume_game.connect(_unpause_game)
-		pause_menu_instance.restart_game.connect(_restart_game)
-		pause_menu_instance.quit_game.connect(_quit_game)
-		$Label.visible = false
+	if not Ui.dialog_playing:
+		get_tree().paused = true
+		if Ui.is_active_ammo() == true:
+			Ui.close_ammo()
+			active_ammo_ui = true
+		if pause_menu_instance == null:		
+			pause_menu_instance = pause_menu_scene.instantiate()
+			get_tree().get_root().add_child(pause_menu_instance)		
+			pause_menu_instance.resume_game.connect(_unpause_game)
+			pause_menu_instance.restart_game.connect(_restart_game)
+			pause_menu_instance.quit_game.connect(_quit_game)
+			$Label.visible = false
 
-	else:
-		pause_menu_instance.visible = true # 
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+		else:
+			pause_menu_instance.visible = true # 
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
 	
 
 func _unpause_game():
-	get_tree().paused = false 
-	if active_ammo_ui:
-		Ui.show_ammo()
-		active_ammo_ui = false
-	if pause_menu_instance != null:
-		pause_menu_instance.queue_free() 
-		pause_menu_instance = null
-		_on_enemy_died() 
+	if not Ui.dialog_playing: 
+		get_tree().paused = false 
+		if active_ammo_ui:
+			Ui.show_ammo()
+			active_ammo_ui = false
+		if pause_menu_instance != null:
+			pause_menu_instance.queue_free() 
+			pause_menu_instance = null
+			_on_enemy_died() 
 
 
 
