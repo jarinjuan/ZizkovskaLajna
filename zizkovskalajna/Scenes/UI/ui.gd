@@ -126,8 +126,12 @@ func wait(time):
 func wait_for_any_input() -> void:
 	while true:
 		await get_tree().process_frame
-		if Input.is_anything_pressed():
-			return
+		for action in InputMap.get_actions():
+			if Input.is_action_pressed(action) and action != "fire":
+				return
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			continue
+
 	
 var lorem = "Noc byla chladná a mlha se valila údolím jako přízrak. Každý krok na vlhké trávě zněl hlasitěji, než by měl. Ve vzduchu bylo něco těžkého – neklid, který se nedal vysvětlit. A pak, najednou, ticho prořízl výkřik. Krátký. Ostrý. A pak zase nic"
 

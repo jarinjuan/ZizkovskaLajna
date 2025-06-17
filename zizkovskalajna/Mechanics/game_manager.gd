@@ -42,9 +42,9 @@ func _ready():
 	print("ok")
 	return
 	
-func set_max_unlocked_level(current_level: int):
-	if max_unlocked_level < current_level + 1:
-		max_unlocked_level = current_level + 1
+func set_max_unlocked_level(cur_level: int):
+	if max_unlocked_level < cur_level + 1:
+		max_unlocked_level = cur_level + 1
 	
 func set_last_level_time(time: float):
 	last_level_time = time

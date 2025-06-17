@@ -8,7 +8,8 @@ extends Weapon
 @export var original_ammo = 6
 
 func _ready():
-	$ReloadSound.play()
+	if weapon_owner.is_in_group("player"):
+		$ReloadSound.play()
 
 func shoot(target_pos: Vector2) -> void:
 	if !can_fire or ammo <= 0:
