@@ -41,7 +41,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
-collision_mask = 20
+collision_mask = 52
 safe_margin = 1.0
 
 [node name="Player_Unarmed_collision" type="CollisionPolygon2D" parent="."]

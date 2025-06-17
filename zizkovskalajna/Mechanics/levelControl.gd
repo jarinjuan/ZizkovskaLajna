@@ -94,10 +94,12 @@ func _unpause_game():
 
 func _restart_game():
 	_unpause_game() 
+	Ui.close_dialog()
 	get_tree().reload_current_scene()
 
 func _quit_game():
 	_unpause_game()
 	Ui.close_ammo()
 	Audio.play_audio_stream(Audio.background_music)
+	Ui.close_dialog()
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")
