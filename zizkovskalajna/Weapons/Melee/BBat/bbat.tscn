@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l6l3ft8oyc5x"]
+[gd_scene load_steps=4 format=3 uid="uid://l6l3ft8oyc5x"]
 
 [ext_resource type="Script" uid="uid://bstvttieu6kxq" path="res://Weapons/Melee/BBat/bbat.gd" id="1_432ia"]
 [ext_resource type="Texture2D" uid="uid://diyn4chc6twg7" path="res://Assets/Sprites/Weapons/Melee/bbat.png" id="2_bksn4"]
+[ext_resource type="AudioStream" uid="uid://de8fnwjx2rm0k" path="res://Assets/Audio/SFX/sound_melee_attack.mp3" id="3_x0ya5"]
 
 [node name="BBat" type="Node2D"]
 script = ExtResource("1_432ia")
@@ -12,3 +13,6 @@ scale = Vector2(0.955, 0.955)
 texture = ExtResource("2_bksn4")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x0ya5")
