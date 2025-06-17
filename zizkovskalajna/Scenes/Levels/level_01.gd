@@ -13,9 +13,8 @@ func _ready():
 	
 func _on_enemy_enemy_died() -> void:
 	if (x == 0):
-		await get_tree().create_timer(0.3).timeout 
 		Ui.start_dialog(enemy_dead_sentence, "sprite_enemy_dialogue")
 	x += 1
+	print(x)
 	if (x == 9):
-		await get_tree().create_timer(0.3).timeout 
 		Ui.start_dialog(player_sentence, "sprite_player_dialogue")

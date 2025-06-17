@@ -15,4 +15,5 @@ texture = ExtResource("2_bksn4")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("3_x0ya5")

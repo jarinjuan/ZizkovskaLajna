@@ -22,6 +22,7 @@ texture = ExtResource("2_eaq8e")
 position = Vector2(22, -8)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("4_rtln4")
 
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]

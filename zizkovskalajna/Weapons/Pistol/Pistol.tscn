@@ -22,6 +22,7 @@ position = Vector2(22, -1)
 position = Vector2(6.64772, -5.8574)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("4_wbbrg")
 
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="."]

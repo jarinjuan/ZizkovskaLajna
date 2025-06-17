@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://8y40cbp302ys" path="res://Assets/Audio/SFX/sound_shotgun_load.mp3" id="5_mo2n2"]
 
 [node name="Shotgun" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_lwqk7")
 bullet_scene = ExtResource("2_e1bfy")
 ammo = 6
