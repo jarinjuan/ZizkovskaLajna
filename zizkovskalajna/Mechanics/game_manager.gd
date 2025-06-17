@@ -16,6 +16,7 @@ var sfx_value
 var sfx_mute
 var dialog_value
 var dialog_mute
+var skip_dialog = false
 
 var input_map
 

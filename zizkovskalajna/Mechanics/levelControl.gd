@@ -47,7 +47,7 @@ func _on_porsche_level_finished():
 	final_level_time = current_level_time
 	GameManager.set_last_level_time(final_level_time)
 	GameManager.set_max_unlocked_level(GameManager.current_level)
-
+	GameManager.skip_dialog = false
 	Ui.close_ammo()
 	var level_completed_scene = load("res://Scenes/CompleteLvl/levelCompleted.tscn")
 	get_tree().change_scene_to_packed(level_completed_scene)
@@ -102,4 +102,5 @@ func _quit_game():
 	Ui.close_ammo()
 	Audio.play_audio_stream(Audio.background_music)
 	Ui.close_dialog()
+	GameManager.skip_dialog = false
 	get_tree().change_scene_to_file("res://Scenes/Main/control.tscn")

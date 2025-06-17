@@ -70,7 +70,9 @@ func close_dialog():
 	
 	
 func start_dialog(message, character_name):
-	
+	if GameManager.skip_dialog:
+		return
+
 	var size = character_texture.size
 	character_texture.texture = resize_get_texture(load(dialog_image_path + character_name + ".png") as Texture2D, size)
 	dialog.visible = true
@@ -79,33 +81,43 @@ func start_dialog(message, character_name):
 	dialog_text.visible_characters = 0
 	
 	get_tree().paused = true
-	while true:
-		if dialog_text.visible_characters == dialog_text.text.length():
-			break
-			
-		if dialog_text.text[dialog_text.visible_characters] == '.':
-			dialog_text.visible_characters += 1
-			await wait_for_any_input()
-			continue
-			
-		dialog_text.visible_characters += 1
-		blop_player.pitch_scale = random.randf_range(0.90, 1.05)
-		blop_player.play(0)
-		scroll_bar.visible = false
-		await blop_player.finished
+	
+	var interrupted := false
+	
+	while dialog_text.visible_characters < dialog_text.text.length():
+		await get_tree().process_frame
 		
-	await wait_for_any_input()
+		if Input.is_action_just_pressed("confirm") or GameManager.skip_dialog:
+			dialog_text.visible_characters = dialog_text.text.length()
+			interrupted = true
+			break
+
+		var char = dialog_text.text[dialog_text.visible_characters]
+		dialog_text.visible_characters += 1
+
+		if char != ".":
+			blop_player.pitch_scale = random.randf_range(0.90, 1.05)
+			blop_player.play(0)
+			scroll_bar.visible = false
+			await blop_player.finished
+	
+	if not interrupted:
+		await wait_for_any_input()
+
 	dialog_playing = false
 	get_tree().paused = false
 	close_dialog()
 
 
 func dialog_setup():
+	if GameManager.skip_dialog:
+		return
 	dialog.visible = false
 	show_dialog()
 	scroll_bar.visible = false
 	await wait(0.01)
 	close_dialog()
+
 	
 #------------OTHER--------------------------
 func wait(time):

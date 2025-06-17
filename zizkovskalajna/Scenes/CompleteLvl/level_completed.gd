@@ -38,6 +38,7 @@ func _on_next_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
+	GameManager.skip_dialog = false
 	Ui.close_ammo()
 	Audio.play_audio_stream(Audio.background_music)
 	Audio.stop_audio_stream(Audio.lvlc_music)
